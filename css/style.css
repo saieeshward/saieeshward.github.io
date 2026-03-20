@@ -1045,6 +1045,14 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   margin: 0;
 }
 
+.footer-tagline {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  margin: 0.25rem 0 0;
+  font-style: italic;
+}
+
 .site-footer .text-md-right {
   text-align: right;
 }
