@@ -1081,6 +1081,12 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   .recipe-meta { grid-template-columns: repeat(2, 1fr); }
   .ingredients-compact { columns: 1; }
   .gallery-strip { height: 180px; }
+  .cta-actions { flex-direction: column; }
+  .recipe-header { padding: 1.5rem; }
+  .recipe-meta-item { padding: 0.8rem; }
+  .recipe-body { padding: 1.5rem; }
+  .method-step { flex-direction: column; gap: 0.5rem; }
+  .step-number { font-size: 1.5rem; }
 }
 
 /* ===== BRAND SMALL (footer) ===== */
