@@ -537,7 +537,7 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
 
 .h-timeline-item {
   position: relative;
-  width: 300px;
+  width: 380px;
   min-width: 0;
   flex-shrink: 0;
   padding-top: 2rem;
@@ -570,11 +570,11 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1.2rem;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
   transition: border-color 0.3s;
+  overflow: hidden;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  max-width: calc(100% - 1rem);
 }
 
 .h-timeline-card:hover { border-color: var(--accent); }
