@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Projects by Sai Eeshwar D — AI, ML, Distributed Systems, and more." />
+  <meta property="og:title" content="Projects — Sai Eeshwar D" />
+  <meta property="og:description" content="AI, ML, distributed systems, and creative projects by Sai Eeshwar D." />
+  <meta property="og:image" content="assets/profile.png" />
+  <meta name="twitter:card" content="summary" />
+  <title>Projects — Sai Eeshwar D</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <script src="js/components.js"></script>
+</head>
+<body>
+
+  <script>document.write(getNavbar('projects'));</script>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title fade-up">Projects<span class="text-accent">.</span></h1>
+      <p class="page-subtitle fade-up">Stuff I've actually built. Most of it links to code or a live demo.</p>
+    </div>
+  </section>
+
+  <!-- ========== FILTER TAGS ========== -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-tags fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="systems">Systems</button>
+        <button class="filter-btn" data-filter="creative">Creative</button>
+        <button class="filter-btn" data-filter="hardware">Hardware</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS GRID ========== -->
+  <section class="projects-section">
+    <div class="container">
+      <div class="row project-grid">
+
+        <!-- 2026 — Dissertation (TCD Sem 2, current) -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
+          <div class="project-card">
+            <span class="badge badge-current">In Progress</span>
+            <h4>Historical Document Transcription</h4>
+            <p>Comparing LLMs (Qwen2.5-VL) vs CNNs for transcribing historical documents. Python layout engine for multi-column reconstruction.</p>
+            <div class="project-tags">
+              <span>LLMs</span><span>PyTorch</span><span>Computer Vision</span><span>Layout Reconstruction</span>
+            </div>
+            <div class="project-links">
+              <span class="text-muted"><i class="fas fa-lock"></i> Private</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2026 — Shellock (TCD, current) -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems">
+          <div class="project-card">
+            <span class="badge badge-current">In Progress</span>
+            <h4>Shellock CLI</h4>
+            <p>Node.js CLI that sets up dev environments. Handles multi-module projects with plan files and rollback.</p>
+            <div class="project-tags">
+              <span>Node.js</span><span>CLI</span><span>Developer Tooling</span><span>Automation</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/EESH-843/shellock" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="assets/reports/shellock-outline.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 — TCD Sem 1: Spotify Viz -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="creative">
+          <div class="project-card">
+            <h4>Spotify Audio Feature Viz</h4>
+            <p>Altair dashboard with <strong>114,000+ Spotify tracks</strong>. "Mood Maps" (Valence vs Energy), brush-linked selection, multi-genre filtering.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Altair</span><span>Data Visualization</span><span>Pandas</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/EESH-843/spotify-viz" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="assets/reports/spotify-viz-interactive.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chart-bar"></i> Interactive</a>
+              <a href="assets/reports/spotify-viz-report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 — TCD Sem 1: Transformers from Scratch -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
+          <div class="project-card">
+            <h4>Transformers from Scratch</h4>
+            <p>Custom <strong>GPT-style transformer</strong> architectures. Token/position embeddings, <strong>multi-head attention</strong> for arithmetic and boolean logic.</p>
+            <div class="project-tags">
+              <span>PyTorch</span><span>NLP</span><span>Transformers</span><span>Deep Learning</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/EESH-843/math-boolean-gpt" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="assets/reports/transformers-report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 — TCD Sem 1: Lucene Search -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems">
+          <div class="project-card">
+            <h4>Lucene Search Engine</h4>
+            <p>Java-based search engine using <strong>Apache Lucene 9.9</strong>. Custom analyzers, field-specific boosting, <strong>BM25 scoring</strong> with TREC evaluation.</p>
+            <div class="project-tags">
+              <span>Java</span><span>Lucene</span><span>Information Retrieval</span><span>TREC</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/EESH-843/assignment-two-group-10" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="assets/reports/lucene-ir-report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 — TCD Sem 1: ShutterBoxd Knowledge Graph -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems">
+          <div class="project-card">
+            <h4>ShutterBoxd — Movie Knowledge Graph</h4>
+            <p>Movie knowledge graph built on IMDb and Letterboxd data. RML mappings, SHACL validation, SPARQL queries — all in Protege and GraphDB.</p>
+            <div class="project-tags">
+              <span>Protege</span><span>RML</span><span>SHACL</span><span>Knowledge Graphs</span><span>Semantic Web</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/EESH-843/knowledge-graph" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="assets/reports/shutterBoxd_25338829.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 — TCD Sem 1: Fencer-PRO -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="creative">
+          <div class="project-card">
+            <h4>Fencer-PRO Innovation Pitch</h4>
+            <p>Research pitch for fencing performance tech. Motion capture, real-time feedback, market sizing.</p>
+            <div class="project-tags">
+              <span>Research</span><span>Ideation</span><span>Product Discovery</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/EESH-843/fencer-pro" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="assets/reports/fencer-pro-report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
+              <a href="assets/reports/fencer-pro-presentation.pptx" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-powerpoint"></i> Pitch Deck</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 — VTI: Heart Murmur Detection (Mar–May 2025) -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
+          <div class="project-card">
+            <h4>Heart Murmur Detection</h4>
+            <p>Deep learning model hitting <strong>87% accuracy</strong> on heart murmur classification from stethoscope audio. Runs on a <strong>digital stethoscope</strong> for cheap cardiac screening.</p>
+            <div class="project-tags">
+              <span>Deep Learning</span><span>Audio Classification</span><span>Healthcare</span><span>Python</span>
+            </div>
+            <div class="project-links">
+              <span class="text-muted"><i class="fas fa-lock"></i> Private</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 — Syncwave: Is It Legal To -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
+          <div class="project-card">
+            <span class="badge badge-live">Live</span>
+            <h4>Is It Legal To</h4>
+            <p>Legal guidance platform I co-founded. Case tracking, <strong>AI summaries</strong>, lawyer matching — live and used daily.</p>
+            <div class="project-tags">
+              <span>AI</span><span>Deep Learning</span><span>LegalTech</span><span>LLM Optimization</span>
+            </div>
+            <div class="project-links">
+              <a href="https://syncwave.co.in" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i> Live Site</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 — Hybrid Forecast (IEEE published) -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
+          <div class="project-card">
+            <span class="badge badge-published">Published</span>
+            <h4>Hybrid Time Series Forecasting</h4>
+            <p>Combining ARIMA, Echo State Networks, and LSTM for time series prediction. Tested on Brent Oil, Gold, and Sunspot datasets.</p>
+            <div class="project-tags">
+              <span>ARIMA</span><span>LSTM</span><span>Echo State Networks</span><span>Time Series</span>
+            </div>
+            <div class="project-links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/11158940" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt"></i> Read on IEEE</a>
+              <a href="assets/reports/hybrid-forecast-paper.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> View Slides</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2024 — GoWarm: WAV2Lip-HQ -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
+          <div class="project-card">
+            <h4>WAV2Lip-HQ Inference</h4>
+            <p>Lip-sync pipeline doing <strong>95% accuracy at 30 FPS</strong>, supports 4K. Built this for video dubbing at GoWarm.</p>
+            <div class="project-tags">
+              <span>Python</span><span>PyTorch</span><span>Deep Learning</span><span>Video Processing</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/EESH-843/Wav2Lip-HQ-inference" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2023 — Cetacean Detection (IEEE published + Patent) -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
+          <div class="project-card">
+            <span class="badge badge-published">Published</span>
+            <h4>Cetacean Species Detection</h4>
+            <p>Classifies <strong>93 cetacean species</strong> from underwater audio using CNNs, CRNNs, and SoundNet. <strong>IEEE published</strong> + Indian patent filed.</p>
+            <div class="project-tags">
+              <span>CNN</span><span>CRNN</span><span>SoundNet</span><span>Bioacoustics</span>
+            </div>
+            <div class="project-links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/10333321" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt"></i> IEEE Paper</a>
+              <a href="assets/reports/patent-specification.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-certificate"></i> Patent</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2023 — CRISP (VIT, published) -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems">
+          <div class="project-card">
+            <span class="badge badge-published">Published</span>
+            <h4>CRISP</h4>
+            <p>Real-time GPS tracking for public buses. Built so students could actually figure out when their bus was coming.</p>
+            <div class="project-tags">
+              <span>GPS</span><span>Real-Time Tracking</span><span>UX Design</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/EESH-843/CRISP" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2022 — VISU-NG (VIT) -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
+          <div class="project-card">
+            <h4>VISU-NG Robot</h4>
+            <p>Robot that talks back. TTS/STT with LLM integration so it can hold a conversation.</p>
+            <div class="project-tags">
+              <span>TTS</span><span>STT</span><span>LLMs</span><span>Human-Robot Interaction</span>
+            </div>
+            <div class="project-links">
+              <span class="text-muted"><i class="fas fa-lock"></i> Private</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2022 — V-SAT (VIT) -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="hardware">
+          <div class="project-card">
+            <h4>V-SAT (1U CubeSat)</h4>
+            <p>EM spectrum analysis payload for a 1U CubeSat. Redundant systems, weather-resistant build.</p>
+            <div class="project-tags">
+              <span>CubeSat</span><span>EM Analysis</span><span>CAD Design</span>
+            </div>
+            <div class="project-links">
+              <span class="text-muted"><i class="fas fa-lock"></i> Private</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2021 — HackAP (VIT, earliest) -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="hardware">
+          <div class="project-card">
+            <h4>HackAP — Dance Floor Energy</h4>
+            <p>Dance floor that generates electricity. Air-tight syringes + piezoelectric sensors under the tiles.</p>
+            <div class="project-tags">
+              <span>Hydraulics</span><span>Piezoelectric</span><span>Sustainable Energy</span>
+            </div>
+            <div class="project-links">
+              <span class="text-muted"><i class="fas fa-lock"></i> Private</span>
+            </div>
+          </div>
+        </div>
+
+        <!--
+        ==========================================
+        ADD NEW PROJECT — Copy this template:
+        ==========================================
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai|systems|creative|hardware">
+          <div class="project-card">
+            <span class="badge badge-current">In Progress</span>  ← optional: badge-current / badge-live / badge-published, delete if not needed
+            <h4>Project Title</h4>
+            <p>Short description of the project.</p>
+            <div class="project-tags">
+              <span>Tag1</span><span>Tag2</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/EESH-843/repo" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="assets/reports/report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
+            </div>
+          </div>
+        </div>
+        ==========================================
+        -->
+
+      </div>
+    </div>
+  </section>
+
+  <script>document.write(getFooter());</script>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
