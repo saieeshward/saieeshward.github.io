@@ -1045,6 +1045,24 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   margin: 0;
 }
 
+.site-footer .text-md-right {
+  text-align: right;
+}
+
+.site-footer .social-icons {
+  justify-content: flex-end;
+}
+
+@media (max-width: 767px) {
+  .site-footer .text-md-right {
+    text-align: left;
+  }
+  .site-footer .social-icons {
+    justify-content: flex-start;
+    margin-top: 0.75rem;
+  }
+}
+
 /* ===== ANIMATIONS ===== */
 
 /* Simple entrance — no scroll-triggered lazy-load feel */
@@ -1053,7 +1071,7 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   transform: none;
 }
 
-.delay-1, .delay-2, .delay-3, .delay-4 { }
+/* .delay-* classes reserved for future animation use */
 
 /* ===== RESPONSIVE ===== */
 
