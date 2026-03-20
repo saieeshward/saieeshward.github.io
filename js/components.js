@@ -39,8 +39,7 @@ function getFooter() {
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p class="footer-text"><span class="brand-name-sm">sheesh<span class="text-accent">.</span></span> &copy; ${new Date().getFullYear()} Sai Eeshwar D. All rights reserved.</p>
-          <p class="footer-tagline">Built with purpose.</p>
+          <p class="footer-text"><span class="brand-name-sm">sheesh<span class="text-accent">.</span></span> &copy; ${new Date().getFullYear()} Sai Eeshwar D. Built with purpose.</p>
         </div>
         <div class="col-md-6 text-md-right">
           <div class="social-icons social-icons-sm">
