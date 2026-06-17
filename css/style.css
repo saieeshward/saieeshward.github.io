@@ -1,5 +1,5 @@
 /* ========================================
-   SAI EESHWAR D — PORTFOLIO (Multi-Page)
+   SAI EESHWAR D - PORTFOLIO (Multi-Page)
    Accent on Dark (#0a0a0a)
    ======================================== */
 
@@ -297,7 +297,7 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   margin-bottom: 1.5rem;
 }
 
-/* green underline removed — the .text-accent dot serves as the design constant */
+/* green underline removed - the .text-accent dot serves as the design constant */
 
 .section-header {
   display: flex;
@@ -470,7 +470,7 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   z-index: 1;
 }
 
-/* Right-edge gradient fade — signals more content */
+/* Right-edge gradient fade - signals more content */
 .h-timeline-wrapper::after {
   content: '';
   position: absolute;
@@ -1079,7 +1079,7 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
 
 /* ===== ANIMATIONS ===== */
 
-/* Simple entrance — no scroll-triggered lazy-load feel */
+/* Simple entrance - no scroll-triggered lazy-load feel */
 .fade-up {
   opacity: 1;
   transform: none;

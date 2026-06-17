@@ -1,5 +1,5 @@
 /* ========================================
-   COMPONENTS.JS — Shared Navbar & Footer
+   COMPONENTS.JS - Shared Navbar & Footer
    Edit here to update across ALL pages.
    ======================================== */
 

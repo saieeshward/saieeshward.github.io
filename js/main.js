@@ -1,5 +1,5 @@
 /* ========================================
-   MAIN.JS — Portfolio Scripts (Multi-Page)
+   MAIN.JS - Portfolio Scripts (Multi-Page)
    ======================================== */
 
 (function ($) {
