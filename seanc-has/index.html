@@ -338,6 +338,9 @@ h1{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:no
 .home-card-primary:hover{background:var(--primary-faint);}
 .home-badge{position:absolute;top:12px;right:12px;background:var(--primary);color:#fdf8ef;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;}
 .data-safety{width:100%;margin:20px 0 0;text-align:center;font-size:.8rem;color:var(--muted);line-height:1.55;}
+.resume-banner{width:100%;margin:0 0 18px;padding:12px 16px;border:1px solid var(--primary);border-radius:10px;background:var(--primary-faint);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:.88rem;color:var(--text);}
+.resume-banner .resume-btn-go{margin-left:auto;background:var(--primary);color:#fdf8ef;border:none;border-radius:6px;padding:7px 14px;font-weight:700;font-size:.82rem;cursor:pointer;font-family:inherit;}
+.resume-banner .resume-btn-fresh{background:none;border:none;color:var(--muted);text-decoration:underline;cursor:pointer;font-size:.8rem;font-family:inherit;}
 .home-cards{display:flex;gap:22px;width:100%;}
 .home-card{flex:1;position:relative;border:1.5px solid var(--border-strong);border-radius:12px;background:var(--surface);padding:44px 28px;text-align:center;cursor:pointer;transition:.15s;display:flex;flex-direction:column;align-items:center;gap:11px;min-height:210px;justify-content:center;}
 .home-card:hover,.home-card.drag-over{border-color:var(--primary);background:var(--primary-faint);box-shadow:0 6px 18px rgba(70,50,25,.12);transform:translateY(-2px);}
@@ -414,6 +417,11 @@ h1{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:no
   <div id="load-test-hint" style="display:none">The sample evaluation set bundled with this app — loads instantly, no file picker.</div>
   <!-- Browser home: two clean choices (revealed in JS-only mode by the load handler) -->
   <div id="browser-home" style="display:none">
+    <div id="resume-banner" class="resume-banner" style="display:none">
+      <span>📌 You have work in progress from last time.</span>
+      <button class="resume-btn-go" onclick="resumeBrowserSession()">Resume where I left off →</button>
+      <button class="resume-btn-fresh" onclick="clearSession();document.getElementById('resume-banner').style.display='none'">Start fresh</button>
+    </div>
     <details class="how-box" id="how-box" open>
       <summary>How this works &nbsp;·&nbsp; 3 steps</summary>
       <ol>
@@ -3634,6 +3642,17 @@ function saveSession(obj) { try { localStorage.setItem('seanc-session', JSON.str
 function loadSession() { try { return JSON.parse(localStorage.getItem('seanc-session') || 'null'); } catch (e) { return null; } }
 function clearSession() { _sessionSource = null; try { localStorage.removeItem('seanc-session'); } catch (e) {} }
 function touchSession() { if (_sessionSource) saveSession({ source: _sessionSource, lastPageKey: currentPageKey() }); }
+// Click-to-resume (never automatic): reload the test set and reopen the last page.
+async function resumeBrowserSession() {
+  const sess = loadSession();
+  if (!sess || sess.source !== 'test') return;
+  _sessionSource = 'test';
+  await loadTestDocuments();
+  if (sess.lastPageKey) {
+    const i = allPages.findIndex(p => pageKey(p) === sess.lastPageKey);
+    if (i >= 0) openFromPreview(i);
+  }
+}
 async function idbCommit(key, message, content) {
   const db = await idbOpen();
   return new Promise((resolve, reject) => {
@@ -3902,20 +3921,13 @@ if (window.pywebview) {
         e.target.value = '';
         await ingestUpload(items, true);
       });
-      // Resume on reload: if a test-doc session was active, auto-reload it and
-      // reopen the last page so a refresh doesn't drop back to the home screen.
-      // (Uploaded-file sessions can't auto-restore — browsers can't silently
-      // re-read local files — so those just show the home cards again.)
+      // Resume on reload: don't auto-load — just OFFER to resume. If a test-doc
+      // session exists, reveal a "Resume" banner so the user always lands on the
+      // home and chooses when to load. Their saved corrections persist in
+      // IndexedDB regardless, so nothing is lost either way.
       const _sess = loadSession();
-      if (_sess && _sess.source === 'test') {
-        _sessionSource = 'test';
-        loadTestDocuments().then(() => {
-          if (_sess.lastPageKey) {
-            const i = allPages.findIndex(p => pageKey(p) === _sess.lastPageKey);
-            if (i >= 0) openFromPreview(i);
-          }
-        }).catch(() => {});
-      }
+      const rb = document.getElementById('resume-banner');
+      if (rb && _sess && _sess.source === 'test') rb.style.display = '';
     }
   });
 }
