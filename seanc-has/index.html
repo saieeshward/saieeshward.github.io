@@ -302,9 +302,9 @@ h1{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:no
 .tree-twisty{width:14px;display:inline-block;text-align:center;color:var(--muted);font-size:.7rem;flex:none;}
 .tree-ico{width:16px;text-align:center;flex:none;}
 .tree-label{overflow:hidden;text-overflow:ellipsis;flex:1 1 auto;min-width:0;}
-.tree-count{margin-left:auto;font-size:.66rem;color:var(--muted);padding-left:12px;flex:none;}
+.tree-count{margin-left:8px;font-size:.66rem;color:var(--muted);flex:none;min-width:18px;text-align:right;}
 .tree-chk{margin-left:6px;flex:none;}
-.tree-open-btn{flex:none;margin-left:auto;padding:2px 10px;border:1px solid var(--primary);border-radius:4px;background:var(--primary);color:#fdf8ef;font-size:.7rem;font-weight:700;cursor:pointer;transition:.15s;}
+.tree-open-btn{flex:none;margin-left:6px;padding:2px 10px;border:1px solid var(--primary);border-radius:4px;background:var(--primary);color:#fdf8ef;font-size:.7rem;font-weight:700;cursor:pointer;transition:.15s;}
 .tree-open-btn:hover{background:var(--primary-hover);border-color:var(--primary-hover);}
 .tree-children{display:none;}
 .tree-children.open{display:block;}
@@ -521,11 +521,13 @@ h1{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:no
         <div class="export-dropdown">
           <button class="export-toggle-btn" onclick="toggleExportMenu(event)" title="Export options">Export ▾</button>
           <div class="export-menu" id="export-menu">
-            <button id="btn-export-png" onclick="exportPNG();closeExportMenu()">🖼 &nbsp;Export PNG</button>
+            <button id="btn-export-png" onclick="exportPNG();closeExportMenu()">🖼 &nbsp;Export PNG (this page)</button>
             <div class="menu-sep"></div>
-            <button onclick="exportXML();closeExportMenu()">📄 &nbsp;Download corrected XML</button>
+            <button onclick="exportPageHtml();closeExportMenu()">⬇ &nbsp;Download HTML (this page)</button>
             <div class="menu-sep"></div>
-            <button onclick="downloadBook();closeExportMenu()">⬇ &nbsp;Download HTML</button>
+            <button onclick="exportXML();closeExportMenu()">📄 &nbsp;Download corrected XML (this page)</button>
+            <div class="menu-sep"></div>
+            <button onclick="downloadBook();closeExportMenu()">📚 &nbsp;Download all pages (HTML)</button>
           </div>
         </div>
       </div>
@@ -568,7 +570,7 @@ h1{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:no
         <span class="gallery-sel-count" id="gallery-sel-count"></span>
       </div>
       <div style="display:flex;gap:8px;">
-        <button class="gal-btn" onclick="openProjectFolder()">📂 Open folder</button>
+        <button class="gal-btn" id="gallery-openfolder-btn" onclick="openProjectFolder()">📂 Open folder</button>
         <button class="gal-btn" onclick="uploadMore()">⬆ Upload More</button>
         <button class="gal-btn gal-btn-primary" id="btn-view-selected" style="display:none" onclick="enterViewer(false)">View Selected</button>
         <button class="gal-btn gal-btn-primary" id="gallery-view-all-btn" onclick="enterViewer(true)">View All</button>
@@ -962,7 +964,11 @@ async function loadTestViaFetch() {
   await generate();
 }
 
+let _loadingDocs = false;   // re-entrancy guard: a fast double-click must not double-load
 async function loadTestDocuments() {
+  if (_loadingDocs) return;
+  _loadingDocs = true;
+  try {
   // Backend build (desktop app / served launcher): load the bundled set through
   // the real folder loader so it establishes a working root — without that,
   // Save can't snapshot and version history never appears. Disk paths also let
@@ -970,10 +976,10 @@ async function loadTestDocuments() {
   if (hasPyApi()) {
     try {
       const res = await window.pywebview.api.open_test_documents('');
-      if (res && res.files && res.files.length) { await openWorkingFolder(res.files); return; }
+      if (res && res.files && res.files.length) { await openWorkingFolder(res.files); _sessionSource = 'test'; touchSession(); return; }
     } catch (e) { console.warn('[seanc-has] backend test-docs load failed, falling back:', e); }
   }
-  try { await loadTestViaFetch(); return; }               // best path: sibling folder over http
+  try { await loadTestViaFetch(); _sessionSource = 'test'; touchSession(); return; }   // best path: sibling folder over http
   catch (e) { /* file:// blocks fetch — try the other paths */ }
   if (fsaaAvailable()) {
     try {
@@ -983,10 +989,12 @@ async function loadTestDocuments() {
       try { testDir = await dir.getDirectoryHandle('test-documents'); rootDirHandle = testDir; }
       catch (_) {}                                        // they picked test-documents itself
       await loadFromDirHandle(testDir);
+      _sessionSource = 'test'; touchSession();
       return;
     } catch (e) { if (e && e.name === 'AbortError') return; }
   }
   loadEmbeddedTestDocs();
+  } finally { _loadingDocs = false; }
 }
 
 // ── Embedded offline sample (fallback when File System Access API is absent) ──
@@ -1570,10 +1578,15 @@ async function hydratePage(idx) {
   // faithfully, so their reading order + per-line statuses come back intact.
   if (!hasPyApi()) {
     try {
-      const hist = await idbList(pageKey(p));
-      if (hist.length && hist[0].content) {
-        task = { ...task, xml: new Blob([hist[0].content], { type: 'text/xml' }) };
-        faithful = true;
+      const key = pageKey(p);
+      const hist = await idbList(key);
+      if (hist.length) {
+        const head = await idbGetHead(key);                       // current = head pointer
+        const rec = (head && hist.find(r => r.commit_id === head)) || hist[0];
+        if (rec && rec.content) {
+          task = { ...task, xml: new Blob([rec.content], { type: 'text/xml' }) };
+          faithful = true;
+        }
       }
     } catch (e) { /* fall back to pristine import */ }
   }
@@ -2418,6 +2431,7 @@ async function loadPage(idx) {
   document.getElementById('history-panel')?.classList.remove('open');  // close stale panel
   if (typeof refreshHistoryUI === 'function') refreshHistoryUI();
   scheduleSession();
+  touchSession();   // browser mode: remember the open page so reload can resume
 }
 
 // ── Zoom ──────────────────────────────────────────────────
@@ -2488,6 +2502,7 @@ function setMode(mode) {
 // stay in memory, so re-opening the same set from the cards is instant.
 function goHome() {
   if (currentPageIdx !== null) { try { savePage(currentPageIdx); } catch (e) {} }
+  clearSession();   // going Home is an explicit reset → don't auto-restore on next reload
   const vp = document.getElementById('viewer-phase'); if (vp) vp.style.display = 'none';
   const app = document.getElementById('app'); if (app) app.style.display = 'none';
   document.getElementById('gallery-view')?.classList.remove('active');
@@ -2535,17 +2550,19 @@ function renderTreeNode(node, pathArr, depth) {
     // Single-click a folder = expand/collapse; double-click = open all its pages in the reader.
     html += `<div class="tree-row" style="padding-left:${pad}px" title="Double-click to open this folder" onclick="toggleTreeFolder(${kq})" ondblclick="event.stopPropagation();viewFolder(${kq})">
       <span class="tree-twisty">${open ? '▾' : '▸'}</span><span class="tree-ico">📁</span>
-      <span class="tree-label">${escH(seg)}</span><span class="tree-count">${_countPages(child)}</span>
+      <span class="tree-label">${escH(seg)}</span>
+      <button class="tree-open-btn" onclick="event.stopPropagation();viewFolder(${kq})" title="Open all pages in this folder">Open</button>
+      <span class="tree-count">${_countPages(child)}</span>
     </div><div class="tree-children${open ? ' open' : ''}">${open ? renderTreeNode(child, cpath, depth + 1) : ''}</div>`;
   });
   node.pages.forEach(i => {
     const p = allPages[i];
     const sel = selectedIndices.has(i);
     // Single-click a page = preview; double-click = open it in the reader.
-    html += `<div class="tree-row${previewIdx === i ? ' active' : ''}" style="padding-left:${pad}px" title="Double-click to open" data-page-row="${i}" onclick="previewPage(${i})" ondblclick="event.stopPropagation();openFromPreview(${i})">
+    html += `<div class="tree-row${previewIdx === i ? ' active' : ''}" style="padding-left:${pad}px" title="Double-click to open this page" data-page-row="${i}" onclick="previewPage(${i})" ondblclick="event.stopPropagation();openSinglePage(${i})">
       <span class="tree-twisty"></span><span class="tree-ico">📄</span>
       <span class="tree-label">${escH(p.title)}</span>
-      <button class="tree-open-btn" onclick="event.stopPropagation();openFromPreview(${i})" title="Open this page in the reader">Open</button>
+      <button class="tree-open-btn" onclick="event.stopPropagation();openSinglePage(${i})" title="Open just this page">Open</button>
       <input type="checkbox" class="tree-chk" title="Select for export" ${sel ? 'checked' : ''} onclick="event.stopPropagation();toggleSelect(${i})">
     </div>`;
   });
@@ -2575,6 +2592,10 @@ function renderTree() {
 
 function buildGallery() {
   updateTreeToggleBtn();
+  // "Open folder" is a native-picker action that only works with the Python
+  // backend; in the browser the per-row Open buttons cover this, so hide it.
+  const ofb = document.getElementById('gallery-openfolder-btn');
+  if (ofb) ofb.style.display = hasPyApi() ? '' : 'none';
   const nFolders = (() => { let c = 0; const walk = n => { n.folders.forEach(f => { c++; walk(f); }); }; walk(treeRoot()); return c; })();
   document.getElementById('gallery-folder-label').textContent =
     `${allPages.length} page${allPages.length!==1?'s':''}` + (nFolders ? ` · ${nFolders} folder${nFolders!==1?'s':''}` : '');
@@ -3055,6 +3076,40 @@ function exportXML() {
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
 }
 
+// Standalone HTML of just the CURRENT page (scan + transcription in reading
+// order) — distinct from downloadBook(), which bundles the whole archive.
+function exportPageHtml() {
+  if (currentPageIdx === null) return;
+  savePage(currentPageIdx);
+  const p = allPages[currentPageIdx];
+  const img = p.imgSrc || document.getElementById('main-image')?.src || '';
+  const rows = [...document.querySelectorAll('#text-list .text-line')].map(el => {
+    const num = el.querySelector('.line-num')?.textContent || '';
+    const status = el.querySelector('.status-badge')?.dataset.status || 'unreviewed';
+    const text = el.querySelector('.line-content')?.innerText || '';
+    return `<tr><td class="n">${escH(num)}</td><td class="s">${escH(status)}</td><td class="t">${escH(text)}</td></tr>`;
+  }).join('');
+  const title = escH(p.title || 'page');
+  const html = `<!doctype html><html><head><meta charset="utf-8"><title>${title} — seanc-has</title>
+<style>body{font-family:-apple-system,'Segoe UI',sans-serif;margin:0;background:#f4ece0;color:#211d16}
+header{padding:14px 20px;background:#1c140c;color:#f5ede0;font-weight:700}
+.wrap{display:flex;gap:20px;padding:20px;align-items:flex-start;flex-wrap:wrap}
+.scan{flex:1 1 340px;max-width:48%}.scan img{width:100%;border:1px solid #c6b995;border-radius:6px}
+.lines{flex:1 1 340px}table{border-collapse:collapse;width:100%;background:#fcf9f1;border:1px solid #c6b995;border-radius:6px;overflow:hidden}
+td{padding:6px 10px;border-bottom:1px solid #ece0c8;vertical-align:top;font-size:14px}
+td.n{color:#9a8c70;width:34px;text-align:right;font-variant-numeric:tabular-nums}
+td.s{width:88px;font-size:11px;text-transform:uppercase;color:#7a6f5b}
+td.t{font-family:'Iowan Old Style',Palatino,Georgia,serif;font-size:16px}
+@media(max-width:720px){.scan{max-width:100%}}</style></head>
+<body><header>seanc-has · ${title}</header><div class="wrap">
+<div class="scan">${img ? `<img src="${img}" alt="${title}">` : ''}</div>
+<div class="lines"><table>${rows}</table></div></div></body></html>`;
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+  a.download = (p.title || 'page').replace(/[/\\:*?"<>|]/g, '_') + '.html';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+
 async function saveCurrentXML() {
   if (currentPageIdx === null) return false;
   const p    = allPages[currentPageIdx];
@@ -3076,7 +3131,8 @@ async function saveCurrentXML() {
     const key = pageKey(p);
     const existing = await idbList(key);
     if (!existing.length && p.xmlText) await idbCommit(key, 'Original (imported)', p.xmlText);
-    await idbCommit(key, 'Save', xml);
+    const saved = await idbCommit(key, 'Save', xml);
+    await idbSetHead(key, saved.commit_id);   // the new save becomes the current version
   } catch (e) { alert('Save failed: ' + (e && e.message || e)); return false; }
   // Best-effort in-place disk write if the user granted a folder/file (FSAA).
   try {
@@ -3499,21 +3555,51 @@ async function restoreSession(sess = null) {
 // shape matches what renderHistoryPanel expects: {commit_id, timestamp, message,
 // content}. Each entry's `content` is a full PAGE-XML snapshot from
 // generateXMLString(), so any version can be restored purely client-side.
-const SEANC_DB = 'seanc-has', SEANC_STORE = 'versions';
+const SEANC_DB = 'seanc-has', SEANC_STORE = 'versions', SEANC_HEADS = 'heads';
 function idbOpen() {
   return new Promise((resolve, reject) => {
-    const req = indexedDB.open(SEANC_DB, 1);
+    const req = indexedDB.open(SEANC_DB, 2);
     req.onupgradeneeded = () => {
       const db = req.result;
       if (!db.objectStoreNames.contains(SEANC_STORE)) {
         const os = db.createObjectStore(SEANC_STORE, { keyPath: 'id', autoIncrement: true });
         os.createIndex('pageKey', 'pageKey', { unique: false });
       }
+      // v2: a per-page "head" pointer → which version is current (Google-Docs /
+      // Overleaf style). Restoring just moves this pointer; it never adds a copy.
+      if (!db.objectStoreNames.contains(SEANC_HEADS)) {
+        db.createObjectStore(SEANC_HEADS, { keyPath: 'pageKey' });
+      }
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error);
   });
 }
+async function idbSetHead(key, commitId) {
+  const db = await idbOpen();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(SEANC_HEADS, 'readwrite');
+    tx.objectStore(SEANC_HEADS).put({ pageKey: key, commit_id: commitId });
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  });
+}
+async function idbGetHead(key) {
+  if (!key) return null;
+  const db = await idbOpen();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(SEANC_HEADS, 'readonly');
+    const req = tx.objectStore(SEANC_HEADS).get(key);
+    req.onsuccess = () => resolve(req.result ? req.result.commit_id : null);
+    req.onerror = () => reject(req.error);
+  });
+}
+// ── Browser session (localStorage): remember what was loaded so a reload resumes ──
+let _sessionSource = null;   // 'test' once the bundled set is loaded; null = fresh
+function saveSession(obj) { try { localStorage.setItem('seanc-session', JSON.stringify(obj)); } catch (e) {} }
+function loadSession() { try { return JSON.parse(localStorage.getItem('seanc-session') || 'null'); } catch (e) { return null; } }
+function clearSession() { _sessionSource = null; try { localStorage.removeItem('seanc-session'); } catch (e) {} }
+function touchSession() { if (_sessionSource) saveSession({ source: _sessionSource, lastPageKey: currentPageKey() }); }
 async function idbCommit(key, message, content) {
   const db = await idbOpen();
   return new Promise((resolve, reject) => {
@@ -3591,31 +3677,35 @@ async function toggleHistory(e) {
   e?.stopPropagation();
   const panel = document.getElementById('history-panel');
   if (panel.classList.contains('open')) { panel.classList.remove('open'); return; }
-  let hist = [];
+  let hist = [], headId = null;
   if (hasPyApi()) {
     const abs = currentAbsPath();
     if (!abs) return;
     try { hist = await window.pywebview.api.get_page_history(abs); } catch(e2) {}
   } else {
-    try { hist = await idbList(currentPageKey()); } catch(e2) {}
+    try { const key = currentPageKey(); hist = await idbList(key); headId = await idbGetHead(key); } catch(e2) {}
   }
-  renderHistoryPanel(hist);
+  renderHistoryPanel(hist, headId);
   panel.classList.add('open');
 }
-function renderHistoryPanel(hist) {
+function renderHistoryPanel(hist, currentId) {
   const panel = document.getElementById('history-panel');
   if (!hist || !hist.length) {
     panel.innerHTML = '<div class="hist-empty">No saved versions yet.</div>';
     return;
   }
-  const rows = hist.map((c, i) => `
-    <div class="hist-row${i===0?' latest':''}">
+  // "current" = the head pointer when given (browser); else the newest (backend).
+  const rows = hist.map((c, i) => {
+    const isCurrent = currentId != null ? (c.commit_id === currentId) : (i === 0);
+    return `
+    <div class="hist-row${isCurrent ? ' latest' : ''}">
       <span class="hist-dot"></span>
-      <span class="hist-when">${relTime(c.timestamp)}${i===0?' · current':''}
+      <span class="hist-when">${relTime(c.timestamp)}${isCurrent ? ' · current' : ''}
         <span class="hist-msg">${escH(c.message || '')}</span></span>
-      ${i===0 ? '' : `<button class="hist-btn" onclick="viewVersion('${c.commit_id}')">View</button>
+      ${isCurrent ? '' : `<button class="hist-btn" onclick="viewVersion('${c.commit_id}')">View</button>
       <button class="hist-btn" onclick="restoreVersion('${c.commit_id}', ${i})">Restore</button>`}
-    </div>`).join('');
+    </div>`;
+  }).join('');
   panel.innerHTML = `<div class="hist-head">History · this page</div>${rows}`;
 }
 function relTime(iso) {
@@ -3656,9 +3746,10 @@ async function viewVersion(commitId) {
 }
 function closeHistDiff() { document.getElementById('hist-diff-modal').classList.remove('open'); }
 async function restoreVersion(commitId, idx) {
-  if (idx === 0) { return; }  // already the current version
-  // No confirm() — it's a no-op in PyWebView, and restore is reversible
-  // (the current text is itself snapshotted on the next save).
+  // Restore = "dial back to this version" (Google-Docs / Overleaf style). In the
+  // browser this just moves the head pointer — it does NOT add a new copy. The
+  // move is reversible: every saved version stays in the list, so you can dial
+  // forward again.
   const targetIdx = currentPageIdx;
   let content;
   if (hasPyApi()) {
@@ -3672,9 +3763,11 @@ async function restoreVersion(commitId, idx) {
     try { ver = await window.pywebview.api.get_page_version(abs, commitId); } catch(e) {}
     content = ver && ver.content;
   } else {
-    const list = await idbList(currentPageKey());
+    const key = currentPageKey();
+    const list = await idbList(key);
     const rec = list.find(r => r.commit_id === commitId);
     content = rec && rec.content;
+    if (content != null) await idbSetHead(key, commitId);   // move the pointer — no new copy
   }
   document.getElementById('history-panel').classList.remove('open');
   if (content == null) return;
@@ -3695,10 +3788,7 @@ async function restoreVersion(commitId, idx) {
       lineCount: Object.keys(full.lineCoords).length,
     });
     await loadPage(targetIdx);
-    // Browser mode: record the restore as a new (current) snapshot so the panel
-    // head reflects the restored state and the prior current stays in history.
-    if (!hasPyApi()) { try { await idbCommit(pageKey(allPages[targetIdx]), 'Restored earlier version', content); } catch(e) {} }
-    resetDirty();                        // disk and memory now match the restored file
+    resetDirty();                        // working copy now matches the head version
     refreshHistoryUI();
   } catch(e) { console.error('[seanc-has] reprocess after restore failed:', e); }
 }
@@ -3778,6 +3868,20 @@ if (window.pywebview) {
         e.target.value = '';
         await ingestUpload(items, true);
       });
+      // Resume on reload: if a test-doc session was active, auto-reload it and
+      // reopen the last page so a refresh doesn't drop back to the home screen.
+      // (Uploaded-file sessions can't auto-restore — browsers can't silently
+      // re-read local files — so those just show the home cards again.)
+      const _sess = loadSession();
+      if (_sess && _sess.source === 'test') {
+        _sessionSource = 'test';
+        loadTestDocuments().then(() => {
+          if (_sess.lastPageKey) {
+            const i = allPages.findIndex(p => pageKey(p) === _sess.lastPageKey);
+            if (i >= 0) openFromPreview(i);
+          }
+        }).catch(() => {});
+      }
     }
   });
 }
