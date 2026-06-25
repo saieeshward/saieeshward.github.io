@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
+    <Metadata>
+        <Creator>prov=READ-COOP:name=PyLaia@TranskribusPlatform:version=2.23.0:model_id=39995:lm=none:date=17_02_2025_23:53</Creator>
+        <Created>2025-02-17T17:26:09.162+01:00</Created>
+        <LastChange>2025-02-17T23:53:44.751+01:00</LastChange>
+        <TranskribusMetadata docId="6965734" pageId="91692785" pageNr="9" tsid="229481895" status="NEW" userId="21498" imgUrl="https://files.transkribus.eu/Get?id=PSVBGWDADTVCYKCPEFLHKYOX&amp;fileType=view" xmlUrl="https://files.transkribus.eu/Get?id=CAQXOMVORKNGAJAMIQXVAYNR" imageId="76517174"/>
+    </Metadata>
+    <Page imageFilename="91692785.jpg" imageWidth="2479" imageHeight="3508">
+        <ReadingOrder>
+            <OrderedGroup id="ro_1740043396792" caption="Regions reading order">
+                <RegionRefIndexed index="0" regionRef="tr_1"/>
+            </OrderedGroup>
+        </ReadingOrder>
+        <TextRegion orientation="0.0" id="tr_1" custom="readingOrder {index:0;}">
+            <Coords points="361,799 361,2929 1994,2929 1994,799"/>
+            <TextLine id="tr_1_tl_1" custom="readingOrder {index:0;}">
+                <Coords points="848,869 1460,858 1460,756 1429,744 1015,744 958,765 919,748 848,775"/>
+                <Baseline points="859,829 889,829 919,828 949,826 980,826 1010,827 1040,829 1071,827 1101,826 1131,826 1162,824 1192,825 1222,826 1252,826 1283,826 1313,826 1343,826 1374,826 1404,826 1434,828 1465,829"/>
+                <TextEquiv>
+                    <Unicode>INTRODUCTION</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_2" custom="readingOrder {index:1;}">
+                <Coords points="438,977 1967,977 1967,875 1914,869 438,885"/>
+                <Baseline points="450,946 526,948 602,946 678,946 754,949 830,949 906,948 983,949 1059,949 1135,949 1211,949 1287,948 1363,949 1439,949 1516,949 1592,949 1668,952 1744,952 1820,949 1896,949 1973,946"/>
+                <TextEquiv>
+                    <Unicode>The Act setting up the Registry of Deeds in Ireland included</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_3" custom="readingOrder {index:2;}">
+                <Coords points="353,1032 1971,1034 1971,983 1906,960 353,977"/>
+                <Baseline points="364,1015 444,1013 525,1010 605,1012 686,1012 767,1012 847,1010 928,1010 1008,1012 1089,1012 1170,1012 1250,1012 1331,1015 1411,1015 1492,1012 1573,1015 1653,1012 1734,1012 1814,1013 1895,1015 1976,1018"/>
+                <TextEquiv>
+                    <Unicode>provision for the registering of all Wills and devises in writing</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_4" custom="readingOrder {index:3;}">
+                <Coords points="353,1085 1974,1087 1974,1034 1708,1019 353,1036"/>
+                <Baseline points="364,1071 444,1071 525,1071 606,1071 687,1069 767,1071 848,1071 929,1073 1010,1074 1090,1074 1171,1077 1252,1071 1333,1072 1413,1074 1494,1075 1575,1074 1656,1074 1736,1073 1817,1074 1898,1074 1979,1077"/>
+                <TextEquiv>
+                    <Unicode>where the devisor or testatrix shall die after the said 25th March</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_5" custom="readingOrder {index:4;}">
+                <Coords points="353,1154 1974,1156 1974,1089 667,1109 353,1076"/>
+                <Baseline points="364,1137 444,1134 525,1129 606,1132 687,1134 767,1137 848,1137 929,1137 1010,1138 1090,1137 1171,1140 1252,1140 1333,1140 1413,1140 1494,1140 1575,1137 1656,1139 1736,1140 1817,1139 1898,1137 1979,1140"/>
+                <TextEquiv>
+                    <Unicode>1708.“ Nevertheless, there are, in this volume of Abstracts, several</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_6" custom="readingOrder {index:5;}">
+                <Coords points="351,1213 1833,1233 1971,1217 1969,1160 349,1162"/>
+                <Baseline points="361,1200 441,1199 522,1197 603,1197 684,1198 764,1200 845,1198 926,1198 1007,1200 1087,1203 1168,1203 1249,1200 1330,1202 1410,1203 1491,1203 1572,1203 1653,1200 1733,1200 1814,1200 1895,1200 1976,1203"/>
+                <TextEquiv>
+                    <Unicode>instances of testators who took the unusual step of recording their</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_7" custom="readingOrder {index:6;}">
+                <Coords points="351,1282 1980,1282 1965,1215 351,1213"/>
+                <Baseline points="361,1262 442,1260 523,1261 604,1262 685,1262 766,1262 847,1265 928,1265 1009,1264 1090,1268 1171,1265 1252,1265 1333,1267 1414,1263 1495,1265 1576,1265 1657,1265 1738,1265 1819,1264 1900,1265 1982,1265"/>
+                <TextEquiv>
+                    <Unicode>own Wills, as, for example, John Gaynor.(1) He was so angry with</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_8" custom="readingOrder {index:7;}">
+                <Coords points="353,1337 1978,1350 1978,1295 1698,1270 353,1270"/>
+                <Baseline points="364,1322 444,1325 525,1325 606,1325 687,1325 768,1325 849,1328 930,1328 1011,1328 1092,1328 1173,1328 1253,1328 1334,1328 1415,1328 1496,1328 1577,1328 1658,1328 1739,1328 1820,1330 1901,1329 1982,1337"/>
+                <TextEquiv>
+                    <Unicode>his two undutiful daughters for not visiting him during his long</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_9" custom="readingOrder {index:8;}">
+                <Coords points="357,1409 1976,1411 1976,1350 1827,1341 357,1344"/>
+                <Baseline points="367,1385 447,1388 528,1386 608,1388 689,1388 770,1388 850,1388 931,1391 1011,1389 1092,1391 1173,1391 1253,1391 1334,1391 1414,1394 1495,1394 1576,1391 1656,1391 1737,1391 1817,1392 1898,1392 1979,1391"/>
+                <TextEquiv>
+                    <Unicode>illness that he drew up a Will leaving them one shilling each, and</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_10" custom="readingOrder {index:9;}">
+                <Coords points="351,1478 559,1492 612,1468 646,1492 665,1476 830,1488 858,1480 856,1401 765,1419 567,1403 349,1423"/>
+                <Baseline points="361,1453 386,1450 411,1447 436,1449 461,1450 486,1450 511,1450 536,1450 561,1450 586,1450 611,1452 636,1453 661,1451 686,1450 711,1450 736,1450 761,1450 786,1450 811,1450 836,1452 862,1453"/>
+                <TextEquiv>
+                    <Unicode>registered it himself.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_11" custom="readingOrder {index:10;}">
+                <Coords points="436,1556 1974,1572 1974,1492 1711,1505 1615,1468 1456,1505 1176,1466 1089,1507 983,1474 436,1503"/>
+                <Baseline points="447,1546 523,1546 600,1544 676,1546 753,1544 830,1546 906,1546 983,1549 1059,1549 1136,1549 1213,1549 1289,1549 1366,1549 1442,1549 1519,1549 1596,1549 1672,1549 1749,1549 1825,1549 1902,1551 1979,1552"/>
+                <TextEquiv>
+                    <Unicode>The Registry of Deeds is indeed a mine of information, and,</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_12" custom="readingOrder {index:11;}">
+                <Coords points="357,1627 1976,1627 1976,1572 1865,1560 575,1578 357,1533"/>
+                <Baseline points="367,1606 447,1609 528,1612 608,1610 689,1610 770,1609 850,1612 931,1612 1011,1612 1092,1610 1173,1612 1253,1612 1334,1613 1414,1612 1495,1615 1576,1612 1656,1612 1737,1612 1817,1612 1898,1610 1979,1612"/>
+                <TextEquiv>
+                    <Unicode>from the genealogical point of view in particular, much can be learnt</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_13" custom="readingOrder {index:12;}">
+                <Coords points="353,1690 1992,1684 1992,1647 1882,1623 353,1629"/>
+                <Baseline points="364,1674 445,1671 527,1671 608,1671 690,1671 771,1673 853,1672 934,1674 1016,1674 1097,1674 1179,1674 1260,1674 1342,1674 1423,1674 1505,1677 1586,1674 1668,1674 1749,1674 1831,1673 1912,1674 1994,1671"/>
+                <TextEquiv>
+                    <Unicode>from the vast mass of material available—not only from the Wills</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_14" custom="readingOrder {index:13;}">
+                <Coords points="359,1749 1984,1755 1967,1684 359,1694"/>
+                <Baseline points="370,1734 450,1734 531,1734 612,1735 693,1737 774,1737 855,1734 936,1736 1017,1739 1098,1739 1179,1737 1259,1740 1340,1737 1421,1738 1502,1739 1583,1737 1664,1737 1745,1737 1826,1737 1907,1737 1988,1737"/>
+                <TextEquiv>
+                    <Unicode>but from marriage settlements, leases, and recorded Deeds of all</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_15" custom="readingOrder {index:14;}">
+                <Coords points="353,1823 1984,1827 1959,1747 353,1747"/>
+                <Baseline points="364,1797 445,1798 526,1799 607,1797 688,1796 770,1797 851,1797 932,1798 1013,1802 1094,1802 1176,1802 1257,1800 1338,1800 1419,1800 1500,1801 1582,1802 1663,1797 1744,1798 1825,1798 1906,1798 1988,1800"/>
+                <TextEquiv>
+                    <Unicode>kinds.(2) The Wills at the Registry of Deeds have now a special</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_16" custom="readingOrder {index:15;}">
+                <Coords points="359,1884 1984,1888 1984,1825 1823,1808 359,1827"/>
+                <Baseline points="370,1859 450,1862 531,1859 612,1859 693,1859 774,1862 855,1859 936,1862 1017,1860 1098,1863 1179,1862 1259,1862 1340,1862 1421,1862 1502,1862 1583,1862 1664,1862 1745,1862 1826,1861 1907,1862 1988,1862"/>
+                <TextEquiv>
+                    <Unicode>importance because they replace some of those destroyed in the</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_17" custom="readingOrder {index:16;}">
+                <Coords points="361,1951 1974,1949 1974,1884 1929,1872 361,1880"/>
+                <Baseline points="373,1925 453,1925 533,1925 613,1925 694,1922 774,1925 854,1925 935,1925 1015,1923 1095,1925 1176,1925 1256,1925 1336,1925 1416,1928 1497,1928 1577,1925 1657,1925 1738,1925 1818,1925 1898,1923 1979,1922"/>
+                <TextEquiv>
+                    <Unicode>Record Office in 1922, when virtually all the original Irish Prerogative</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_18" custom="readingOrder {index:17;}">
+                <Coords points="357,2020 1967,2016 1967,1953 1914,1935 357,1953"/>
+                <Baseline points="367,1988 447,1988 527,1989 607,1988 688,1988 768,1985 848,1988 929,1987 1009,1988 1089,1991 1170,1991 1250,1991 1330,1989 1410,1991 1491,1991 1571,1991 1651,1991 1732,1991 1812,1991 1892,1991 1973,1988"/>
+                <TextEquiv>
+                    <Unicode>and Consistorial Wills perished.(3) As explained more fully in the</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_19" custom="readingOrder {index:18;}">
+                <Coords points="361,2112 389,2130 508,2122 569,2139 610,2122 777,2130 809,2112 809,2059 777,2045 361,2049"/>
+                <Baseline points="373,2092 399,2092 425,2092 451,2092 477,2093 503,2095 529,2095 555,2095 581,2095 607,2095 633,2095 659,2095 685,2095 711,2095 737,2095 763,2097 789,2097 815,2095"/>
+                <TextEquiv>
+                    <Unicode>(1) See Abstract 721,</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_20" custom="readingOrder {index:19;}">
+                <Coords points="361,2202 1843,2188 1843,2130 1778,2092 1706,2133 1655,2090 1437,2090 1380,2133 917,2090 638,2145 361,2112"/>
+                <Baseline points="373,2167 446,2168 520,2168 594,2170 668,2169 741,2168 815,2173 889,2170 963,2173 1036,2173 1110,2173 1184,2173 1258,2173 1331,2168 1405,2170 1479,2172 1553,2173 1626,2173 1700,2173 1774,2173 1848,2170"/>
+                <TextEquiv>
+                    <Unicode>(2) Research must be undertaken personally or through an agent.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_21" custom="readingOrder {index:20;}">
+                <Coords points="1890,2173 1900,2173 1906,2179 1914,2177 1923,2184 1927,2181 1939,2184 1955,2177 1961,2181 1980,2179 1978,2100 1953,2100 1947,2106 1931,2102 1927,2106 1912,2092 1888,2094"/>
+                <Baseline points="1901,2170 1928,2170 1955,2171 1982,2173"/>
+                <TextEquiv>
+                    <Unicode>The</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_22" custom="readingOrder {index:21;}">
+                <Coords points="420,2218 1974,2245 1974,2179 1861,2159 1823,2190 420,2184"/>
+                <Baseline points="432,2212 509,2212 586,2212 664,2212 741,2212 818,2211 896,2215 973,2215 1050,2215 1128,2215 1205,2215 1282,2215 1360,2215 1437,2215 1514,2215 1592,2215 1669,2215 1746,2215 1824,2215 1901,2215 1979,2212"/>
+                <TextEquiv>
+                    <Unicode>organisation and rules of the Department preclude the transaction of such</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_23" custom="readingOrder {index:22;}">
+                <Coords points="432,2275 567,2287 618,2267 824,2296 848,2275 881,2292 1015,2277 1013,2234 966,2220 430,2220"/>
+                <Baseline points="441,2251 469,2255 498,2257 527,2257 556,2255 585,2254 614,2254 642,2254 671,2254 700,2254 729,2253 758,2251 787,2251 816,2253 844,2257 873,2257 902,2257 931,2257 960,2255 989,2255 1018,2257"/>
+                <TextEquiv>
+                    <Unicode>business by correspondence.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_24" custom="readingOrder {index:23;}">
+                <Coords points="418,2351 1978,2347 1978,2273 1853,2259 418,2290"/>
+                <Baseline points="429,2325 506,2325 584,2325 661,2320 739,2325 817,2328 894,2328 972,2328 1050,2328 1127,2328 1205,2328 1283,2331 1360,2328 1438,2330 1516,2331 1593,2331 1671,2331 1749,2328 1826,2328 1904,2328 1982,2328"/>
+                <TextEquiv>
+                    <Unicode>Before 1857 Wills were proved in the Consistorial Court, that is the Court</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_25" custom="readingOrder {index:24;}">
+                <Coords points="424,2387 1984,2379 1984,2338 1768,2332 424,2349"/>
+                <Baseline points="435,2370 512,2368 590,2367 667,2367 745,2370 823,2370 900,2370 978,2370 1056,2373 1133,2373 1211,2373 1289,2373 1366,2373 1444,2370 1522,2371 1599,2373 1677,2371 1755,2372 1832,2370 1910,2373 1988,2370"/>
+                <TextEquiv>
+                    <Unicode>of the Bishop or Ordinary within whose diocese or jurisdiction the testator</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_26" custom="readingOrder {index:25;}">
+                <Coords points="426,2420 1978,2420 1933,2379 426,2387"/>
+                <Baseline points="438,2412 515,2410 592,2410 669,2409 746,2409 824,2409 901,2412 978,2412 1055,2414 1132,2412 1210,2412 1287,2415 1364,2413 1441,2412 1518,2412 1596,2412 1673,2412 1750,2412 1827,2412 1904,2412 1982,2412"/>
+                <TextEquiv>
+                    <Unicode>dwelt; but if there were effects to the value of f5 in two or more dioceses</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_27" custom="readingOrder {index:26;}">
+                <Coords points="424,2461 1984,2465 1984,2420 424,2418"/>
+                <Baseline points="435,2454 512,2451 590,2451 667,2451 745,2451 823,2454 900,2453 978,2454 1056,2454 1133,2452 1211,2454 1289,2454 1366,2454 1444,2456 1522,2454 1599,2454 1677,2454 1755,2454 1832,2455 1910,2457 1988,2454"/>
+                <TextEquiv>
+                    <Unicode>the Will had to be proved in the Prerogative Court of the Archbishop of</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_28" custom="readingOrder {index:27;}">
+                <Coords points="426,2520 1974,2508 1929,2461 426,2473"/>
+                <Baseline points="438,2495 515,2495 592,2495 669,2495 746,2495 823,2493 900,2495 977,2496 1054,2498 1131,2495 1208,2495 1285,2495 1362,2495 1439,2495 1516,2495 1593,2495 1670,2492 1747,2495 1824,2497 1901,2495 1979,2492"/>
+                <TextEquiv>
+                    <Unicode>Armagh, Primate of All Ireland, which was the Supreme Court in matters</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_29" custom="readingOrder {index:28;}">
+                <Coords points="418,2555 1978,2553 1978,2508 1861,2504 418,2514"/>
+                <Baseline points="429,2537 506,2537 584,2537 661,2534 739,2534 817,2534 894,2537 972,2537 1050,2537 1127,2540 1205,2540 1283,2537 1360,2538 1438,2537 1516,2539 1593,2540 1671,2537 1749,2537 1826,2537 1904,2537 1982,2537"/>
+                <TextEquiv>
+                    <Unicode>of which the ecclesiastical jurisdiction had cognisance. The jurisdiction</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_30" custom="readingOrder {index:29;}">
+                <Coords points="424,2583 1978,2616 1978,2550 1878,2544 424,2557"/>
+                <Baseline points="435,2579 512,2579 589,2579 667,2578 744,2579 821,2581 899,2582 976,2579 1053,2579 1131,2581 1208,2582 1285,2582 1363,2581 1440,2582 1517,2582 1595,2579 1672,2580 1749,2579 1827,2579 1904,2581 1982,2579"/>
+                <TextEquiv>
+                    <Unicode>of the Ecclesiastical Courts was abolished and transferred to the Probate</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_31" custom="readingOrder {index:30;}">
+                <Coords points="426,2638 1749,2640 1749,2589 426,2587"/>
+                <Baseline points="438,2618 503,2621 569,2621 635,2621 701,2621 767,2621 833,2621 898,2624 964,2621 1030,2621 1096,2622 1162,2624 1228,2624 1294,2624 1359,2621 1425,2621 1491,2621 1557,2621 1623,2624 1689,2624 1755,2620"/>
+                <TextEquiv>
+                    <Unicode>Court by the Court of Probate Act 1857 (20 and 21 Vict, c. 7</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_32" custom="readingOrder {index:31;}">
+                <Coords points="424,2671 1984,2677 1984,2620 1921,2614 424,2638"/>
+                <Baseline points="435,2663 512,2663 590,2663 667,2663 745,2660 823,2663 900,2663 978,2663 1056,2663 1133,2663 1211,2663 1289,2666 1366,2664 1444,2663 1522,2663 1599,2663 1677,2663 1755,2663 1832,2662 1910,2660 1988,2663"/>
+                <TextEquiv>
+                    <Unicode>Sir William Betham, Ulster King of Arms, compiled his valuable Will</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_33" custom="readingOrder {index:32;}">
+                <Coords points="424,2722 1984,2724 1984,2673 1918,2669 424,2673"/>
+                <Baseline points="435,2704 512,2704 590,2704 667,2704 745,2707 823,2705 900,2704 978,2704 1056,2704 1133,2704 1211,2707 1289,2707 1366,2704 1444,2704 1522,2704 1599,2704 1677,2703 1755,2706 1832,2705 1910,2704 1988,2704"/>
+                <TextEquiv>
+                    <Unicode>Pedigrees from all the Prerogative Wills up to the year 1800. His volures</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_34" custom="readingOrder {index:33;}">
+                <Coords points="418,2756 1976,2758 1951,2718 1702,2707 418,2720"/>
+                <Baseline points="429,2746 506,2746 584,2746 661,2747 739,2746 816,2749 894,2746 971,2749 1049,2746 1126,2748 1204,2749 1281,2749 1359,2746 1436,2746 1514,2746 1591,2746 1669,2747 1746,2746 1824,2746 1901,2749 1979,2746"/>
+                <TextEquiv>
+                    <Unicode>of these pedigrees, now at the Genealogical Office, Dublin Castle, have been</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_35" custom="readingOrder {index:34;}">
+                <Coords points="424,2795 1982,2807 1982,2760 1878,2752 424,2767"/>
+                <Baseline points="435,2788 512,2788 590,2788 667,2788 745,2788 822,2788 900,2788 977,2791 1055,2791 1132,2791 1210,2791 1287,2791 1365,2788 1442,2789 1520,2788 1597,2788 1675,2788 1752,2788 1830,2788 1907,2788 1985,2788"/>
+                <TextEquiv>
+                    <Unicode>used in checking many doubtful points met with in the Wills recorded at</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_36" custom="readingOrder {index:35;}">
+                <Coords points="426,2840 1980,2842 1929,2795 426,2799"/>
+                <Baseline points="438,2833 515,2833 592,2830 670,2831 747,2833 824,2830 902,2832 979,2833 1056,2836 1134,2836 1211,2831 1288,2833 1366,2833 1443,2833 1520,2836 1598,2833 1675,2833 1752,2833 1830,2833 1907,2830 1985,2830"/>
+                <TextEquiv>
+                    <Unicode>the Registry of Deeds. I am indebted to Dr. Edward MacLysaght, Keeper</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_37" custom="readingOrder {index:36;}">
+                <Coords points="420,2887 1978,2899 1978,2842 420,2844"/>
+                <Baseline points="432,2872 509,2877 587,2877 664,2872 742,2872 819,2873 897,2874 974,2875 1052,2878 1129,2878 1207,2877 1284,2878 1362,2878 1439,2878 1517,2878 1594,2878 1672,2877 1749,2878 1827,2875 1904,2875 1982,2875"/>
+                <TextEquiv>
+                    <Unicode>of Manuscripts, National Library, and Chief Herald, for enabling me to</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_38" custom="readingOrder {index:37;}">
+                <Coords points="420,2956 777,2934 1032,2956 1066,2934 1066,2889 1044,2883 420,2897"/>
+                <Baseline points="432,2916 465,2918 499,2919 532,2919 566,2919 600,2919 633,2919 667,2919 701,2919 734,2919 768,2919 801,2918 835,2916 869,2918 902,2919 936,2919 970,2919 1003,2917 1037,2918 1071,2919"/>
+                <TextEquiv>
+                    <Unicode>consult these and other MSS.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+    </Page>
+</PcGts>

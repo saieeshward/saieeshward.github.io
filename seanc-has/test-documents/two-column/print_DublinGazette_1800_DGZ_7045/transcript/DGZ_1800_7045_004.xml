@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
+  <Metadata>
+    <Creator>Transkribus Processing API</Creator>
+    <Created>2024-11-26T15:01:01.653+01:00</Created>
+    <LastChange>2026-06-25T10:57:38.392Z</LastChange>
+  </Metadata>
+<Page imageFilename="DGZ_1800_7045_004" imageWidth="2620" imageHeight="4279">
+    <ReadingOrder>
+      <OrderedGroup id="ro_1" caption="Regions reading order">
+      <RegionRefIndexed index="0" regionRef="tr_1"/>
+      </OrderedGroup>
+    </ReadingOrder>
+<TextRegion orientation="0.0" id="tr_1" custom="readingOrder {index:0;}">
+  <Coords points="292,285 292,2914 2488,2914 2488,285"/>
+  <TextLine id="l0" custom="readingOrder {index:0;} correctionStatus {value:unreviewed;}">
+    <Coords points="1296,342 1368,347 1383,337 1400,349 1444,345 1446,238 1407,238 1378,247 1364,238 1342,257 1320,257 1308,267 1296,264"/><Baseline points="1309,310 1337,311 1365,313 1393,311 1421,309 1450,307"/><TextEquiv><Unicode>9055</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l1" custom="readingOrder {index:1;} correctionStatus {value:unreviewed;}">
+    <Coords points="303,434 1213,446 1213,349 1065,371 917,347 822,386 759,347 303,369"/><Baseline points="316,420 361,420 406,420 451,420 496,418 542,420 587,420 632,420 677,423 722,423 768,420 813,420 858,420 903,420 948,420 994,420 1039,420 1084,417 1129,417 1174,417 1220,417"/><TextEquiv><Unicode>Charles Woodley, Gent. to be Lieutenant.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l2" custom="readingOrder {index:2;} correctionStatus {value:unreviewed;}">
+    <Coords points="320,497 539,517 638,483 679,517 852,517 951,483 951,444 876,427 672,449 524,425 400,444 320,429"/><Baseline points="334,483 365,478 396,476 427,474 458,474 489,474 520,474 552,474 583,476 614,477 645,477 676,477 707,477 738,477 770,477 801,477 832,477 863,477 894,475 925,474 957,474"/><TextEquiv><Unicode>John Pitt, Gent. to be Ensign.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l3" custom="readingOrder {index:3;} correctionStatus {value:unreviewed;}">
+    <Coords points="434,568 1233,577 1233,514 956,526 922,493 835,522 434,526"/><Baseline points="447,558 486,558 526,558 565,558 605,558 644,558 684,558 723,559 763,559 802,558 842,558 882,558 921,558 961,558 1000,558 1040,558 1079,557 1119,555 1158,554 1198,552 1238,552"/><TextEquiv><Unicode>Sunderland Loyal Volunteer Infantry.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l4" custom="readingOrder {index:4;} correctionStatus {value:unreviewed;}">
+    <Coords points="289,638 1135,624 1354,658 1354,587 1281,563 289,573"/><Baseline points="301,626 356,626 412,626 468,626 523,626 579,626 635,626 691,626 746,625 802,623 858,623 914,623 969,626 1025,624 1081,621 1137,620 1192,622 1248,619 1304,617 1360,614"/><TextEquiv><Unicode>Lieutenant Christopher John Cay to be Major-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l5" custom="readingOrder {index:5;} correctionStatus {value:unreviewed;}">
+    <Coords points="352,691 1014,708 1230,684 1230,645 1172,626 352,650"/><Baseline points="364,683 407,683 451,683 494,682 538,680 581,680 625,680 668,680 712,680 755,680 799,680 843,680 886,680 930,680 973,680 1017,677 1060,677 1104,677 1147,674 1191,674 1235,677"/><TextEquiv><Unicode>Commandant, vice Haylon, who resigns.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l6" custom="readingOrder {index:6;} correctionStatus {value:unreviewed;}">
+    <Coords points="539,784 733,796 852,769 903,796 1002,776 1133,793 1133,699 1072,687 893,728 772,684 696,730 626,689 539,699"/><Baseline points="552,763 581,760 610,761 640,763 669,763 698,763 728,761 757,760 786,760 816,760 845,760 874,760 904,760 933,760 962,760 992,760 1021,759 1050,757 1080,757 1109,758 1139,760"/><TextEquiv><Unicode>Woolfardisworthy Volunteer:.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l7" custom="readingOrder {index:7;} correctionStatus {value:unreviewed;}">
+    <Coords points="306,849 990,842 1019,839 1021,779 577,798 536,776 495,798 359,796 308,769"/><Baseline points="319,829 354,832 389,832 425,832 460,832 495,832 531,832 566,830 601,831 637,831 672,829 707,829 743,829 778,829 813,829 849,829 884,829 919,829 955,828 990,826 1026,826"/><TextEquiv><Unicode>John Caddy, Esq. to be Captain.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l8" custom="readingOrder {index:8;} correctionStatus {value:unreviewed;}">
+    <Coords points="303,907 1201,890 1201,837 303,849"/><Baseline points="316,886 360,886 405,886 449,886 494,889 539,889 583,886 628,886 672,886 717,886 762,886 806,886 851,886 895,883 940,883 985,883 1029,883 1074,883 1118,880 1163,880 1208,880"/><TextEquiv><Unicode>Henry Downing, Gent. to be Lieutenant.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l9" custom="readingOrder {index:9;} correctionStatus {value:unreviewed;}">
+    <Coords points="660,980 733,995 769,970 847,970 888,995 905,983 941,1000 975,970 1021,973 1021,895 966,915 941,895 873,900 849,924 806,893 660,917"/><Baseline points="674,963 699,963 724,963 749,963 774,963 799,963 824,963 850,963 875,963 900,963 925,961 950,961 975,962 1000,963 1026,963"/><TextEquiv><Unicode>MEMORANDUM.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l10" custom="readingOrder {index:10;} correctionStatus {value:unreviewed;}">
+    <Coords points="364,1041 1334,1051 1354,966 1055,951 941,1000 791,970 691,1004 366,963"/><Baseline points="378,1032 429,1032 481,1032 532,1032 584,1032 635,1032 687,1029 738,1029 790,1031 841,1029 893,1029 944,1029 996,1029 1047,1029 1099,1026 1150,1026 1202,1026 1253,1026 1305,1026 1357,1020"/><TextEquiv><Unicode>The Appointment of Lieutenant Archibald Ber-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l11" custom="readingOrder {index:11;} correctionStatus {value:unreviewed;}">
+    <Coords points="301,1094 1356,1087 1356,1053 1288,1036 626,1063 301,1029"/><Baseline points="313,1083 365,1086 418,1089 470,1086 523,1086 575,1086 628,1084 680,1085 733,1086 785,1083 838,1083 890,1083 943,1083 995,1083 1048,1083 1100,1083 1153,1082 1205,1080 1258,1080 1310,1080 1363,1077"/><TextEquiv><Unicode>tram, from the 30th Foot, to be Captain, by Pur-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l12" custom="readingOrder {index:12;} correctionStatus {value:unreviewed;}">
+    <Coords points="301,1152 1342,1145 1344,1089 1257,1085 303,1106"/><Baseline points="313,1139 364,1139 416,1139 468,1138 520,1137 572,1137 624,1136 676,1136 728,1136 780,1136 832,1136 883,1136 935,1136 987,1136 1039,1136 1091,1135 1143,1133 1195,1133 1247,1133 1299,1133 1351,1136"/><TextEquiv><Unicode>chase, in the 60th Regiment of Foot, vice Fursdon</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l13" custom="readingOrder {index:13;} correctionStatus {value:unreviewed;}">
+    <Coords points="306,1203 1218,1228 1354,1199 1354,1148 1313,1140 306,1160"/><Baseline points="319,1193 371,1193 423,1190 475,1192 527,1190 579,1190 631,1192 683,1190 735,1190 787,1191 839,1192 891,1190 943,1190 995,1190 1047,1190 1099,1190 1151,1189 1203,1188 1255,1190 1307,1190 1360,1190"/><TextEquiv><Unicode>who retires, as stated in the Gazette of the 12th</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l14" custom="readingOrder {index:14;} correctionStatus {value:unreviewed;}">
+    <Coords points="301,1271 1155,1252 1155,1208 1089,1199 786,1225 723,1201 301,1201"/><Baseline points="313,1253 355,1247 397,1247 440,1244 482,1247 524,1247 567,1247 609,1247 651,1247 694,1245 736,1244 778,1244 821,1244 863,1244 905,1244 948,1244 990,1244 1032,1244 1075,1244 1117,1244 1160,1244"/><TextEquiv><Unicode>November, 1799, has not taken Place.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l15" custom="readingOrder {index:15;} correctionStatus {value:unreviewed;}">
+    <Coords points="354,1315 1351,1308 1320,1225 1038,1279 941,1250 354,1257"/><Baseline points="367,1303 416,1301 466,1301 515,1301 565,1300 614,1298 664,1298 713,1298 763,1298 812,1300 862,1301 911,1298 961,1298 1010,1299 1060,1300 1109,1298 1159,1298 1208,1296 1258,1297 1307,1298 1357,1298"/><TextEquiv><Unicode>Lieutenant James Green, of the 4th West India</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l16" custom="readingOrder {index:16;} correctionStatus {value:unreviewed;}">
+    <Coords points="306,1364 1347,1373 1347,1305 604,1330 306,1288"/><Baseline points="319,1354 370,1354 422,1354 473,1354 525,1354 577,1354 628,1354 680,1354 731,1351 783,1352 835,1354 886,1352 938,1351 989,1354 1041,1354 1093,1351 1144,1351 1196,1351 1247,1351 1299,1351 1351,1351"/><TextEquiv><Unicode>Regiment, is superseded, being absent without</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l17" custom="readingOrder {index:17;} correctionStatus {value:unreviewed;}">
+    <Coords points="291,1419 303,1419 311,1427 340,1422 359,1431 376,1417 388,1417 403,1427 417,1417 454,1417 456,1381 376,1381 352,1364 313,1371 294,1368"/><Baseline points="304,1411 330,1408 356,1408 383,1408 409,1408 435,1408 462,1408"/><TextEquiv><Unicode>Leave.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l18" custom="readingOrder {index:18;} correctionStatus {value:unreviewed;}">
+    <Coords points="359,1470 1342,1482 1342,1412 1218,1383 927,1424 679,1383 541,1429 476,1395 359,1419"/><Baseline points="372,1462 420,1462 469,1462 518,1462 567,1462 616,1462 664,1460 713,1459 762,1459 811,1459 860,1459 908,1459 957,1462 1006,1462 1055,1461 1104,1459 1152,1459 1201,1457 1250,1458 1299,1459 1348,1456"/><TextEquiv><Unicode>Lieutenant Daniel M'Carty, of Colonel Mac-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l19" custom="readingOrder {index:19;} correctionStatus {value:unreviewed;}">
+    <Coords points="296,1521 1351,1543 1351,1482 1252,1468 1152,1495 296,1475"/><Baseline points="310,1515 362,1515 414,1515 467,1515 519,1515 571,1514 624,1512 676,1512 728,1512 781,1512 833,1512 885,1513 938,1515 990,1513 1042,1515 1095,1515 1147,1514 1199,1513 1252,1513 1304,1512 1357,1512"/><TextEquiv><Unicode>neill's Regiment of Fencible-Infantry, is super-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l20" custom="readingOrder {index:20;} correctionStatus {value:unreviewed;}">
+    <Coords points="291,1592 1036,1575 1036,1533 954,1521 291,1538"/><Baseline points="304,1572 340,1572 377,1572 414,1572 451,1570 488,1569 525,1569 561,1569 598,1569 635,1569 672,1567 709,1566 746,1566 783,1566 819,1566 856,1566 893,1568 930,1569 967,1568 1004,1566 1041,1566"/><TextEquiv><Unicode>seded, being absent without Leave.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l21" custom="readingOrder {index:21;} correctionStatus {value:unreviewed;}">
+    <Coords points="357,1630 1281,1638 1281,1577 1080,1550 958,1604 357,1582"/><Baseline points="370,1623 415,1623 461,1623 507,1623 553,1623 599,1621 644,1620 690,1620 736,1620 782,1622 828,1623 873,1623 919,1623 965,1623 1011,1623 1057,1620 1102,1620 1148,1620 1194,1620 1240,1620 1286,1617"/><TextEquiv><Unicode>Lieutenant John Browne, of the Prince</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l22" custom="readingOrder {index:22;} correctionStatus {value:unreviewed;}">
+    <Coords points="303,1698 825,1674 1356,1711 1356,1635 1286,1621 822,1652 303,1628"/><Baseline points="316,1674 368,1676 420,1676 473,1675 525,1674 577,1674 630,1674 682,1676 734,1674 787,1674 839,1675 891,1676 944,1676 996,1676 1048,1676 1101,1675 1153,1674 1205,1674 1258,1674 1310,1676 1363,1676"/><TextEquiv><Unicode>Wales's own Regiment of Fencible Infantry, is</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l23" custom="readingOrder {index:23;} correctionStatus {value:unreviewed;}">
+    <Coords points="301,1754 992,1757 992,1706 929,1684 301,1698"/><Baseline points="313,1730 347,1730 381,1730 415,1730 450,1730 484,1728 518,1729 553,1730 587,1730 621,1730 656,1730 690,1730 724,1730 758,1730 793,1728 827,1727 861,1727 896,1727 930,1729 964,1730 999,1733"/><TextEquiv><Unicode>dismissed His Majesty's Service.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l24" custom="readingOrder {index:24;} correctionStatus {value:unreviewed;}">
+    <Coords points="279,1859 1356,1849 1356,1793 1085,1776 1051,1808 648,1769 279,1808"/><Baseline points="292,1841 345,1840 398,1838 452,1838 505,1838 559,1838 612,1838 665,1837 719,1835 772,1835 826,1835 879,1836 932,1838 986,1838 1039,1838 1093,1838 1146,1837 1199,1835 1253,1835 1306,1835 1360,1835"/><TextEquiv><Unicode>Commission in the Norfolk Militia, signed by the Lord</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l25" custom="readingOrder {index:25;} correctionStatus {value:unreviewed;}">
+    <Coords points="708,1897 747,1900 762,1914 784,1917 803,1917 822,1897 888,1897 895,1905 941,1900 941,1849 910,1861 842,1861 820,1851 791,1861 764,1846 730,1846 708,1856"/><Baseline points="722,1888 747,1888 772,1888 797,1888 822,1888 847,1888 872,1888 897,1888 922,1888 948,1888"/><TextEquiv><Unicode>Lieutenant.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l26" custom="readingOrder {index:26;} correctionStatus {value:unreviewed;}">
+    <Coords points="641,1951 679,1970 813,1943 837,1968 1017,1951 1017,1871 983,1875 941,1905 837,1897 803,1917 711,1888 641,1902"/><Baseline points="653,1945 679,1942 705,1942 732,1942 758,1942 785,1942 811,1942 838,1942 864,1943 890,1945 917,1945 943,1944 970,1943 996,1942 1023,1942"/><TextEquiv><Unicode>Western Regiment.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l27" custom="readingOrder {index:27;} correctionStatus {value:unreviewed;}">
+    <Coords points="291,2026 1361,2014 1361,1926 1097,1926 915,1973 621,1970 493,1926 291,1953"/><Baseline points="304,1996 357,1996 410,1997 463,1999 516,1997 569,1996 622,1996 675,1996 728,1996 781,1996 835,1996 888,1996 941,1998 994,1997 1047,1997 1100,1996 1153,1996 1206,1996 1259,1996 1312,1998 1366,2002"/><TextEquiv><Unicode>Hambleton Thomas Custance, Esq. to be Captain,</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l28" custom="readingOrder {index:28;} correctionStatus {value:unreviewed;}">
+    <Coords points="342,2067 1349,2079 1325,2007 1155,2033 1077,2004 342,2011"/><Baseline points="355,2052 407,2051 460,2050 512,2050 565,2049 617,2052 670,2049 723,2051 775,2049 828,2049 880,2049 933,2052 985,2052 1038,2052 1091,2052 1143,2050 1196,2049 1248,2049 1301,2052 1354,2052"/><TextEquiv><Unicode>Lieutenant, vice James Smyth, Esq. resigned.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l29" custom="readingOrder {index:29;} correctionStatus {value:unreviewed;}">
+    <Coords points="347,2130 951,2142 951,2079 856,2057 801,2082 650,2060 602,2079 524,2060 347,2070"/><Baseline points="361,2103 390,2105 420,2106 450,2106 480,2106 510,2106 539,2106 569,2104 599,2103 629,2103 659,2103 688,2104 718,2106 748,2106 778,2106 808,2106 837,2106 867,2105 897,2103 927,2107 957,2109"/><TextEquiv><Unicode>Dated November 11, 1800.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l30" custom="readingOrder {index:30;} correctionStatus {value:unreviewed;}">
+    <Coords points="291,2269 1344,2261 1344,2208 1254,2188 291,2201"/><Baseline points="304,2246 356,2238 408,2240 460,2243 512,2243 565,2242 617,2240 669,2240 721,2240 773,2240 826,2240 878,2240 930,2240 982,2240 1034,2240 1087,2240 1139,2240 1191,2240 1243,2240 1295,2242 1348,2243"/><TextEquiv><Unicode>HE Commissioners named and authorized in and by</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l31" custom="readingOrder {index:31;} correctionStatus {value:unreviewed;}">
+    <Coords points="412,2290 1349,2298 1351,2259 1257,2249 415,2259"/><Baseline points="426,2288 472,2285 518,2285 565,2284 611,2282 658,2282 704,2282 750,2282 797,2282 843,2282 890,2282 936,2282 982,2282 1029,2284 1075,2283 1122,2282 1168,2285 1214,2282 1261,2285 1307,2282 1354,2282"/><TextEquiv><Unicode>a Commission of Bankrupt awarded, issued, and now</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l32" custom="readingOrder {index:32;} correctionStatus {value:unreviewed;}">
+    <Coords points="294,2339 1339,2344 1339,2300 1300,2293 412,2278 352,2312 294,2286"/><Baseline points="307,2327 358,2327 410,2327 462,2327 514,2327 566,2327 618,2327 670,2327 722,2327 774,2326 826,2324 877,2326 929,2325 981,2327 1033,2324 1085,2327 1137,2327 1189,2327 1241,2327 1293,2327 1345,2324"/><TextEquiv><Unicode>in Prosecution against Joshua Manley and Charles Natha-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l33" custom="readingOrder {index:33;} correctionStatus {value:unreviewed;}">
+    <Coords points="291,2392 1344,2378 1344,2344 1262,2336 291,2334"/><Baseline points="304,2369 356,2371 408,2372 460,2372 512,2369 565,2369 617,2369 669,2369 721,2369 773,2369 826,2369 878,2369 930,2369 982,2369 1034,2369 1087,2369 1139,2369 1191,2370 1243,2372 1295,2370 1348,2366"/><TextEquiv><Unicode>niel Hoffman, of Sligo, in the County of Sligo, Mer¬</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l34" custom="readingOrder {index:34;} correctionStatus {value:unreviewed;}">
+    <Coords points="296,2421 1344,2426 1327,2375 296,2380"/><Baseline points="310,2414 362,2414 414,2414 466,2413 518,2413 570,2412 622,2411 674,2411 726,2411 778,2411 830,2411 882,2411 934,2411 986,2411 1038,2411 1090,2411 1142,2411 1194,2411 1246,2411 1298,2411 1351,2414"/><TextEquiv><Unicode>chants and Co-partners in Trade, intend to meet at the</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l35" custom="readingOrder {index:35;} correctionStatus {value:unreviewed;}">
+    <Coords points="291,2470 1337,2467 1337,2421 1235,2414 291,2417"/><Baseline points="304,2455 355,2455 407,2455 459,2455 511,2454 563,2452 615,2452 667,2452 719,2452 771,2452 823,2452 874,2452 926,2452 978,2452 1030,2452 1082,2452 1134,2452 1186,2452 1238,2452 1290,2454 1342,2452"/><TextEquiv><Unicode>Royal Exchange, Dublin, on the 20th Day of December</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l36" custom="readingOrder {index:36;} correctionStatus {value:unreviewed;}">
+    <Coords points="294,2514 1347,2506 1347,2470 1145,2453 294,2470"/><Baseline points="307,2500 359,2498 411,2497 463,2497 515,2497 568,2497 620,2495 672,2494 724,2494 776,2494 829,2494 881,2494 933,2496 985,2495 1037,2497 1090,2494 1142,2497 1194,2497 1246,2497 1298,2499 1351,2497"/><TextEquiv><Unicode>instant, at the Hour of Two o'Clock in the Afternoon, in</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l37" custom="readingOrder {index:37;} correctionStatus {value:unreviewed;}">
+    <Coords points="291,2557 1339,2550 1339,2509 1218,2504 291,2511"/><Baseline points="304,2539 356,2542 408,2542 460,2541 512,2539 564,2539 616,2539 668,2539 720,2536 772,2536 824,2538 876,2539 928,2539 980,2539 1032,2539 1084,2539 1136,2539 1188,2539 1240,2539 1292,2539 1345,2542"/><TextEquiv><Unicode>order to receive the Proof of Debta from the Creditors of</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l38" custom="readingOrder {index:38;} correctionStatus {value:unreviewed;}">
+    <Coords points="291,2599 1339,2594 1339,2550 1305,2548 291,2557"/><Baseline points="304,2584 356,2584 408,2584 460,2584 512,2584 564,2584 616,2581 668,2581 720,2581 772,2581 824,2579 876,2580 928,2581 980,2581 1032,2581 1084,2581 1136,2581 1188,2581 1240,2581 1292,2581 1345,2584"/><TextEquiv><Unicode>said Bankrupts, and, to choose an Assignee in the Room of</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l39" custom="readingOrder {index:39;} correctionStatus {value:unreviewed;}">
+    <Coords points="311,2642 1339,2642 1339,2594 1300,2589 311,2594"/><Baseline points="325,2628 376,2625 427,2625 478,2625 529,2625 580,2623 631,2625 682,2625 733,2625 784,2622 835,2622 886,2622 937,2624 988,2625 1039,2625 1090,2625 1141,2625 1192,2625 1243,2625 1294,2625 1345,2628"/><TextEquiv><Unicode>James Jones, removed by Order of the Right Honorable</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l40" custom="readingOrder {index:40;} correctionStatus {value:unreviewed;}">
+    <Coords points="291,2686 517,2676 563,2700 628,2679 679,2683 679,2645 626,2632 590,2645 463,2632 449,2647 393,2635 291,2647"/><Baseline points="304,2670 329,2670 354,2670 380,2670 405,2670 431,2670 456,2670 482,2670 507,2670 533,2670 558,2668 584,2667 609,2667 635,2668 660,2670 686,2670"/><TextEquiv><Unicode>the Lord Chancellor.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l41" custom="readingOrder {index:41;} correctionStatus {value:unreviewed;}">
+    <Coords points="383,2851 1000,2851 1126,2805 2329,2831 2327,2737 2230,2730 381,2751"/><Baseline points="396,2798 493,2795 590,2795 687,2794 784,2792 881,2792 978,2792 1075,2795 1172,2795 1269,2795 1366,2795 1463,2795 1560,2798 1657,2801 1754,2801 1851,2802 1948,2804 2045,2804 2142,2804 2239,2807 2336,2807"/><TextEquiv><Unicode>DUBLIN; PRINTED BY GEORGE GRIERSON, PARLIAMENT-STREET.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l42" custom="readingOrder {index:42;} correctionStatus {value:unreviewed;}">
+    <Coords points="1422,427 2482,412 2482,369 2375,332 2232,369 1997,332 1422,369"/><Baseline points="1435,405 1487,405 1540,402 1592,404 1645,405 1698,402 1750,402 1803,405 1856,406 1908,406 1961,402 2014,402 2066,404 2119,405 2172,405 2224,402 2277,404 2330,403 2382,403 2435,404 2488,402"/><TextEquiv><Unicode>In the Matter of William)HE several Creditor-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l43" custom="readingOrder {index:43;} correctionStatus {value:unreviewed;}">
+    <Coords points="2048,466 2186,468 2230,454 2475,463 2475,412 2048,417"/><Baseline points="2061,444 2087,446 2113,447 2139,447 2166,447 2192,447 2218,447 2245,447 2271,447 2297,447 2324,447 2350,447 2376,447 2403,447 2429,447 2455,447 2482,450"/><TextEquiv><Unicode>who have proved thein</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l44" custom="readingOrder {index:44;} correctionStatus {value:unreviewed;}">
+    <Coords points="1470,459 1538,473 1594,456 1703,473 1737,459 1815,476 1861,466 1861,420 1776,422 1754,405 1720,422 1696,405 1664,427 1640,415 1623,427 1589,410 1470,408"/><Baseline points="1483,450 1508,450 1534,450 1559,448 1585,448 1611,450 1636,450 1662,450 1687,450 1713,450 1739,450 1764,450 1790,450 1815,450 1841,450 1867,456"/><TextEquiv><Unicode>Collins, a Bankrupt.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l45" custom="readingOrder {index:45;} correctionStatus {value:unreviewed;}">
+    <Coords points="1956,507 2482,500 2482,463 2438,456 1956,459"/><Baseline points="1969,489 1996,489 2023,489 2050,489 2078,490 2105,492 2132,490 2160,490 2187,492 2214,491 2242,489 2269,489 2296,489 2324,489 2351,491 2378,492 2406,492 2433,492 2460,492 2488,492"/><TextEquiv><Unicode>Debts under this Commissiion</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l46" custom="readingOrder {index:46;} correctionStatus {value:unreviewed;}">
+    <Coords points="1415,539 2480,556 2455,497 1415,505"/><Baseline points="1429,531 1481,534 1534,534 1587,534 1640,534 1693,534 1745,534 1798,537 1851,537 1904,537 1957,535 2009,534 2062,534 2115,534 2168,534 2221,534 2273,534 2326,534 2379,535 2432,537 2485,540"/><TextEquiv><Unicode>of Bankrupt, are requested to meet the Assignee of said</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l47" custom="readingOrder {index:47;} correctionStatus {value:unreviewed;}">
+    <Coords points="1419,587 2475,587 2448,543 1419,539"/><Baseline points="1432,575 1484,575 1537,576 1589,578 1642,576 1694,575 1747,575 1799,576 1852,578 1904,578 1957,578 2009,578 2062,578 2114,578 2167,578 2219,576 2272,575 2324,578 2377,578 2429,578 2482,578"/><TextEquiv><Unicode>Bankrupt, at the Royal Exchange Coffee-Room, on Sa-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l48" custom="readingOrder {index:48;} correctionStatus {value:unreviewed;}">
+    <Coords points="1422,628 2480,638 2480,587 2414,582 1422,587"/><Baseline points="1435,620 1487,620 1540,617 1592,619 1645,620 1697,620 1750,620 1802,620 1855,621 1907,621 1960,620 2012,620 2065,620 2117,620 2170,620 2222,620 2275,620 2327,620 2380,620 2432,624 2485,623"/><TextEquiv><Unicode>turday the 20th December inst. at the Hour of One o'Clock</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l49" custom="readingOrder {index:49;} correctionStatus {value:unreviewed;}">
+    <Coords points="1415,674 2472,674 2438,628 1415,624"/><Baseline points="1429,665 1481,662 1534,662 1586,662 1639,662 1691,662 1744,662 1796,663 1849,665 1901,665 1954,665 2006,665 2059,665 2111,665 2164,665 2216,665 2269,665 2321,665 2374,665 2426,665 2479,665"/><TextEquiv><Unicode>in the Afternoon, sor the Purpose of submitting to Arbi-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l50" custom="readingOrder {index:50;} correctionStatus {value:unreviewed;}">
+    <Coords points="1412,716 2477,738 2477,674 1412,677"/><Baseline points="1426,704 1478,707 1531,705 1584,707 1637,707 1690,707 1742,707 1795,707 1848,708 1901,710 1954,710 2006,707 2059,707 2112,709 2165,709 2218,708 2270,710 2323,710 2376,711 2429,713 2482,716"/><TextEquiv><Unicode>tration a certain Matter relating to the said Bankrupt'</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l51" custom="readingOrder {index:51;} correctionStatus {value:unreviewed;}">
+    <Coords points="1412,786 1427,786 1429,781 1441,789 1444,784 1495,789 1497,781 1514,786 1541,759 1553,759 1553,730 1541,730 1524,716 1487,725 1475,713 1444,716 1410,706"/><Baseline points="1423,748 1449,748 1476,749 1503,750 1530,751 1557,751"/><TextEquiv><Unicode>Estate.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l52" custom="readingOrder {index:52;} correctionStatus {value:unreviewed;}">
+    <Coords points="1883,803 2353,810 2353,733 2303,735 2283,755 2225,735 2128,750 2084,730 2045,750 1965,735 1883,752"/><Baseline points="1897,790 1922,792 1948,793 1973,793 1999,793 2024,793 2050,793 2075,793 2101,793 2127,793 2152,793 2178,793 2203,793 2229,793 2254,793 2280,793 2305,793 2331,795 2357,796"/><TextEquiv><Unicode>WM. BIRMINGHAM,</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l53" custom="readingOrder {index:53;} correctionStatus {value:unreviewed;}">
+    <Coords points="1883,852 1934,871 2028,837 2055,854 2385,849 2385,810 2317,801 1883,803"/><Baseline points="1897,835 1922,837 1948,838 1974,838 2000,838 2026,838 2052,838 2078,838 2104,838 2130,838 2156,838 2182,838 2208,838 2234,838 2260,838 2286,840 2312,841 2338,841 2364,841 2390,841"/><TextEquiv><Unicode>Agent to said Commission.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l54" custom="readingOrder {index:54;} correctionStatus {value:unreviewed;}">
+    <Coords points="1732,961 1805,951 1846,966 1883,958 1902,975 1934,958 1973,966 2036,949 2072,963 2072,898 1997,907 1980,895 1965,905 1956,895 1892,905 1815,895 1766,912 1732,907"/><Baseline points="1745,945 1770,945 1796,945 1822,945 1847,944 1873,943 1899,943 1924,944 1950,945 1976,945 2001,945 2027,945 2053,947 2079,948"/><TextEquiv><Unicode>NOTIC</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l55" custom="readingOrder {index:55;} correctionStatus {value:unreviewed;}">
+    <Coords points="1407,1031 1541,1004 2077,1024 2077,968 2036,949 1902,975 1805,951 1407,963"/><Baseline points="1420,1002 1453,1002 1486,1002 1519,1002 1552,1002 1585,1002 1618,1003 1651,1005 1684,1002 1717,1002 1751,1003 1784,1005 1817,1002 1850,1004 1883,1004 1916,1002 1949,1004 1982,1005 2015,1005 2048,1005 2082,1008"/><TextEquiv><Unicode>In the Matter of James Mc. Parlan,</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l56" custom="readingOrder {index:56;} correctionStatus {value:unreviewed;}">
+    <Coords points="2099,1009 2130,1014 2157,992 2184,992 2213,1019 2300,1009 2451,1021 2472,1017 2470,968 2438,973 2402,954 2324,946 2303,961 2259,944 2193,968 2096,966"/><Baseline points="2112,1002 2138,1000 2164,999 2190,999 2216,1001 2242,1004 2268,1005 2294,1005 2320,1005 2346,1006 2372,1007 2398,1008 2424,1008 2450,1010 2476,1011"/><TextEquiv><Unicode>HE Creditore</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l57" custom="readingOrder {index:57;} correctionStatus {value:unreviewed;}">
+    <Coords points="1458,1060 1892,1068 1924,1048 2065,1065 2065,1014 1851,1024 1723,1004 1645,1029 1458,1009"/><Baseline points="1471,1047 1502,1047 1534,1047 1565,1047 1597,1047 1628,1049 1660,1049 1691,1047 1723,1047 1754,1047 1786,1047 1817,1047 1849,1047 1880,1047 1912,1047 1943,1047 1975,1047 2006,1047 2038,1047 2070,1047"/><TextEquiv><Unicode>of Elphin, in the County of Ros-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l58" custom="readingOrder {index:58;} correctionStatus {value:unreviewed;}">
+    <Coords points="2220,1068 2237,1072 2281,1048 2319,1065 2368,1058 2402,1068 2417,1058 2475,1068 2472,1017 2417,1014 2373,1024 2305,1007 2247,1021 2218,1017"/><Baseline points="2232,1050 2259,1050 2286,1050 2314,1050 2341,1050 2369,1050 2396,1050 2424,1051 2451,1053 2479,1053"/><TextEquiv><Unicode>of: the said</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l59" custom="readingOrder {index:59;} correctionStatus {value:unreviewed;}">
+    <Coords points="1458,1097 1761,1133 1798,1106 2070,1106 2067,1060 1924,1048 1892,1065 1456,1063"/><Baseline points="1471,1089 1501,1089 1531,1089 1561,1089 1592,1089 1622,1089 1652,1089 1682,1091 1713,1092 1743,1092 1773,1092 1803,1092 1834,1092 1864,1092 1894,1092 1924,1092 1955,1092 1985,1093 2015,1095 2045,1095 2076,1095"/><TextEquiv><Unicode>common, Doctor of Medicine, an</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l60" custom="readingOrder {index:60;} correctionStatus {value:unreviewed;}">
+    <Coords points="2101,1111 2210,1116 2232,1097 2252,1111 2290,1099 2310,1109 2336,1094 2424,1121 2467,1104 2467,1063 2397,1068 2375,1051 2327,1070 2281,1048 2237,1068 2220,1055 2150,1065 2130,1046 2101,1046"/><Baseline points="2115,1098 2140,1095 2166,1092 2191,1092 2217,1092 2242,1092 2268,1092 2294,1092 2319,1092 2345,1092 2370,1094 2396,1095 2421,1095 2447,1095 2473,1095"/><TextEquiv><Unicode>James Mc. Parlan</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l61" custom="readingOrder {index:61;} correctionStatus {value:unreviewed;}">
+    <Coords points="1448,1157 1480,1160 1492,1148 1512,1150 1521,1140 1546,1155 1560,1140 1589,1152 1594,1145 1640,1150 1638,1104 1563,1109 1546,1097 1507,1094 1446,1102"/><Baseline points="1462,1130 1488,1130 1514,1131 1541,1132 1567,1133 1594,1133 1620,1133 1647,1133"/><TextEquiv><Unicode>Insolvent.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l62" custom="readingOrder {index:62;} correctionStatus {value:unreviewed;}">
+    <Coords points="2101,1148 2179,1135 2203,1152 2237,1140 2269,1160 2341,1140 2373,1152 2392,1135 2467,1148 2467,1104 2451,1102 2424,1121 2378,1097 2356,1111 2339,1094 2256,1111 2235,1097 2210,1116 2101,1111"/><Baseline points="2115,1133 2140,1133 2166,1133 2191,1133 2217,1133 2242,1133 2268,1133 2294,1133 2319,1133 2345,1133 2370,1135 2396,1136 2421,1136 2447,1136 2473,1136"/><TextEquiv><Unicode>are requested to</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l63" custom="readingOrder {index:63;} correctionStatus {value:unreviewed;}">
+    <Coords points="2094,1177 2186,1194 2218,1184 2467,1191 2467,1148 2424,1135 2276,1160 2237,1140 2203,1152 2179,1135 2145,1150 2094,1135"/><Baseline points="2106,1172 2132,1174 2158,1175 2184,1177 2210,1178 2237,1178 2263,1178 2289,1178 2315,1178 2341,1178 2368,1178 2394,1178 2420,1178 2446,1178 2473,1178"/><TextEquiv><Unicode>come in and prove</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l64" custom="readingOrder {index:64;} correctionStatus {value:unreviewed;}">
+    <Coords points="1410,1225 2463,1252 2446,1186 1410,1186"/><Baseline points="1423,1214 1475,1217 1527,1217 1579,1217 1631,1217 1684,1220 1736,1220 1788,1220 1840,1220 1892,1220 1945,1220 1997,1220 2049,1220 2101,1220 2153,1220 2206,1220 2258,1220 2310,1222 2362,1223 2414,1223 2467,1226"/><TextEquiv><Unicode>their respective Debts before me on or before the 19th Day</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l65" custom="readingOrder {index:65;} correctionStatus {value:unreviewed;}">
+    <Coords points="1410,1274 1461,1286 1478,1271 1546,1300 1606,1300 1686,1271 1740,1288 1808,1279 1808,1237 1781,1230 1623,1237 1609,1225 1575,1240 1509,1223 1410,1223"/><Baseline points="1423,1262 1448,1262 1474,1262 1500,1262 1526,1262 1552,1262 1578,1262 1604,1262 1629,1262 1655,1262 1681,1262 1707,1263 1733,1265 1759,1265 1785,1265 1811,1265"/><TextEquiv><Unicode>of December instant.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l66" custom="readingOrder {index:66;} correctionStatus {value:unreviewed;}">
+    <Coords points="1866,1315 2021,1327 2106,1300 2142,1325 2378,1325 2375,1242 2288,1245 2239,1271 2174,1254 2023,1276 1866,1250"/><Baseline points="1879,1303 1904,1303 1929,1303 1954,1305 1979,1305 2004,1304 2029,1303 2054,1303 2079,1303 2104,1303 2130,1303 2155,1303 2180,1303 2205,1304 2230,1306 2255,1306 2280,1306 2305,1306 2330,1306 2355,1310 2381,1312"/><TextEquiv><Unicode>RICHARD O’CONNOR.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l67" custom="readingOrder {index:67;} correctionStatus {value:unreviewed;}">
+    <Coords points="1740,1366 2443,1388 2443,1308 2419,1303 2366,1327 2142,1325 2108,1300 1917,1330 1863,1298 1740,1303"/><Baseline points="1754,1348 1788,1348 1823,1348 1858,1348 1893,1348 1927,1348 1962,1348 1997,1349 2032,1351 2066,1351 2101,1351 2136,1351 2171,1351 2205,1351 2240,1351 2275,1351 2310,1352 2344,1354 2379,1354 2414,1354 2449,1357"/><TextEquiv><Unicode>Assignee of the said James Mc. Parlan.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l68" custom="readingOrder {index:68;} correctionStatus {value:unreviewed;}">
+    <Coords points="1405,1415 2014,1412 2014,1364 1960,1356 1766,1368 1727,1332 1701,1354 1647,1351 1567,1317 1405,1344"/><Baseline points="1417,1390 1447,1390 1477,1390 1507,1390 1537,1390 1567,1390 1597,1390 1628,1390 1658,1390 1688,1390 1718,1392 1748,1393 1778,1393 1808,1393 1839,1393 1869,1393 1899,1395 1929,1395 1959,1393 1989,1393 2020,1396"/><TextEquiv><Unicode>Inn's-quay, Dublin, Dec. 4, 1800.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l69" custom="readingOrder {index:69;} correctionStatus {value:unreviewed;}">
+    <Coords points="1407,1526 1592,1495 2455,1512 2455,1465 2361,1448 1407,1458"/><Baseline points="1420,1488 1472,1483 1524,1487 1576,1489 1628,1491 1680,1491 1732,1491 1784,1494 1836,1494 1888,1494 1940,1494 1992,1494 2044,1494 2096,1494 2148,1495 2200,1497 2252,1497 2304,1497 2356,1500 2408,1500 2461,1500"/><TextEquiv><Unicode>PHE Partnership heretosore subsisting between John</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l70" custom="readingOrder {index:70;} correctionStatus {value:unreviewed;}">
+    <Coords points="1526,1541 2458,1558 2458,1512 2303,1502 1526,1504"/><Baseline points="1539,1533 1585,1536 1631,1539 1677,1536 1723,1536 1769,1536 1815,1539 1861,1539 1907,1539 1953,1539 2000,1539 2046,1539 2092,1539 2138,1539 2184,1539 2230,1540 2276,1541 2322,1540 2368,1542 2414,1544 2461,1545"/><TextEquiv><Unicode>Orr, James Orr, and Alexander Barrington Orr,</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l71" custom="readingOrder {index:71;} correctionStatus {value:unreviewed;}">
+    <Coords points="1410,1584 2455,1604 2455,1550 2370,1541 2256,1567 1410,1541"/><Baseline points="1423,1578 1474,1575 1526,1578 1578,1579 1630,1581 1682,1581 1734,1581 1786,1581 1838,1584 1890,1583 1942,1583 1993,1584 2045,1581 2097,1584 2149,1584 2201,1584 2253,1584 2305,1584 2357,1584 2409,1587 2461,1590"/><TextEquiv><Unicode>under the Firm of John, James, and A. Orr, is this Day</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l72" custom="readingOrder {index:72;} correctionStatus {value:unreviewed;}">
+    <Coords points="1412,1635 2458,1652 2458,1604 2419,1592 1412,1584"/><Baseline points="1426,1617 1477,1620 1529,1623 1581,1623 1633,1623 1685,1625 1737,1626 1789,1626 1841,1626 1893,1626 1945,1626 1996,1626 2048,1626 2100,1626 2152,1629 2204,1629 2256,1629 2308,1629 2360,1631 2412,1634 2464,1638"/><TextEquiv><Unicode>dissolved by general Consent. Dublin, November 25,</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l73" custom="readingOrder {index:73;} correctionStatus {value:unreviewed;}">
+    <Coords points="1415,1698 1441,1703 1461,1691 1475,1701 1490,1696 1495,1701 1502,1696 1516,1696 1514,1630 1487,1630 1470,1638 1463,1630 1444,1630 1436,1638 1427,1633 1412,1635"/><Baseline points="1426,1665 1457,1667 1489,1668 1521,1668"/><TextEquiv><Unicode>1800.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l74" custom="readingOrder {index:74;} correctionStatus {value:unreviewed;}">
+    <Coords points="2050,1730 2193,1713 2222,1727 2242,1718 2327,1723 2327,1650 2283,1650 2269,1660 2256,1652 2244,1664 2227,1655 2213,1667 2162,1647 2123,1664 2099,1652 2050,1652"/><Baseline points="2064,1703 2090,1708 2117,1712 2144,1712 2171,1711 2198,1709 2225,1711 2252,1712 2279,1712 2306,1713 2333,1715"/><TextEquiv><Unicode>JOHN ORR.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l75" custom="readingOrder {index:75;} correctionStatus {value:unreviewed;}">
+    <Coords points="2038,1778 2065,1776 2084,1761 2164,1761 2198,1776 2218,1764 2341,1766 2341,1723 2324,1720 2225,1727 2193,1713 2111,1727 2082,1720 2057,1740 2038,1737"/><Baseline points="2052,1763 2078,1757 2105,1755 2132,1754 2159,1754 2186,1755 2213,1757 2240,1757 2267,1757 2294,1757 2321,1757 2348,1757"/><TextEquiv><Unicode>JAMES ORR.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l76" custom="readingOrder {index:76;} correctionStatus {value:unreviewed;}">
+    <Coords points="2040,1822 2074,1812 2101,1829 2118,1812 2181,1829 2237,1817 2293,1829 2358,1808 2385,1820 2402,1817 2400,1766 2220,1761 2198,1778 2181,1761 2082,1761 2038,1778"/><Baseline points="2052,1796 2077,1798 2102,1799 2127,1799 2152,1799 2178,1799 2203,1799 2228,1799 2253,1799 2278,1799 2304,1799 2329,1800 2354,1801 2379,1804 2405,1808"/><TextEquiv><Unicode>ALEX. B. ORR.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l77" custom="readingOrder {index:77;} correctionStatus {value:unreviewed;}">
+    <Coords points="1526,1914 2458,1912 2455,1849 2404,1875 1524,1851"/><Baseline points="1539,1897 1585,1897 1631,1897 1677,1897 1723,1894 1769,1894 1815,1894 1861,1897 1907,1897 1953,1897 2000,1897 2046,1897 2092,1897 2138,1897 2184,1898 2230,1900 2276,1900 2322,1900 2368,1900 2414,1902 2461,1900"/><TextEquiv><Unicode>HEREAS by an Ac passed in the Third Year of-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l78" custom="readingOrder {index:78;} correctionStatus {value:unreviewed;}">
+    <Coords points="1555,1943 2443,1958 2443,1909 2417,1907 2378,1929 2203,1902 1555,1914"/><Baseline points="1569,1939 1613,1939 1657,1939 1701,1939 1745,1939 1789,1939 1833,1939 1877,1939 1921,1939 1965,1939 2009,1939 2053,1941 2097,1942 2141,1942 2185,1942 2229,1942 2273,1942 2317,1942 2361,1944 2405,1945 2449,1948"/><TextEquiv><Unicode>His present Majesty's Reign, entitled, “ An Ad</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l79" custom="readingOrder {index:79;} correctionStatus {value:unreviewed;}">
+    <Coords points="1407,2004 2441,1999 2400,1951 1407,1936"/><Baseline points="1420,1981 1471,1984 1522,1984 1573,1983 1625,1981 1676,1981 1727,1984 1779,1981 1830,1978 1881,1981 1933,1982 1984,1984 2035,1984 2086,1984 2138,1984 2189,1984 2240,1984 2292,1985 2343,1987 2394,1989 2446,1987"/><TextEquiv><Unicode>for the better Discovery of Charitable Donations and Be-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l80" custom="readingOrder {index:80;} correctionStatus {value:unreviewed;}">
+    <Coords points="1407,2033 2443,2048 2443,1997 2295,1985 1407,2004"/><Baseline points="1420,2026 1471,2026 1522,2027 1574,2028 1625,2026 1677,2026 1728,2026 1780,2026 1831,2026 1883,2026 1934,2026 1985,2024 2037,2025 2088,2026 2140,2026 2191,2026 2243,2026 2294,2028 2346,2029 2397,2031 2449,2035"/><TextEquiv><Unicode>quests,&quot; It is among other Things enacted, “ That every</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l81" custom="readingOrder {index:81;} correctionStatus {value:unreviewed;}">
+    <Coords points="1400,2070 2446,2089 2446,2048 2227,2026 1400,2031"/><Baseline points="1414,2067 1465,2070 1517,2070 1569,2070 1621,2068 1673,2067 1725,2067 1777,2067 1829,2067 1881,2067 1933,2067 1984,2067 2036,2067 2088,2067 2140,2068 2192,2070 2244,2070 2296,2070 2348,2070 2400,2073 2452,2076"/><TextEquiv><Unicode>Person or Persons to whom the Probate of any Will or</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l82" custom="readingOrder {index:82;} correctionStatus {value:unreviewed;}">
+    <Coords points="1400,2123 2443,2125 2443,2087 2375,2079 1400,2072"/><Baseline points="1414,2112 1465,2112 1517,2112 1569,2112 1621,2112 1672,2112 1724,2109 1776,2109 1828,2110 1879,2111 1931,2109 1983,2111 2035,2109 2086,2112 2138,2112 2190,2113 2242,2115 2293,2115 2345,2115 2397,2115 2449,2115"/><TextEquiv><Unicode>Letters of Administration should be granted, should, three</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l83" custom="readingOrder {index:83;} correctionStatus {value:unreviewed;}">
+    <Coords points="1410,2164 2446,2176 2446,2130 2409,2123 1410,2123"/><Baseline points="1423,2154 1474,2157 1525,2154 1577,2154 1628,2154 1680,2154 1731,2154 1783,2154 1834,2153 1886,2152 1937,2154 1988,2154 2040,2159 2091,2154 2143,2154 2194,2155 2246,2157 2297,2157 2349,2157 2400,2159 2452,2163"/><TextEquiv><Unicode>Months after obtaining the same, publish in the Dublin</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l84" custom="readingOrder {index:84;} correctionStatus {value:unreviewed;}">
+    <Coords points="1407,2205 2436,2220 2434,2169 1405,2164"/><Baseline points="1417,2193 1468,2199 1519,2199 1570,2199 1621,2197 1672,2196 1723,2196 1775,2196 1826,2196 1877,2196 1928,2196 1979,2198 2030,2199 2081,2196 2133,2199 2184,2199 2235,2200 2286,2202 2337,2202 2388,2202 2440,2202"/><TextEquiv><Unicode>Gazette, three Times successively, an Account of every</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l85" custom="readingOrder {index:85;} correctionStatus {value:unreviewed;}">
+    <Coords points="1400,2254 2436,2261 2402,2208 1400,2208"/><Baseline points="1414,2237 1465,2240 1516,2240 1568,2240 1619,2238 1671,2237 1722,2237 1774,2237 1825,2237 1877,2238 1928,2239 1979,2237 2031,2239 2082,2240 2134,2240 2185,2240 2237,2241 2288,2243 2340,2243 2391,2243 2443,2246"/><TextEquiv><Unicode>Charitable Donation or Bequest contained therein, under</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l86" custom="readingOrder {index:86;} correctionStatus {value:unreviewed;}">
+    <Coords points="1405,2290 2446,2298 2431,2252 1405,2244"/><Baseline points="1417,2279 1468,2282 1520,2282 1572,2281 1624,2279 1675,2279 1727,2279 1779,2279 1831,2279 1882,2279 1934,2279 1986,2279 2038,2279 2089,2279 2141,2280 2193,2282 2245,2284 2296,2285 2348,2285 2400,2285 2452,2285"/><TextEquiv><Unicode>the Penalty of Fifty Pounds, to be recovered by any Per-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l87" custom="readingOrder {index:87;} correctionStatus {value:unreviewed;}">
+    <Coords points="1395,2339 2436,2344 2419,2298 1393,2278"/><Baseline points="1408,2324 1459,2324 1511,2324 1563,2324 1615,2324 1666,2324 1718,2324 1770,2321 1822,2321 1873,2321 1925,2322 1977,2318 2029,2321 2080,2323 2132,2322 2184,2324 2236,2326 2287,2327 2339,2330 2391,2330 2443,2327"/><TextEquiv><Unicode>fon who ſhall sue for the same.” And whereas it appeari</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l88" custom="readingOrder {index:88;} correctionStatus {value:unreviewed;}">
+    <Coords points="1405,2375 2446,2390 2446,2346 2407,2336 1405,2334"/><Baseline points="1417,2366 1468,2366 1520,2369 1572,2369 1624,2367 1675,2366 1727,2366 1779,2366 1831,2365 1882,2364 1934,2366 1986,2366 2038,2369 2089,2366 2141,2367 2193,2369 2245,2369 2296,2371 2348,2372 2400,2372 2452,2372"/><TextEquiv><Unicode>that many Charities bequeathed have not been pub-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l89" custom="readingOrder {index:89;} correctionStatus {value:unreviewed;}">
+    <Coords points="1395,2417 2443,2421 2443,2392 2339,2373 1395,2373"/><Baseline points="1408,2408 1460,2411 1512,2411 1564,2411 1616,2411 1668,2411 1720,2408 1772,2408 1824,2408 1876,2408 1928,2408 1980,2408 2032,2411 2084,2408 2136,2410 2188,2409 2240,2411 2292,2411 2344,2414 2396,2414 2449,2414"/><TextEquiv><Unicode>lished in Pursuance of said Act, either by the Execu-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l90" custom="readingOrder {index:90;} correctionStatus {value:unreviewed;}">
+    <Coords points="1405,2463 2441,2472 2441,2421 1405,2419"/><Baseline points="1417,2449 1468,2452 1519,2453 1571,2454 1622,2452 1674,2452 1725,2449 1777,2452 1828,2449 1880,2449 1931,2449 1982,2451 2034,2452 2085,2452 2137,2452 2188,2452 2240,2453 2291,2455 2343,2455 2394,2455 2446,2458"/><TextEquiv><Unicode>tors or Administrators who have obtained Probates of scuh</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l91" custom="readingOrder {index:91;} correctionStatus {value:unreviewed;}">
+    <Coords points="1405,2497 2424,2518 2438,2475 1402,2463"/><Baseline points="1417,2494 1468,2494 1519,2494 1571,2494 1622,2494 1674,2494 1725,2494 1777,2494 1828,2494 1880,2494 1931,2494 1982,2494 2034,2494 2085,2494 2137,2497 2188,2497 2240,2497 2291,2499 2343,2498 2394,2499 2446,2503"/><TextEquiv><Unicode>Wills, Now this is to give Notice, tha unless such Publica-</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l92" custom="readingOrder {index:92;} correctionStatus {value:unreviewed;}">
+    <Coords points="1398,2548 2438,2552 2438,2516 2317,2501 1398,2497"/><Baseline points="1411,2536 1462,2539 1514,2539 1565,2539 1617,2539 1669,2539 1720,2539 1772,2536 1823,2538 1875,2536 1927,2536 1978,2536 2030,2536 2081,2539 2133,2539 2185,2539 2236,2540 2288,2542 2339,2542 2391,2545 2443,2542"/><TextEquiv><Unicode>tions are made, that such Persons as have neglected, or</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l93" custom="readingOrder {index:93;} correctionStatus {value:unreviewed;}">
+    <Coords points="1395,2584 2426,2601 2441,2552 1393,2540"/><Baseline points="1408,2578 1459,2581 1511,2581 1563,2581 1615,2581 1667,2581 1719,2581 1771,2578 1823,2578 1875,2578 1927,2580 1978,2581 2030,2581 2082,2581 2134,2581 2186,2582 2238,2584 2290,2584 2342,2584 2394,2587 2446,2587"/><TextEquiv><Unicode>shall hereafter neglect the doing thereof, will be procoeded</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l94" custom="readingOrder {index:94;} correctionStatus {value:unreviewed;}">
+    <Coords points="1393,2632 1900,2674 2446,2642 2409,2594 1393,2584"/><Baseline points="1405,2619 1457,2622 1509,2622 1561,2622 1613,2622 1666,2622 1718,2622 1770,2622 1822,2622 1874,2622 1927,2622 1979,2622 2031,2622 2083,2622 2135,2625 2188,2626 2240,2628 2292,2628 2344,2631 2396,2631 2449,2634"/><TextEquiv><Unicode>againit for the Recovery of the Penalties described in the</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l95" custom="readingOrder {index:95;} correctionStatus {value:unreviewed;}">
+    <Coords points="1383,2671 1439,2683 1475,2679 1482,2671 1499,2683 1582,2679 1582,2637 1565,2640 1538,2630 1526,2642 1519,2635 1492,2642 1463,2630 1441,2647 1422,2632 1383,2635"/><Baseline points="1396,2667 1423,2667 1450,2668 1477,2669 1505,2670 1532,2670 1559,2670 1587,2670"/><TextEquiv><Unicode>said Act.</Unicode></TextEquiv>
+  </TextLine>
+  <TextLine id="l96" custom="readingOrder {index:96;} correctionStatus {value:unreviewed;}">
+    <Coords points="1085,2936 1356,2936 1378,2916 1412,2936 1436,2916 1669,2931 1667,2844 1577,2822 1470,2824 1429,2853 1371,2817 1082,2829"/><Baseline points="1098,2903 1126,2897 1155,2892 1184,2888 1213,2888 1242,2888 1271,2888 1300,2888 1329,2888 1358,2888 1387,2888 1415,2888 1444,2890 1473,2891 1502,2891 1531,2891 1560,2892 1589,2894 1618,2894 1647,2893 1676,2891"/><TextEquiv><Unicode>s Price Four-pence.</Unicode></TextEquiv>
+  </TextLine>
+</TextRegion>
+</Page>
+</PcGts>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
+    <Metadata>
+        <Creator>prov=READ-COOP:name=PyLaia@TranskribusPlatform:version=2.23.0:model_id=39995:lm=none:date=17_02_2025_23:53</Creator>
+        <Created>2025-02-17T17:26:09.582+01:00</Created>
+        <LastChange>2025-02-17T23:53:45.442+01:00</LastChange>
+        <TranskribusMetadata docId="6965734" pageId="91692665" pageNr="14" tsid="229481903" status="NEW" userId="21498" imgUrl="https://files.transkribus.eu/Get?id=JYFFOWENMRKLONPUVBBTVLIY&amp;fileType=view" xmlUrl="https://files.transkribus.eu/Get?id=USRRULMSGRWPXAIXKXFTBZBO" imageId="76517063"/>
+    </Metadata>
+    <Page imageFilename="91692665.jpg" imageWidth="2479" imageHeight="3508">
+        <ReadingOrder>
+            <OrderedGroup id="ro_1740043396856" caption="Regions reading order">
+                <RegionRefIndexed index="0" regionRef="tr_1"/>
+            </OrderedGroup>
+        </ReadingOrder>
+        <TextRegion orientation="0.0" id="tr_1" custom="readingOrder {index:0;}">
+            <Coords points="507,289 507,2934 2143,2934 2143,289"/>
+            <TextLine id="tr_1_tl_1" custom="readingOrder {index:0;}">
+                <Coords points="1056,372 1263,364 1297,389 1342,356 1463,389 1562,362 1601,380 1601,235 1500,239 1435,215 1382,267 1178,249 1056,212"/>
+                <Baseline points="1068,331 1094,331 1121,330 1148,329 1175,328 1202,328 1229,328 1256,328 1283,328 1310,328 1337,328 1363,328 1390,327 1417,326 1444,325 1471,325 1498,327 1525,329 1552,330 1579,331 1606,331"/>
+                <TextEquiv>
+                    <Unicode>ABSIRACTS OF WILLS</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_2" custom="readingOrder {index:1;}">
+                <Coords points="496,498 1435,463 1831,508 1809,368 1532,399 1407,366 1348,409 1052,358 846,407 710,338 654,395 496,397"/>
+                <Baseline points="507,453 573,450 639,450 706,451 772,453 839,456 905,456 972,450 1038,450 1105,453 1171,455 1237,456 1304,454 1370,454 1437,456 1503,456 1570,458 1636,456 1703,456 1769,459 1836,459"/>
+                <TextEquiv>
+                    <Unicode>2 DAWSON, JOHN, Grecnane, Co. Tipperary, Esq.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_3" custom="readingOrder {index:2;}">
+                <Coords points="585,569 1619,571 1619,478 1574,472 585,500"/>
+                <Baseline points="597,537 648,540 699,537 751,537 802,537 853,539 905,537 956,537 1007,540 1059,539 1110,538 1161,540 1213,540 1264,540 1315,540 1367,538 1418,540 1469,540 1521,538 1572,537 1624,537"/>
+                <TextEquiv>
+                    <Unicode>16 Jan. 1743. Narrate 4 p. 16 May 1746.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_4" custom="readingOrder {index:3;}">
+                <Coords points="595,644 2135,666 2135,565 2042,532 1874,585 1761,548 1463,587 595,577"/>
+                <Baseline points="606,620 682,620 759,620 836,620 912,623 989,620 1066,620 1142,620 1219,621 1296,622 1373,623 1449,623 1526,623 1603,621 1679,623 1756,624 1833,625 1909,623 1986,625 2063,623 2140,620"/>
+                <TextEquiv>
+                    <Unicode>His wife Eleanor Dawson otherwise Southcote, exor. His</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_5" custom="readingOrder {index:4;}">
+                <Coords points="508,708 573,733 621,704 793,729 1137,708 1206,739 1411,708 1411,642 1378,633 1241,664 1206,633 882,660 508,633"/>
+                <Baseline points="519,683 563,686 608,686 653,686 698,686 743,686 787,686 832,686 877,686 922,686 967,686 1011,686 1056,686 1101,686 1146,686 1191,686 1235,686 1280,686 1325,686 1370,689 1415,689"/>
+                <TextEquiv>
+                    <Unicode>kinsman John Jephson, Esq., exor.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_6" custom="readingOrder {index:5;}">
+                <Coords points="585,787 2135,807 2107,696 1421,696 1222,739 585,716"/>
+                <Baseline points="597,767 674,765 751,767 828,767 905,767 982,767 1059,767 1137,770 1214,770 1291,773 1368,773 1445,773 1522,770 1599,772 1677,770 1754,770 1831,770 1908,771 1985,770 2062,770 2140,773"/>
+                <TextEquiv>
+                    <Unicode>Sir Wm. Osborne, Bart., exor,, the Hon. Arthur Blenerhassett,</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_7" custom="readingOrder {index:6;}">
+                <Coords points="516,868 1143,848 1396,876 1465,850 1465,793 1435,785 670,803 516,777"/>
+                <Baseline points="528,841 575,832 622,832 669,832 716,829 763,832 810,831 858,830 905,832 952,832 999,832 1046,832 1093,832 1140,832 1188,834 1235,833 1282,832 1329,832 1376,835 1423,835 1471,835"/>
+                <TextEquiv>
+                    <Unicode>Judge of Court of King's Bench, exor.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_8" custom="readingOrder {index:7;}">
+                <Coords points="585,931 2131,935 2131,810 1765,868 1574,834 1067,890 984,850 585,860"/>
+                <Baseline points="597,913 673,916 750,913 827,913 904,913 981,916 1058,914 1134,919 1211,916 1288,917 1365,919 1442,919 1519,917 1596,919 1672,919 1749,919 1826,919 1903,919 1980,919 2057,919 2134,913"/>
+                <TextEquiv>
+                    <Unicode>Lands of Greenane and other lands in Co. Tipperary purchased</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_9" custom="readingOrder {index:8;}">
+                <Coords points="514,990 2131,1010 2131,947 1997,927 514,917"/>
+                <Baseline points="525,976 605,976 685,977 766,977 846,976 927,979 1007,979 1088,978 1168,980 1249,982 1329,982 1409,982 1490,982 1570,982 1651,982 1731,982 1812,980 1892,980 1973,980 2053,982 2134,982"/>
+                <TextEquiv>
+                    <Unicode>by him from the Earl of Arran. Lands of Borrisnafarney, Barony</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_10" custom="readingOrder {index:9;}">
+                <Coords points="514,1069 2137,1058 2137,1006 2086,998 1407,1020 1311,986 1105,1026 514,992"/>
+                <Baseline points="525,1041 605,1041 686,1042 767,1041 848,1042 929,1041 1010,1044 1091,1044 1172,1044 1253,1044 1334,1044 1414,1044 1495,1041 1576,1042 1657,1044 1738,1041 1819,1044 1900,1044 1981,1044 2062,1042 2143,1047"/>
+                <TextEquiv>
+                    <Unicode>Ikerrin, Co. Tipperary. His estate of East and West Kiele, Co.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_11" custom="readingOrder {index:10;}">
+                <Coords points="520,1113 2137,1119 2117,1054 520,1073"/>
+                <Baseline points="531,1104 611,1104 691,1104 772,1104 852,1103 933,1101 1013,1104 1094,1106 1174,1106 1255,1105 1335,1104 1415,1104 1496,1107 1576,1107 1657,1104 1737,1104 1818,1107 1898,1107 1979,1107 2059,1104 2140,1104"/>
+                <TextEquiv>
+                    <Unicode>Tipperary. To Incorporated Society for Erecting Charity Schools</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_12" custom="readingOrder {index:11;}">
+                <Coords points="516,1186 2133,1194 2133,1125 2046,1119 516,1121"/>
+                <Baseline points="528,1161 608,1168 688,1167 769,1167 849,1167 930,1167 1010,1164 1091,1169 1171,1172 1252,1168 1332,1170 1412,1170 1493,1172 1573,1171 1654,1170 1734,1170 1815,1170 1895,1171 1976,1170 2056,1170 2137,1170"/>
+                <TextEquiv>
+                    <Unicode>in Ireland and their successors, for ever, for educating poor children</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_13" custom="readingOrder {index:12;}">
+                <Coords points="516,1251 2129,1289 2129,1196 1991,1180 516,1192"/>
+                <Baseline points="528,1230 608,1232 688,1233 768,1232 849,1233 929,1230 1009,1233 1090,1231 1170,1233 1250,1233 1331,1236 1411,1234 1491,1236 1571,1236 1652,1236 1732,1236 1812,1236 1893,1236 1973,1234 2053,1233 2134,1236"/>
+                <TextEquiv>
+                    <Unicode>in the Protestant religion, the lands of Currighbane and Curroghiglass,</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_14" custom="readingOrder {index:13;}">
+                <Coords points="522,1315 1149,1309 1324,1340 1453,1313 1453,1259 1421,1251 522,1253"/>
+                <Baseline points="534,1295 580,1292 626,1292 672,1295 719,1295 765,1292 811,1292 857,1292 904,1293 950,1295 996,1295 1042,1296 1089,1297 1135,1296 1181,1297 1227,1296 1274,1296 1320,1295 1366,1295 1412,1297 1459,1301"/>
+                <TextEquiv>
+                    <Unicode>Barony Lower Ormond, Co. Tipperary.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_15" custom="readingOrder {index:14;}">
+                <Coords points="595,1380 2137,1429 2137,1322 2082,1291 1872,1330 1672,1291 1326,1338 595,1324"/>
+                <Baseline points="606,1376 682,1378 759,1376 836,1379 913,1379 990,1380 1067,1379 1143,1379 1220,1380 1297,1382 1374,1382 1451,1382 1528,1382 1605,1380 1681,1382 1758,1385 1835,1385 1912,1384 1989,1382 2066,1382 2143,1376"/>
+                <TextEquiv>
+                    <Unicode>Witnesses: Nicholas Nash, Dublin, Esq., deceased, Jos. Robbins</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_16" custom="readingOrder {index:15;}">
+                <Coords points="526,1465 599,1487 1303,1465 1303,1398 1239,1386 1174,1409 933,1390 864,1415 526,1384"/>
+                <Baseline points="537,1442 575,1444 614,1444 652,1444 691,1444 729,1444 768,1444 806,1442 845,1444 883,1443 922,1442 960,1442 999,1443 1037,1444 1076,1444 1114,1442 1153,1442 1191,1443 1230,1444 1268,1443 1307,1442"/>
+                <TextEquiv>
+                    <Unicode>and Jas. Pierse, both of Dublin.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_17" custom="readingOrder {index:16;}">
+                <Coords points="593,1540 830,1581 880,1548 1216,1589 1342,1550 1461,1589 1836,1552 2135,1589 2133,1439 1755,1445 1700,1481 1629,1421 1538,1475 1372,1437 1319,1475 591,1483"/>
+                <Baseline points="603,1528 679,1528 756,1528 833,1525 910,1525 987,1526 1064,1525 1140,1528 1217,1528 1294,1530 1371,1528 1448,1528 1525,1530 1602,1528 1678,1534 1755,1533 1832,1531 1909,1533 1986,1531 2063,1531 2140,1534"/>
+                <TextEquiv>
+                    <Unicode>Memorial witnessed by: Jos. Robbins, Wm. Jephson, Dublin,</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_18" custom="readingOrder {index:17;}">
+                <Coords points="532,1623 561,1627 581,1615 595,1617 603,1609 640,1635 654,1633 654,1546 637,1552 611,1536 597,1542 571,1540 555,1524 532,1524"/>
+                <Baseline points="543,1594 572,1592 601,1591 630,1591 659,1594"/>
+                <TextEquiv>
+                    <Unicode>gent.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_19" custom="readingOrder {index:18;}">
+                <Coords points="516,1700 589,1716 635,1700 676,1730 737,1706 773,1730 814,1732 838,1708 913,1728 915,1599 759,1621 696,1595 640,1637 605,1611 561,1629 516,1619"/>
+                <Baseline points="528,1674 554,1674 580,1674 606,1674 632,1674 658,1674 684,1674 710,1673 736,1671 762,1671 788,1671 814,1671 840,1671 866,1671 892,1671 919,1671"/>
+                <TextEquiv>
+                    <Unicode>119, 507, 83420</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_20" custom="readingOrder {index:19;}">
+                <Coords points="1477,1704 1518,1724 1603,1714 1621,1732 1674,1714 1692,1732 1722,1714 1943,1732 1977,1714 1979,1603 1925,1566 1872,1605 1813,1601 1783,1619 1698,1593 1556,1585 1526,1603 1479,1589"/>
+                <Baseline points="1489,1680 1514,1678 1540,1677 1566,1677 1592,1678 1618,1680 1644,1680 1670,1680 1696,1678 1722,1677 1748,1677 1774,1677 1800,1677 1826,1677 1852,1677 1878,1677 1904,1677 1930,1677 1956,1677 1982,1677"/>
+                <TextEquiv>
+                    <Unicode>John Jephson (seal)</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_21" custom="readingOrder {index:20;}">
+                <Coords points="512,1933 1597,1949 1613,1819 1500,1856 1443,1799 1317,1791 1230,1852 913,1799 510,1811"/>
+                <Baseline points="522,1901 576,1903 631,1902 686,1904 741,1901 796,1904 850,1904 905,1904 960,1904 1015,1904 1070,1907 1124,1907 1179,1907 1234,1904 1289,1904 1344,1907 1398,1905 1453,1906 1508,1907 1563,1907 1618,1907"/>
+                <TextEquiv>
+                    <Unicode>3 KEOUGH, DENIS, James Street, brewer.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_22" custom="readingOrder {index:21;}">
+                <Coords points="585,2028 650,1999 795,2032 909,2001 967,2032 1230,1999 1564,2022 1564,1935 1514,1929 585,1943"/>
+                <Baseline points="597,1985 645,1982 694,1986 742,1987 791,1985 839,1986 888,1986 936,1985 985,1987 1033,1988 1082,1991 1130,1991 1179,1991 1227,1991 1276,1990 1324,1989 1373,1991 1421,1990 1470,1990 1518,1991 1567,1991"/>
+                <TextEquiv>
+                    <Unicode>9 May 1743. Précis 1 p. 27 May 1746.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_23" custom="readingOrder {index:22;}">
+                <Coords points="591,2099 1985,2097 1985,1993 1872,2026 1805,1983 1753,2026 1674,1981 1568,2028 591,2026"/>
+                <Baseline points="603,2071 672,2071 741,2074 810,2071 880,2071 949,2071 1018,2072 1087,2074 1157,2074 1226,2074 1295,2072 1364,2074 1434,2077 1503,2074 1572,2077 1641,2074 1711,2074 1780,2077 1849,2075 1918,2075 1988,2077"/>
+                <TextEquiv>
+                    <Unicode>All his worldly substance to his wife Jane Keough, extx.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_24" custom="readingOrder {index:23;}">
+                <Coords points="597,2163 2070,2169 2133,2204 2133,2086 2095,2072 1532,2129 597,2099"/>
+                <Baseline points="609,2152 685,2156 761,2155 838,2155 914,2155 991,2156 1067,2156 1143,2158 1220,2160 1296,2158 1373,2158 1449,2159 1525,2158 1602,2159 1678,2158 1755,2158 1831,2158 1907,2158 1984,2159 2060,2160 2137,2158"/>
+                <TextEquiv>
+                    <Unicode>Witnesses: Patt. FitzGerald, victualler, Owen Mitchell, clerk to</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_25" custom="readingOrder {index:24;}">
+                <Coords points="514,2246 2103,2244 2080,2178 763,2188 514,2139"/>
+                <Baseline points="525,2221 604,2223 683,2224 762,2223 841,2221 920,2219 999,2221 1078,2221 1157,2221 1236,2221 1316,2223 1395,2224 1474,2221 1553,2221 1632,2221 1711,2223 1790,2224 1869,2224 1948,2224 2027,2223 2107,2224"/>
+                <TextEquiv>
+                    <Unicode>said Jane Keough, Thomas Barnes, ribbon weaver, all of Dublin.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_26" custom="readingOrder {index:25;}">
+                <Coords points="595,2329 2131,2346 2131,2250 2062,2238 595,2256"/>
+                <Baseline points="606,2301 682,2304 759,2304 835,2301 912,2304 988,2304 1065,2304 1141,2304 1218,2304 1294,2306 1371,2304 1448,2304 1524,2305 1601,2307 1677,2307 1754,2307 1830,2308 1907,2310 1983,2310 2060,2307 2137,2307"/>
+                <TextEquiv>
+                    <Unicode>Memorial witnessed by: Owen Mitchell, Wm. Hall, clerk to James</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_27" custom="readingOrder {index:26;}">
+                <Coords points="514,2400 710,2388 759,2412 882,2388 943,2412 1046,2396 1103,2418 1103,2331 1071,2313 959,2335 919,2319 635,2329 514,2289"/>
+                <Baseline points="525,2370 554,2370 583,2370 612,2370 641,2370 670,2370 699,2370 728,2370 757,2370 786,2370 816,2370 845,2370 874,2370 903,2370 932,2370 961,2370 990,2370 1019,2370 1048,2370 1077,2370 1107,2370"/>
+                <TextEquiv>
+                    <Unicode>Saunders, Dublin, gent.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_28" custom="readingOrder {index:27;}">
+                <Coords points="518,2493 561,2507 605,2485 688,2499 769,2487 797,2516 911,2505 907,2392 775,2396 759,2412 550,2394 520,2412"/>
+                <Baseline points="531,2454 556,2454 582,2456 608,2457 633,2455 659,2455 685,2457 710,2456 736,2454 762,2452 787,2451 813,2451 839,2451 864,2451 890,2450 916,2448"/>
+                <TextEquiv>
+                    <Unicode>122, 177, 83479</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_29" custom="readingOrder {index:28;}">
+                <Coords points="1502,2493 1550,2516 1603,2495 1700,2497 1726,2516 1769,2495 1821,2516 1864,2491 1985,2499 1985,2388 1838,2372 1821,2388 1753,2376 1726,2392 1704,2372 1672,2398 1611,2364 1564,2364 1502,2392"/>
+                <Baseline points="1513,2466 1538,2458 1563,2457 1588,2457 1613,2457 1638,2457 1663,2457 1688,2456 1713,2454 1738,2454 1763,2454 1788,2456 1813,2457 1838,2457 1863,2456 1888,2455 1913,2455 1938,2457 1963,2458 1988,2460"/>
+                <TextEquiv>
+                    <Unicode>Jane Keough (seal)</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_30" custom="readingOrder {index:29;}">
+                <Coords points="510,2718 1722,2720 1722,2603 816,2635 753,2596 510,2594"/>
+                <Baseline points="522,2681 582,2681 642,2681 702,2683 762,2683 822,2682 882,2681 943,2683 1003,2683 1063,2683 1123,2683 1183,2683 1243,2686 1303,2685 1364,2685 1424,2686 1484,2686 1544,2686 1604,2686 1664,2688 1725,2686"/>
+                <TextEquiv>
+                    <Unicode>4 COOKE, THOMAS, Youghall, Co. Cork, gent.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_31" custom="readingOrder {index:30;}">
+                <Coords points="591,2801 1672,2793 1641,2704 1182,2732 591,2706"/>
+                <Baseline points="603,2764 656,2767 710,2768 763,2770 817,2770 870,2770 924,2769 977,2768 1031,2770 1084,2770 1138,2770 1192,2770 1245,2770 1299,2770 1352,2770 1406,2770 1459,2770 1513,2770 1566,2770 1620,2768 1674,2770"/>
+                <TextEquiv>
+                    <Unicode>21 Aug. 1745. Narrate 1 p. 13 June 1746.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_32" custom="readingOrder {index:31;}">
+                <Coords points="591,2851 2131,2884 2129,2783 1961,2760 1601,2809 591,2801"/>
+                <Baseline points="603,2848 679,2851 756,2851 833,2854 909,2851 986,2852 1063,2850 1139,2851 1216,2852 1293,2854 1370,2854 1446,2854 1523,2854 1600,2854 1676,2854 1753,2854 1830,2851 1906,2854 1983,2857 2060,2854 2137,2851"/>
+                <TextEquiv>
+                    <Unicode>His cousin Thomas Cooke, Arnasack in liberties of Youghal, Co.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextLine id="tr_1_tl_33" custom="readingOrder {index:32;}">
+                <Coords points="514,2941 2026,2957 1987,2870 729,2882 514,2841"/>
+                <Baseline points="525,2913 600,2917 675,2916 750,2916 826,2917 901,2916 976,2916 1051,2916 1127,2914 1202,2916 1277,2916 1352,2916 1428,2916 1503,2916 1578,2916 1653,2916 1729,2916 1804,2915 1879,2916 1954,2916 2030,2919"/>
+                <TextEquiv>
+                    <Unicode>Cork, exor. Testator's sister Mable Harrison otherwise Cooke.</Unicode>
+                </TextEquiv>
+            </TextLine>
+            <TextEquiv>
+                <Unicode></Unicode>
+            </TextEquiv>
+        </TextRegion>
+    </Page>
+</PcGts>
