@@ -150,6 +150,10 @@ h1{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:no
 .hover-hint-icon{width:15px;height:15px;border-radius:50%;background:var(--border);color:var(--muted);font-size:.65rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
 .zoom-controls{display:none;align-items:center;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:3px 8px;}
 .edit-mode .zoom-controls{display:flex;}
+.view-mode .zoom-controls{display:flex;}
+.view-mode #toggle-boxes-btn{display:none;}
+.view-mode #left-panel{cursor:grab;}
+.view-mode #left-panel.panning{cursor:grabbing;}
 .zoom-controls button{background:transparent;border:none;width:26px;height:26px;border-radius:4px;cursor:pointer;font-size:1rem;font-weight:700;color:var(--text);line-height:1;}
 .zoom-controls button:hover{background:var(--border);}
 .zoom-controls .zoom-fit-btn{width:auto;padding:0 8px;font-size:.75rem;font-weight:600;}
@@ -1952,16 +1956,39 @@ function sortLinesByColumn(lines, numColumns, strategy = 'histogram') {
   }
 
   const numCols = splitPoints.length + 1;
+
+  // Separate full-width spanning lines (titles/headings/footers) from column
+  // content, then re-merge them by Y — mirrors the Python engine so the browser
+  // build produces the same reading order (layout_engine.sort_lines_by_column).
+  let spanning = [], narrow = lines;
+  if (splitPoints.length) {
+    const spanThresh = spanningThreshold(lines, pageWidth);
+    spanning = lines.filter(l => l.bbox[2] >= spanThresh);
+    narrow   = lines.filter(l => l.bbox[2] <  spanThresh);
+  }
+
   const buckets = Array.from({ length: numCols }, () => []);
-  lines.forEach(l => {
+  narrow.forEach(l => {
     let col = numCols - 1;
     for (let i = 0; i < splitPoints.length; i++) { if (l.center_x < splitPoints[i]) { col = i; break; } }
     l.column = col;
     buckets[col].push(l);
   });
 
+  const narrowOrdered = [];
+  buckets.forEach(b => { b.sort((a, b) => a.sort_y - b.sort_y); narrowOrdered.push(...b); });
+
+  // Merge spanning lines back in at their vertical position.
+  spanning.forEach(l => { l.column = -1; });
+  spanning.sort((a, b) => a.sort_y - b.sort_y);
   const sortedLines = [];
-  buckets.forEach(b => { b.sort((a, b) => a.sort_y - b.sort_y); sortedLines.push(...b); });
+  let si = 0;
+  for (const item of narrowOrdered) {
+    while (si < spanning.length && spanning[si].sort_y < item.sort_y) { sortedLines.push(spanning[si]); si++; }
+    sortedLines.push(item);
+  }
+  while (si < spanning.length) { sortedLines.push(spanning[si]); si++; }
+
   return { sortedLines, colInfo: { numColumns: numCols, autoDetected, splitPoints, pageMinX: allMinX, pageWidth } };
 }
 
@@ -2075,7 +2102,7 @@ function generateTableHtml(sortedLines, numCols, pageMinX, pageWidth) {
 let allPages = [];
 let currentPageIdx = null;
 let lineCoords = {}, lineSortData = {}, linePolygons = {};
-let origWidth = 1, origHeight = 1, zoomLevel = null;
+let origWidth = 1, origHeight = 1, zoomLevel = null, mainZoom = null;
 let selectedIndices = new Set(); // gallery selection
 let viewSubset = null;           // null=all, or sorted array of allPages indices for current viewer session
 let loadGeneration = 0;          // guards against stale async loads
@@ -2487,9 +2514,36 @@ function applyZoom() {
   img.style.width=(img.naturalWidth*zoomLevel)+'px'; img.style.height='auto';
   scaleOverlayBoxes(); updateZoomDisplay();
 }
+function inViewMode(){ return document.getElementById('viewer-phase').className==='view-mode'; }
 function updateZoomDisplay() {
-  const el=document.getElementById('zoom-display');
-  if (el&&zoomLevel!==null) el.textContent=Math.round(zoomLevel*100)+'%';
+  const el=document.getElementById('zoom-display'); if(!el) return;
+  if (inViewMode()) { if (mainZoom!==null) el.textContent=Math.round(mainZoom*100)+'%'; }
+  else if (zoomLevel!==null) el.textContent=Math.round(zoomLevel*100)+'%';
+}
+// ── Side-by-Side scan zoom (so faint text is legible while editing) ──
+function mainFit(){
+  const lp=document.getElementById('left-panel'), img=document.getElementById('main-image');
+  if(!img||!img.naturalWidth) return 1;
+  return Math.min(1,(lp.clientWidth-48)/img.naturalWidth);
+}
+function applyMainZoom(){
+  const img=document.getElementById('main-image'); if(!img||!img.naturalWidth) return;
+  if(mainZoom===null) mainZoom=mainFit();
+  img.style.maxWidth='none'; img.style.width=(img.naturalWidth*mainZoom)+'px'; img.style.height='auto';
+  updateZoomDisplay();
+}
+function mainZoomAt(delta,cx,cy){
+  const lp=document.getElementById('left-panel'), img=document.getElementById('main-image');
+  if(!img||!img.naturalWidth) return;
+  if(mainZoom===null) mainZoom=mainFit();
+  const oldZ=mainZoom, newZ=Math.min(6,Math.max(0.1,oldZ+delta));
+  if(newZ===oldZ) return;
+  const r=img.getBoundingClientRect();
+  const relX=r.width?(cx-r.left)/r.width:0.5, relY=r.height?(cy-r.top)/r.height:0.5;
+  mainZoom=newZ; applyMainZoom();
+  const nr=img.getBoundingClientRect();
+  lp.scrollLeft += (nr.left+relX*nr.width)-cx;
+  lp.scrollTop  += (nr.top +relY*nr.height)-cy;
 }
 function zoomAt(delta,focusX,focusY) {
   if (zoomLevel===null) zoomLevel=getFitZoom();
@@ -2504,9 +2558,18 @@ function zoomAt(delta,focusX,focusY) {
   c.scrollLeft=Math.max(0,iX*newZ+nWL-focusX);
   c.scrollTop =Math.max(0,iY*newZ+wT-focusY);
 }
-function changeZoom(d){const c=document.getElementById('overlay-container');zoomAt(d,c.clientWidth/2,c.clientHeight/2);}
-function resetZoom(){zoomLevel=getFitZoom();applyZoom();const c=document.getElementById('overlay-container');c.scrollLeft=0;c.scrollTop=0;}
-function zoomTo1x(){const c=document.getElementById('overlay-container');zoomAt(1-(zoomLevel||getFitZoom()),c.clientWidth/2,c.clientHeight/2);}
+function changeZoom(d){
+  if(inViewMode()){const lp=document.getElementById('left-panel'),r=lp.getBoundingClientRect();mainZoomAt(d,r.left+lp.clientWidth/2,r.top+lp.clientHeight/2);return;}
+  const c=document.getElementById('overlay-container');zoomAt(d,c.clientWidth/2,c.clientHeight/2);
+}
+function resetZoom(){
+  if(inViewMode()){mainZoom=mainFit();applyMainZoom();const lp=document.getElementById('left-panel');lp.scrollLeft=0;lp.scrollTop=0;return;}
+  zoomLevel=getFitZoom();applyZoom();const c=document.getElementById('overlay-container');c.scrollLeft=0;c.scrollTop=0;
+}
+function zoomTo1x(){
+  if(inViewMode()){const lp=document.getElementById('left-panel'),r=lp.getBoundingClientRect();mainZoomAt(1-(mainZoom||mainFit()),r.left+lp.clientWidth/2,r.top+lp.clientHeight/2);return;}
+  const c=document.getElementById('overlay-container');zoomAt(1-(zoomLevel||getFitZoom()),c.clientWidth/2,c.clientHeight/2);
+}
 
 // ── Mode ──────────────────────────────────────────────────
 function setMode(mode) {
@@ -2899,6 +2962,28 @@ oc.addEventListener('mousedown',e=>{
 window.addEventListener('mousemove',e=>{ if(!isPanning) return; oc.scrollLeft=panStart.sl-(e.clientX-panStart.x); oc.scrollTop=panStart.st-(e.clientY-panStart.y); });
 window.addEventListener('mouseup',()=>{ if(!isPanning) return; isPanning=false; oc.classList.remove('panning'); document.body.style.userSelect=''; });
 
+// Side-by-Side scan: scroll to zoom, drag to pan (view mode only).
+const lpz = document.getElementById('left-panel');
+lpz.addEventListener('wheel', e => {
+  if (!inViewMode() || !document.getElementById('main-image').naturalWidth) return;
+  e.preventDefault();
+  mainZoomAt(e.deltaY < 0 ? 0.12 : -0.12, e.clientX, e.clientY);
+}, { passive:false });
+let mPan=false, mStart={};
+lpz.addEventListener('mousedown', e => {
+  if (!inViewMode() || !document.getElementById('main-image').naturalWidth) return;
+  mPan=true; mStart={x:e.clientX,y:e.clientY,sl:lpz.scrollLeft,st:lpz.scrollTop};
+  lpz.classList.add('panning'); document.body.style.userSelect='none'; e.preventDefault();
+});
+window.addEventListener('mousemove', e => { if(!mPan) return; lpz.scrollLeft=mStart.sl-(e.clientX-mStart.x); lpz.scrollTop=mStart.st-(e.clientY-mStart.y); });
+window.addEventListener('mouseup', () => { if(!mPan) return; mPan=false; lpz.classList.remove('panning'); document.body.style.userSelect=''; });
+// Re-fit the scan to the panel whenever a new page image loads (and clear any
+// stale inline width from a previous page's zoom).
+document.getElementById('main-image').addEventListener('load', () => {
+  mainZoom=null; const img=document.getElementById('main-image'); img.style.width=''; img.style.maxWidth='';
+  if (inViewMode()) requestAnimationFrame(applyMainZoom);
+});
+
 // ── Keyboard shortcuts ────────────────────────────────────
 document.addEventListener('keydown',e=>{
   if((e.ctrlKey||e.metaKey)&&e.key==='s'){e.preventDefault();triggerSave();return;}
@@ -2906,12 +2991,12 @@ document.addEventListener('keydown',e=>{
   if(e.target.closest('[contenteditable]')) return;
   if(document.getElementById('viewer-phase').style.display==='none') return;
   const vm = document.getElementById('viewer-phase').className==='edit-mode';
-  if(vm) {
+  if(vm || inViewMode()) {
     if(e.key==='+'||e.key==='='){e.preventDefault();changeZoom(0.25);}
     else if(e.key==='-'){e.preventDefault();changeZoom(-0.25);}
     else if(e.key==='0'){e.preventDefault();resetZoom();}
     else if(e.key==='1'){e.preventDefault();zoomTo1x();}
-    else if(e.key==='h'||e.key==='H'){e.preventDefault();toggleBoxes();}
+    else if(vm && (e.key==='h'||e.key==='H')){e.preventDefault();toggleBoxes();}
   }
   if(e.key==='ArrowLeft')  navPage(-1);
   if(e.key==='ArrowRight') navPage(1);
@@ -3124,28 +3209,32 @@ function exportPageHtml() {
   if (currentPageIdx === null) return;
   savePage(currentPageIdx);
   const p = allPages[currentPageIdx];
-  const img = p.imgSrc || document.getElementById('main-image')?.src || '';
-  const rows = [...document.querySelectorAll('#text-list .text-line')].map(el => {
-    const num = el.querySelector('.line-num')?.textContent || '';
-    const status = el.querySelector('.status-badge')?.dataset.status || 'unreviewed';
-    const text = el.querySelector('.line-content')?.innerText || '';
-    return `<tr><td class="n">${escH(num)}</td><td class="s">${escH(status)}</td><td class="t">${escH(text)}</td></tr>`;
-  }).join('');
+  // Plain columnar reading text — the columns as they read, and nothing else:
+  // no scan image, no review status, no line numbers (mirrors the Reading view).
+  const lineEls = [...document.querySelectorAll('#text-list .text-line')];
+  const colMap = new Map();
+  lineEls.forEach(el => {
+    const col = ([...el.classList].find(c => c.startsWith('col-')) || 'col-0').replace('col-', '');
+    if (!colMap.has(col)) colMap.set(col, []);
+    colMap.get(col).push(el.querySelector('.line-content')?.innerText || '');
+  });
+  // Pad up to the page's expected column count so empty columns still appear.
+  const expectedCols = allPages[currentPageIdx]?.colCount || 0;
+  const maxIdx = Math.max(expectedCols - 1, ...[...colMap.keys()].map(Number), 0);
+  for (let i = 0; i <= maxIdx; i++) if (!colMap.has(String(i))) colMap.set(String(i), []);
+  const sorted = [...colMap.entries()].sort((a, b) => Number(a[0]) - Number(b[0]));
+  const cols = sorted
+    .map(([, lines]) => `<div class="col">${lines.map(t => `<p>${escH(t)}</p>`).join('')}</div>`)
+    .join('');
   const title = escH(p.title || 'page');
-  const html = `<!doctype html><html><head><meta charset="utf-8"><title>${title} — seanc-has</title>
-<style>body{font-family:-apple-system,'Segoe UI',sans-serif;margin:0;background:#f4ece0;color:#211d16}
-header{padding:14px 20px;background:#1c140c;color:#f5ede0;font-weight:700}
-.wrap{display:flex;gap:20px;padding:20px;align-items:flex-start;flex-wrap:wrap}
-.scan{flex:1 1 340px;max-width:48%}.scan img{width:100%;border:1px solid #c6b995;border-radius:6px}
-.lines{flex:1 1 340px}table{border-collapse:collapse;width:100%;background:#fcf9f1;border:1px solid #c6b995;border-radius:6px;overflow:hidden}
-td{padding:6px 10px;border-bottom:1px solid #ece0c8;vertical-align:top;font-size:14px}
-td.n{color:#9a8c70;width:34px;text-align:right;font-variant-numeric:tabular-nums}
-td.s{width:88px;font-size:11px;text-transform:uppercase;color:#7a6f5b}
-td.t{font-family:'Iowan Old Style',Palatino,Georgia,serif;font-size:16px}
-@media(max-width:720px){.scan{max-width:100%}}</style></head>
-<body><header>seanc-has · ${title}</header><div class="wrap">
-<div class="scan">${img ? `<img src="${img}" alt="${title}">` : ''}</div>
-<div class="lines"><table>${rows}</table></div></div></body></html>`;
+  const html = `<!doctype html><html><head><meta charset="utf-8"><title>${title}</title>
+<style>body{font-family:'Iowan Old Style',Palatino,Georgia,serif;margin:0;padding:28px;color:#1a1a1a;background:#fff;line-height:1.5}
+h1{font:600 14px/1.3 -apple-system,'Segoe UI',sans-serif;color:#666;margin:0 0 22px;text-transform:none}
+.cols{display:flex;gap:34px;align-items:flex-start}
+.col{flex:1;min-width:0}
+.col p{margin:0 0 .4em}
+@media(max-width:640px){.cols{flex-direction:column}}</style></head>
+<body><h1>${title}</h1><div class="cols">${cols}</div></body></html>`;
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
   a.download = (p.title || 'page').replace(/[/\\:*?"<>|]/g, '_') + '.html';
