@@ -221,8 +221,9 @@ h1{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:no
 .text-line.active-line{background:var(--success-bg);border-color:var(--success)!important;}
 .line-meta{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:90px;flex-shrink:0;}
 .line-num{font-size:.75rem;font-weight:600;color:var(--muted);background:var(--surface-2);padding:2px 8px;border-radius:3px;font-variant-numeric:tabular-nums;}
-.line-content{flex:1;font-family:var(--font-doc);font-size:1.125rem;line-height:1.5;outline:none;}
-.line-content[contenteditable]:focus{background:#faf3dc;padding:4px 8px;margin:-4px -8px;border-radius:3px;}
+.line-content{flex:1;font-family:var(--font-doc);font-size:1.125rem;line-height:1.5;outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s;}
+.line-content[contenteditable]:hover{background:rgba(250,243,220,.55);box-shadow:inset 0 0 0 1px var(--border-strong);}
+.line-content[contenteditable]:focus{background:#faf3dc;padding:4px 8px;margin:-4px -8px;border-radius:3px;box-shadow:inset 0 0 0 2px var(--primary);}
 .status-badge{font-size:.68rem;font-weight:600;padding:4px 9px;border-radius:3px;cursor:pointer;user-select:none;text-transform:uppercase;letter-spacing:.05em;border:1px solid transparent;transition:filter .2s;}
 .status-badge:hover{filter:brightness(.95);}
 [data-status="unreviewed"]{background:var(--unreviewed-bg);color:var(--muted);border-color:var(--unreviewed);}
@@ -552,13 +553,13 @@ h1{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:no
         <div class="export-dropdown">
           <button class="export-toggle-btn" onclick="toggleExportMenu(event)" title="Export options">Export ▾</button>
           <div class="export-menu" id="export-menu">
-            <button id="btn-export-png" onclick="exportPNG();closeExportMenu()">🖼 &nbsp;Export PNG (page layout)</button>
+            <button id="btn-export-png" onclick="exportPNG();closeExportMenu()">🖼 &nbsp;Save as a picture (PNG · page layout)</button>
             <div class="menu-sep"></div>
-            <button onclick="exportPageHtml();closeExportMenu()">⬇ &nbsp;Download HTML (page layout · selectable)</button>
+            <button onclick="exportPageHtml();closeExportMenu()">⬇ &nbsp;Save as a web page (HTML · selectable text)</button>
             <div class="menu-sep"></div>
-            <button onclick="exportXML();closeExportMenu()">📄 &nbsp;Download corrected XML (this page)</button>
+            <button onclick="exportXML();closeExportMenu()">📄 &nbsp;Save the corrected transcription (PAGE XML)</button>
             <div class="menu-sep"></div>
-            <button onclick="downloadBook();closeExportMenu()">📚 &nbsp;Download all pages (HTML)</button>
+            <button onclick="downloadBook();closeExportMenu()">📚 &nbsp;Save all pages as one web page (HTML)</button>
           </div>
         </div>
       </div>
@@ -645,7 +646,7 @@ h1{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:no
             </div>
             <span class="rp-hint">Select text to copy</span>
           </div>
-          <div class="status-legend" id="status-legend">Tip: click a line’s tag to mark it — <b>Unreviewed → Verified → Corrected → Uncertain</b>.</div>
+          <div class="status-legend" id="status-legend">Tip: click a line’s <b>text</b> to edit it, or click its <b>tag</b> to mark it — <b>Unreviewed → Verified → Corrected → Uncertain</b>.</div>
           <div id="text-list"></div>
           <div id="text-view"></div>
         </div>
@@ -1523,7 +1524,9 @@ async function processTask(task, forceCols, faithful = false) {
     origWidth,
     origHeight,
     colCount:       colInfo.numColumns,
-    detectionLabel: colInfo.autoDetected ? 'auto-detected' : 'set manually',
+    // Faithful loads (imports / version restores) take their reading order from
+    // the file, not the user or the auto-detector — label it honestly.
+    detectionLabel: faithful ? 'imported' : (colInfo.autoDetected ? 'auto-detected' : 'set manually'),
     rawLines,
     xmlText,
     lineCoords:     Object.fromEntries(sortedLines.map((l,i) => [i, l.bbox])),
@@ -2055,7 +2058,7 @@ function generateTextList(lines) {
   if (!lines.length) return '<div class="no-lines-msg">No transcription available for this page.</div>';
   return lines.map((l,i) => {
     const col = (l.column >= 0) ? l.column : 0; // -1 = spanning line → treat as col 0
-    return `<div class="text-line col-${col}" data-id="${i}"><div class="line-meta"><span class="line-num">${i+1}</span><span class="status-badge" data-status="unreviewed" onclick="cycleStatus('${i}')" title="Click to cycle: Unreviewed → Verified → Corrected → Uncertain">Unreviewed</span></div><div class="line-content" contenteditable="true">${escH(l.text)}</div></div>`;
+    return `<div class="text-line col-${col}" data-id="${i}"><div class="line-meta"><span class="line-num">${i+1}</span><span class="status-badge" data-status="unreviewed" onclick="cycleStatus('${i}')" title="Click to cycle: Unreviewed → Verified → Corrected → Uncertain">Unreviewed</span></div><div class="line-content" contenteditable="true" title="Click to edit this line">${escH(l.text)}</div></div>`;
   }).join('');
 }
 
@@ -2252,7 +2255,7 @@ async function exportPNG() {
   } catch (e) {
     alert('PNG export failed: ' + e.message);
   } finally {
-    if (btn) { btn.textContent = '🖼 Export PNG'; btn.disabled = false; }
+    if (btn) { btn.textContent = '🖼  Save as a picture (PNG · page layout)'; btn.disabled = false; }
   }
 }
 
@@ -2401,7 +2404,7 @@ async function loadPage(idx) {
   origHeight    = p.origHeight || 1;
 
   document.getElementById('col-label').textContent =
-    `${p.colCount} column${p.colCount === 1 ? '' : 's'} ${p.detectionLabel === 'auto-detected' ? '(detected automatically)' : '(set by you)'}`;
+    `${p.colCount} column${p.colCount === 1 ? '' : 's'} ${p.detectionLabel === 'auto-detected' ? '(detected automatically)' : p.detectionLabel === 'imported' ? '(from the transcription file)' : '(set by you)'}`;
   document.querySelectorAll('.col-btn').forEach((b,i) =>
     b.classList.toggle('active-col', i+1===p.colCount));
 
@@ -2508,6 +2511,11 @@ function setMode(mode) {
   const appEl = document.getElementById('app');
 
   const isGallery = mode === 'gallery';
+  // Leaving the editor for the gallery: snapshot the open page's edits + review
+  // marks into memory so reopening it restores them (they'd otherwise live only
+  // in the DOM and be lost on the gallery rebuild). The dirty dot still flags
+  // that they aren't yet persisted to the version store via Save.
+  if (isGallery && currentPageIdx !== null && allPages[currentPageIdx]) savePage(currentPageIdx);
   if (isGallery) {
     galleryView.classList.add('active');
     appEl.style.display = 'none';
@@ -2793,6 +2801,23 @@ async function setPageColumns(idx, n, strategy) {
     ({ sortedLines, colInfo } = sortLinesByColumn(linesCopy, n, strat));
   }
 
+  // Preserve the user's per-line review statuses and text edits across the
+  // re-sort. They are keyed by the *old* sorted index, which the new column
+  // count invalidates, so re-key them by a stable physical-line identity
+  // (polygon points, else region+bbox) and re-apply onto the new indices below.
+  // Without this, changing the column count silently discards marks + edits.
+  const _lineKey = (pts, regionId, bbox) =>
+    (pts && pts.length ? pts : '') || `${regionId || 'tr_1'}#${(bbox || []).join(',')}`;
+  const _oldPolys = p.linePolygons || {}, _oldRegions = p.lineRegionIds || {}, _oldCoords = p.lineCoords || {};
+  const _carry = {}, _carryTable = {};
+  new Set([...Object.keys(p.statuses || {}), ...Object.keys(p.texts || {})]).forEach(id => {
+    _carry[_lineKey(_oldPolys[id], _oldRegions[id], _oldCoords[id])] =
+      { status: (p.statuses || {})[id], text: (p.texts || {})[id] };
+  });
+  Object.keys(p.tableEdits || {}).forEach(id => {
+    _carryTable[_lineKey(_oldPolys[id], _oldRegions[id], _oldCoords[id])] = p.tableEdits[id];
+  });
+
   p.colCount        = colInfo.numColumns;
   p.detectionLabel  = n ? 'set manually' : (colInfo.autoDetected ? 'auto-detected' : 'set manually');
   p.lineCoords      = Object.fromEntries(sortedLines.map((l,i) => [i, l.bbox]));
@@ -2802,7 +2827,21 @@ async function setPageColumns(idx, n, strategy) {
   p.linesHtml       = generateTextList(sortedLines);
   p.overlayHtml     = generateOverlayBoxes(sortedLines);
   p.tableHtml       = generateTableHtml(sortedLines, colInfo.numColumns, colInfo.pageMinX || 0, colInfo.pageWidth || 1000);
-  p.tableEdits      = {};
+
+  // Re-map the preserved statuses/edits onto the new line indices by identity.
+  const _newStatuses = {}, _newTexts = {}, _newTableEdits = {};
+  sortedLines.forEach((l, i) => {
+    const k = _lineKey((l.points||[]).map(pt=>pt.join(',')).join(' '), l._regionId, l.bbox);
+    const c = _carry[k];
+    if (c) {
+      if (c.status && c.status !== 'unreviewed') _newStatuses[i] = c.status;
+      if (c.text != null) _newTexts[i] = c.text;
+    }
+    if (_carryTable[k] != null) _newTableEdits[i] = _carryTable[k];
+  });
+  p.statuses   = _newStatuses;
+  p.texts      = _newTexts;
+  p.tableEdits = _newTableEdits;
 }
 
 // ── Editing sync (delegated once, survives innerHTML replacement) ─────────────
@@ -2811,6 +2850,7 @@ document.getElementById('text-list').addEventListener('input', e => {
   if (!lc) return;
   markDirty();
   const id = lc.closest('.text-line').dataset.id;
+  autoMarkCorrected(id);
   const ot = document.querySelector(`.overlay-box[data-id="${id}"] .overlay-text`);
   if (ot && ot.innerHTML !== lc.innerHTML) ot.innerHTML = lc.innerHTML;
 });
@@ -2819,6 +2859,7 @@ document.getElementById('overlay-boxes').addEventListener('input', e => {
   if (!ot) return;
   markDirty();
   const id = ot.closest('.overlay-box').dataset.id;
+  autoMarkCorrected(id);
   const lc = document.querySelector(`.text-line[data-id="${id}"] .line-content`);
   if (lc && lc.innerHTML !== ot.innerHTML) lc.innerHTML = ot.innerHTML;
 });
@@ -2953,12 +2994,19 @@ function cycleStatus(id){
   setStatus(id,STATUS_CYCLE[(STATUS_CYCLE.indexOf(b.dataset.status)+1)%STATUS_CYCLE.length]);
   markDirty();
 }
+// Editing a line's text implies it was corrected — promote Unreviewed → Corrected
+// automatically (never override a status the user chose deliberately).
+function autoMarkCorrected(id){
+  const b=document.querySelector(`.text-line[data-id="${id}"] .status-badge`);
+  if(b && b.dataset.status==='unreviewed') setStatus(id,'corrected');
+}
 function setupSync(){
   // No-op: sync is handled by delegated listeners wired once at startup.
 }
 
 function syncFromTable(id, el) {
   const html = el.innerHTML;
+  autoMarkCorrected(id);
   const lc = document.querySelector(`#text-list .text-line[data-id="${id}"] .line-content`);
   if (lc && lc.innerHTML !== html) lc.innerHTML = html;
   const ot = document.querySelector(`.overlay-box[data-id="${id}"] .overlay-text`);
@@ -3023,6 +3071,19 @@ async function reSort(numCols) {
   textList.innerHTML                                 = p.linesHtml;
   document.getElementById('overlay-boxes').innerHTML = p.overlayHtml;
   document.getElementById('table-panel').innerHTML   = p.tableHtml || '';
+  // Re-apply the text edits + review statuses that setPageColumns just re-keyed
+  // onto the new line indices (the freshly rendered HTML starts unreviewed/raw).
+  Object.entries(p.tableEdits || {}).forEach(([id, html]) => {
+    const cell = document.querySelector(`#table-panel [data-id="${id}"] .tbl-text`);
+    if (cell) cell.innerHTML = html;
+  });
+  Object.entries(p.texts || {}).forEach(([id, html]) => {
+    const lc = document.querySelector(`#text-list .text-line[data-id="${id}"] .line-content`);
+    if (lc) lc.innerHTML = html;
+    const ot = document.querySelector(`.overlay-box[data-id="${id}"] .overlay-text`);
+    if (ot) ot.innerHTML = html;
+  });
+  Object.entries(p.statuses || {}).forEach(([id, s]) => setStatus(id, s));
   document.getElementById('col-label').textContent   =
     `${p.colCount} col · ${p.detectionLabel === 'auto-detected' ? 'auto' : 'manual'}`;
   document.querySelectorAll('.col-btn').forEach((b,i) => b.classList.toggle('active-col', i+1===p.colCount));
