@@ -2360,9 +2360,10 @@ function buildViewer() {
 
 function uploadMore() {
   if (currentPageIdx !== null) savePage(currentPageIdx);
-  // If we're inside a specific folder, new files join it (deepest segment).
-  uploadContext = previewIdx != null && allPages[previewIdx] && (allPages[previewIdx].pathSegs||[]).length
-    ? allPages[previewIdx].pathSegs[allPages[previewIdx].pathSegs.length - 1] : null;
+  // New uploads always come in independently — a loose file as a standalone page,
+  // a dropped folder as its own new folder — never nested under an already-added
+  // folder, regardless of which folder is currently open.
+  uploadContext = null;
   document.title = 'seanc-has';
   document.getElementById('viewer-phase').style.display = 'none';
   const up = document.getElementById('upload-phase');
