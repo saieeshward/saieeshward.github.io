@@ -552,7 +552,7 @@ h1{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:no
         <div class="export-dropdown">
           <button class="export-toggle-btn" onclick="toggleExportMenu(event)" title="Export options">Export ▾</button>
           <div class="export-menu" id="export-menu">
-            <button id="btn-export-png" onclick="exportPNG();closeExportMenu()">🖼 &nbsp;Export PNG (this page)</button>
+            <button id="btn-export-png" onclick="exportPNG();closeExportMenu()">🖼 &nbsp;Export PNG (page layout)</button>
             <div class="menu-sep"></div>
             <button onclick="exportPageHtml();closeExportMenu()">⬇ &nbsp;Download HTML (page layout · selectable)</button>
             <div class="menu-sep"></div>
@@ -2192,136 +2192,45 @@ async function exportPNG() {
   if (btn) { btn.textContent = 'Exporting…'; btn.disabled = true; }
 
   try {
-    // ── Collect lines grouped by column ────────────────────
-    // Always read from text-list even if it's display:none (Text mode).
-    // Use innerHTML trick to force WebKit to expose hidden subtree.
-    const colLines = new Map();
-    const numCols  = p.colCount || 1;
-    for (let i = 0; i < numCols; i++) colLines.set(i, []);
+    // ── Layout-faithful render ──────────────────────────────
+    // Place each line at its ORIGINAL page coordinates (the same arrangement as
+    // the scan), sized to its line height but shrunk to fit the box width —
+    // measured exactly on the canvas — so long lines don't overflow into the next
+    // column. No scan image; paper background. (A PNG is a raster, so this is not
+    // selectable — use the HTML export for selectable text.)
+    const W = origWidth || 1000, H = origHeight || 1400;
+    const SCALE = Math.min(3, Math.max(1.4, 2400 / W));   // ~2400px-wide crisp render
+    const canvas = document.createElement('canvas');
+    canvas.width  = Math.round(W * SCALE);
+    canvas.height = Math.round(H * SCALE);
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fdfaf1';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#161310';
+    ctx.textBaseline = 'top';
+    const FACE = 'px "Iowan Old Style", Palatino, Georgia, "Times New Roman", serif';
 
-    // Parse from the stored linesHtml if text-list is hidden (WebKit display:none bug)
-    const textList = document.getElementById('text-list');
-    const isHidden = textList.style.display === 'none';
-    let lineEls;
-    if (isHidden) {
-      // Temporarily show, query, re-hide
-      textList.style.display = '';
-      lineEls = [...textList.querySelectorAll('.text-line')];
-      textList.style.display = 'none';
-    } else {
-      lineEls = [...textList.querySelectorAll('.text-line')];
-    }
+    // Read lines in reading order, even when the text list is display:none (WebKit).
+    const textList  = document.getElementById('text-list');
+    const wasHidden = textList.style.display === 'none';
+    if (wasHidden) textList.style.display = '';
+    const lineEls   = [...textList.querySelectorAll('.text-line')];
+    if (wasHidden) textList.style.display = 'none';
 
     lineEls.forEach(el => {
-      const col  = parseInt(([...el.classList].find(c => c.startsWith('col-')) || 'col-0').replace('col-',''));
+      const bb   = lineCoords[el.dataset.id];
       const text = el.querySelector('.line-content')?.innerText?.trim() || '';
-      const num  = el.querySelector('.line-num')?.textContent?.trim() || '';
-      const key  = Math.min(col, numCols - 1);
-      if (!colLines.has(key)) colLines.set(key, []);
-      colLines.get(key).push({ num, text });
+      if (!bb || !text) return;
+      const [x, y, w, h] = bb;
+      let fs = h * 0.9 * SCALE;                         // start from the line height
+      ctx.font = fs + FACE;
+      const measured = ctx.measureText(text).width, maxW = w * SCALE;
+      if (measured > maxW && measured > 0) {            // shrink to fit the box width
+        fs *= maxW / measured;
+        ctx.font = fs + FACE;
+      }
+      ctx.fillText(text, x * SCALE, y * SCALE);
     });
-
-    // ── Canvas layout constants ─────────────────────────────
-    const SCALE    = 2;           // retina
-    const PW       = 1200 * SCALE;
-    const MARGIN_X = 56  * SCALE;
-    const MARGIN_T = 72  * SCALE;
-    const MARGIN_B = 64  * SCALE;
-    const COL_GAP  = 28  * SCALE;
-    const LINE_H   = 26  * SCALE;
-    const FONT_SZ  = 15  * SCALE;
-    const NUM_SZ   = 11  * SCALE;
-    const TITLE_SZ = 16  * SCALE;
-    const NUM_W    = 28  * SCALE;
-
-    // Column accent colours (match --col-0..5 CSS vars)
-    const COL_COLORS = ['#3c5d7c','#5d7747','#b4452c','#b07f24','#74487e','#2e7d7b'];
-
-    const colW   = (PW - MARGIN_X * 2 - COL_GAP * (numCols - 1)) / numCols;
-    const maxRows = Math.max(...[...colLines.values()].map(ls => ls.length), 1);
-    const PH     = MARGIN_T + maxRows * LINE_H + MARGIN_B;
-
-    const canvas = document.createElement('canvas');
-    canvas.width  = PW;
-    canvas.height = PH;
-    const ctx = canvas.getContext('2d');
-
-    ctx.fillStyle = '#ffffff';
-    ctx.fillRect(0, 0, PW, PH);
-
-    // Title
-    ctx.font      = `700 ${TITLE_SZ}px "Iowan Old Style", Palatino, Georgia, serif`;
-    ctx.fillStyle = '#211d16';
-    ctx.fillText(p.title || '', MARGIN_X, MARGIN_T - 28 * SCALE);
-
-    // Column dividers (only if multi-column)
-    if (numCols > 1) {
-      ctx.strokeStyle = '#ddd3bd';
-      ctx.lineWidth   = 1 * SCALE;
-      for (let c = 1; c < numCols; c++) {
-        const dx = MARGIN_X + c * (colW + COL_GAP) - COL_GAP / 2;
-        ctx.beginPath();
-        ctx.moveTo(dx, MARGIN_T - 12 * SCALE);
-        ctx.lineTo(dx, PH - MARGIN_B);
-        ctx.stroke();
-      }
-    }
-
-    // Text lines per column
-    for (let c = 0; c < numCols; c++) {
-      const lines = colLines.get(c) || [];
-      const colX  = MARGIN_X + c * (colW + COL_GAP);
-      const accentColor = COL_COLORS[c % COL_COLORS.length];
-
-      // Column header label (multi-col only)
-      if (numCols > 1) {
-        ctx.font      = `600 ${NUM_SZ}px Seravek, "Avenir Next", system-ui, sans-serif`;
-        ctx.fillStyle = accentColor;
-        ctx.fillText(`Column ${c + 1}`, colX + NUM_W, MARGIN_T - 10 * SCALE);
-      }
-
-      lines.forEach(({ num, text }, row) => {
-        const y = MARGIN_T + row * LINE_H + FONT_SZ;
-
-        ctx.font      = `${NUM_SZ}px Seravek, "Avenir Next", system-ui, sans-serif`;
-        ctx.fillStyle = '#a89c84';
-        ctx.textAlign = 'right';
-        ctx.fillText(num, colX + NUM_W - 4 * SCALE, y);
-
-        ctx.font      = `${FONT_SZ}px Charter, "Iowan Old Style", Georgia, "Times New Roman", serif`;
-        ctx.fillStyle = '#211d16';
-        ctx.textAlign = 'left';
-
-        // Wrap long lines to fit column width
-        const maxW  = colW - NUM_W - 4 * SCALE;
-        const words = text.split(' ');
-        let line    = '';
-        let wy      = y;
-        words.forEach(word => {
-          const test = line ? line + ' ' + word : word;
-          if (ctx.measureText(test).width > maxW && line) {
-            ctx.fillText(line, colX + NUM_W, wy);
-            line = word;
-            wy  += LINE_H;
-          } else {
-            line = test;
-          }
-        });
-        if (line) ctx.fillText(line, colX + NUM_W, wy);
-      });
-    }
-
-    // Footer rule
-    ctx.strokeStyle = '#ddd3bd';
-    ctx.lineWidth   = 1 * SCALE;
-    ctx.beginPath();
-    ctx.moveTo(MARGIN_X, PH - MARGIN_B + 10 * SCALE);
-    ctx.lineTo(PW - MARGIN_X, PH - MARGIN_B + 10 * SCALE);
-    ctx.stroke();
-    ctx.font      = `${NUM_SZ}px Seravek, "Avenir Next", system-ui, sans-serif`;
-    ctx.fillStyle = '#a89c84';
-    ctx.textAlign = 'left';
-    ctx.fillText(`${numCols} column${numCols !== 1 ? 's' : ''} · ${p.detectionLabel || ''} · seanc-has`, MARGIN_X, PH - 18 * SCALE);
 
     // ── Save ───────────────────────────────────────────────
     const dataUrl  = canvas.toDataURL('image/png');
