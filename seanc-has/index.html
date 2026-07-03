@@ -1461,8 +1461,16 @@ async function processTask(task, forceCols, faithful = false) {
     // Only compress thumb upfront — full image is lazy-loaded on first view
     const thumb = await compressImage(task.img, 180, 0.65);
     thumbSrc   = 'data:image/jpeg;base64,' + thumb.b64;
-    origWidth  = thumb.origWidth;
-    origHeight = thumb.origHeight;
+    // The coordinate space is the XML's <Page imageWidth/imageHeight>, NOT the
+    // scan's pixel size — transcription may have been done on a downscaled copy
+    // (e.g. NLI Keane: coords live in a ~1106-wide space while the scan is
+    // ~6003px). Only adopt the image's dimensions when there is no XML to
+    // anchor the coordinates; otherwise the boxes render scaled to the wrong
+    // reference and collapse into the top-left corner.
+    if (!task.xml) {
+      origWidth  = thumb.origWidth;
+      origHeight = thumb.origHeight;
+    }
     // imgSrc stays null; loaded at 1600px on first loadPage()
   } else {
     imgSrc   = makePlaceholderSVG(task.stem, origWidth, origHeight);
