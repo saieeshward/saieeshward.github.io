@@ -706,10 +706,11 @@ const CONTAINER_DIRS = new Set(['images','image','img','imgs','transcript','tran
 // OPENED root — used to build the gallery's nested folder tree. rel_path is
 // relative to folder.parent, so the first segment (the opened folder) is dropped,
 // as is a trailing container dir (images/transcript/…). [] means "at the root".
-function folderSegs(relativePath) {
+function folderSegs(relativePath, stripRoot = true) {
   const parts = (relativePath || '').split('/').filter(Boolean);
   if (parts.length <= 1) return [];          // bare filename
-  let dirs = parts.slice(0, -1).slice(1);    // drop filename, then the opened-folder segment
+  let dirs = parts.slice(0, -1);             // drop filename
+  if (stripRoot) dirs = dirs.slice(1);       // drop the single opened-root segment (see generate())
   if (dirs.length && CONTAINER_DIRS.has(dirs[dirs.length - 1].toLowerCase())) dirs = dirs.slice(0, -1);
   return dirs;
 }
@@ -1341,7 +1342,18 @@ async function generate() {
   // location so the gallery mirrors the real tree at any depth. Loose uploads with
   // no folder structure are batched under a single "Upload N" segment; adding into
   // a chosen folder nests under it.
-  const segsFor = (stem) => folderSegs(xmlRelMap.get(stem) || imageRelMap.get(stem) || '');
+  // Strip the leading path segment only when the whole upload shares ONE top-level
+  // folder (a single opened folder, or the bundled test-documents root) — there it
+  // is a redundant wrapper. When the upload spans SEVERAL top-level folders (e.g. two
+  // folders dropped together), keep that segment so each becomes its own gallery
+  // folder instead of collapsing into one "Upload N" batch.
+  const relOf = (stem) => xmlRelMap.get(stem) || imageRelMap.get(stem) || '';
+  const topFolders = new Set(
+    tasks.map(t => { const p = relOf(t.stem).split('/').filter(Boolean); return p.length > 1 ? p[0] : null; })
+         .filter(Boolean)
+  );
+  const stripRoot = topFolders.size <= 1;
+  const segsFor = (stem) => folderSegs(relOf(stem), stripRoot);
   const anyRootLevel = tasks.some(t => segsFor(t.stem).length === 0);
   const newBatch = (uploadContext === null && anyRootLevel && tasks.length > 1)
     ? `Upload ${++batchCount}` : null;
