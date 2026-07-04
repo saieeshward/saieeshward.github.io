@@ -4044,5 +4044,30 @@ if (window.pywebview) {
     </div>
   </div>
 </div>
+
+<!-- Privacy-preserving visit counter (web build only). Increments an opaque
+     aggregate total once per browser session via a fire-and-forget request.
+     It sets no cookies and records nothing about the visitor — only a running
+     count is stored server-side. Skipped in the desktop app (which keeps
+     everything local) and silently no-ops offline or if storage is blocked. -->
+<script>
+(function () {
+  function beacon() {
+    if (window.pywebview) return;                 // desktop app never phones home
+    var already = false;
+    try {
+      already = !!sessionStorage.getItem('sh_visit_counted');
+      if (!already) sessionStorage.setItem('sh_visit_counted', '1');
+    } catch (e) { /* storage disabled (private mode) — still count once */ }
+    if (already) return;
+    try {
+      fetch('https://abacus.jasoncameron.dev/hit/seanc-has-eval-2026/visits',
+            { mode: 'no-cors', cache: 'no-store', keepalive: true }).catch(function () {});
+    } catch (e) { /* offline / blocked — ignore */ }
+  }
+  if (document.readyState !== 'loading') setTimeout(beacon, 600);
+  else document.addEventListener('DOMContentLoaded', function () { setTimeout(beacon, 600); });
+})();
+</script>
 </body>
 </html>
