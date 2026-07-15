@@ -14,7 +14,7 @@
   <meta name="twitter:image" content="assets/profile.jpg" />
   <title>Sai Eeshwar D - sheesh.</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
@@ -32,7 +32,10 @@
           <p class="hero-greeting">Hello, I'm</p>
           <h1 class="hero-name">Sai Eeshwar <span class="text-accent">D</span></h1>
           <p class="hero-typed">I'm <span id="typed"></span></p>
-          <p class="hero-bio">I bring people together through <span class="hero-highlight">code</span>, <span class="hero-highlight">food</span>, and <span class="hero-highlight">stories</span>. I've published research, filed a patent, shipped a product people actually use, and I still cook brunch on weekends. Doing my MSc at <strong>Trinity College Dublin</strong>.</p>
+          <p class="status-line" aria-label="Current status">
+            <span class="status-prompt">&gt;</span> currently: MSc Intelligent Systems @ TCD &middot; building CLAN<span class="status-cursor"></span>
+          </p>
+          <p class="hero-bio">I bring people together through <span class="hero-highlight">code</span>, <span class="hero-highlight">food</span>, and <span class="hero-highlight">stories</span>. I build systems that learn, and I ship them: published research, a patent, a live product, and agents that hand off cleanly. I still cook brunch on weekends. Doing my MSc at <strong>Trinity College Dublin</strong>.</p>
           <div class="hero-actions">
             <a href="projects.html" class="btn btn-accent">View My Work</a>
             <a href="contact.html" class="btn btn-outline-accent">Get In Touch</a>
@@ -193,7 +196,7 @@
   </section>
 
   <!-- ========== SKILLS ========== -->
-  <section class="skills-strip-section section-alt">
+  <section class="skills-strip-section section-alt grid-texture">
     <div class="container">
       <h2 class="section-heading">What I Work With<span class="text-accent">.</span></h2>
       <div class="row mt-4">
@@ -308,7 +311,7 @@
     <div class="container">
       <div class="contact-cta-inner text-center">
         <h2 class="section-heading">What's Next<span class="text-accent">.</span></h2>
-        <p class="cta-subtitle">May it be a collaboration, work, or just a coffee, contact me.</p>
+        <p class="cta-subtitle">Research collaborations, agent systems, product ideas, or just coffee in Dublin. My inbox is open.</p>
         <div class="cta-actions">
           <a href="mailto:saieeshwar03@gmail.com" class="btn btn-accent">saieeshwar03@gmail.com</a>
           <a href="contact.html" class="btn btn-outline-accent">All Socials</a>
@@ -322,6 +325,7 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/typed.js/typed.min.js"></script>
+  <script src="js/neural-bg.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -7,19 +7,24 @@
 
   // --- Typed.js (Home page only) ---
   if (document.getElementById("typed")) {
-    new Typed("#typed", {
-      strings: [
-        "an AI Engineer ^3000",
-        "an ML Researcher",
-        "a Sous Chef",
-        "a Video Editor"
-      ],
-      typeSpeed: 55,
-      backSpeed: 30,
-      backDelay: 2000,
-      loop: true,
-      smartBackspace: true
-    });
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.getElementById("typed").textContent = "an AI Engineer";
+    } else {
+      new Typed("#typed", {
+        strings: [
+          "an AI Engineer ^3000",
+          "an ML Researcher",
+          "a Systems Builder",
+          "a Sous Chef",
+          "a Video Editor"
+        ],
+        typeSpeed: 55,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true,
+        smartBackspace: true
+      });
+    }
   }
 
   // --- Navbar shrink on scroll ---

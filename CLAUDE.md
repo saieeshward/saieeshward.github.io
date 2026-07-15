@@ -18,7 +18,7 @@
 
 ## Tech stack
 - Plain static HTML + Bootstrap (vendored in `vendor/bootstrap/`), jQuery, Typed.js.
-- Fonts: Poppins, Inter, Playfair Display (Google Fonts). Icons: Font Awesome 6.5.1 (CDN).
+- Fonts: Poppins, Inter, Playfair Display, JetBrains Mono (Google Fonts). Icons: Font Awesome 6.5.1 (CDN).
 - No framework, no bundler. Edit HTML/CSS/JS directly.
 
 ## File structure
@@ -28,11 +28,12 @@ projects.html      Projects grid + filter tags
 experience.html    Work timeline, education, skills, certifications
 research.html      Patent, publications, articles, dish gallery, video portfolio
 contact.html       Contact card + social grid
-404.html           Not-found page
+404.html           Not-found page (terminal-styled, standalone: loads only style.css)
 robots.txt, sitemap.xml
 css/style.css      All styling (single file)
 js/components.js   Shared navbar + footer (getNavbar / getFooter) — edit once, applies everywhere
 js/main.js         Page scripts (typed.js init, etc.)
+js/neural-bg.js    Faint node-mesh canvas behind the home hero (index.html only)
 images/            Dish photos (IMG_*.JPG)
 assets/            profile.png, favicon.svg, reports/ (PDFs, decks, interactive html)
 vendor/            bootstrap, jquery, typed.js
@@ -40,13 +41,16 @@ vendor/            bootstrap, jquery, typed.js
 
 ## Shared components (js/components.js)
 - **Navbar:** `getNavbar('<activePage>')` where activePage ∈ home|projects|experience|research|contact. Pages array drives nav links. Brand = "sheesh.". Includes Resume link → `assets/reports/Resume_Sai_eeshwar_D_.pdf`.
-- **Footer:** `getFooter()` — auto year via `new Date().getFullYear()`, social icons.
+- **Footer:** `getFooter()` — auto year via `new Date().getFullYear()`, social icons. Footer line: "Built by hand. No framework, no build step."
 - Every page calls these via `document.write(...)`.
+- components.js also prints a "model card" easter egg to the devtools console on every page.
 
 ## Conventions
 - **No em dashes (—) or en dashes (–) in text.** Use a spaced hyphen ` - ` for title/label separators (e.g. `Projects - Sai Eeshwar D`), commas/periods in prose. (Date ranges in timelines still use the `&ndash;` HTML entity, e.g. "Dec 2023 &ndash; May 2024" — that's intentional range typography.)
 - **Accent dot:** headings end with `<span class="text-accent">.</span>` (the green dot). Keep this pattern.
-- **Animations:** add class `fade-up` for entrance animation.
+- **Animations:** add class `fade-up` for entrance animation. A global `prefers-reduced-motion` block at the end of style.css freezes all animations/transitions; JS effects (typed.js, neural-bg) must also check the media query and provide a static fallback.
+- **Mono font:** `var(--font-mono)` (JetBrains Mono) is for small labels/metadata under ~0.9rem only (badges, tags, dates, `.card-meta`, `.status-line`, `.skill-group-title`), never headings, nav, buttons, or body text.
+- **`.card-meta` rows** on project cards use keys `year / status / stack` (values lowercase); status vocabulary: `active | shipped | published | archived | private | live`. Keep to 2-3 keys. Must be a `<div>` (not `<p>`) so populateLatestWork() ignores it.
 - **External links:** always `target="_blank" rel="noopener noreferrer"`.
 - Separators in meta lines use `&middot;` (·).
 

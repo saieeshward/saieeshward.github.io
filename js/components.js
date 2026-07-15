@@ -39,7 +39,7 @@ function getFooter() {
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p class="footer-text"><span class="brand-name-sm">sheesh<span class="text-accent">.</span></span> &copy; ${new Date().getFullYear()} Sai Eeshwar D. Built with purpose.</p>
+          <p class="footer-text"><span class="brand-name-sm">sheesh<span class="text-accent">.</span></span> &copy; ${new Date().getFullYear()} Sai Eeshwar D. Built by hand. No framework, no build step.</p>
         </div>
         <div class="col-md-6 text-md-right">
           <div class="social-icons social-icons-sm">
@@ -51,4 +51,17 @@ function getFooter() {
       </div>
     </div>
   </footer>`;
+}
+
+// Model card for anyone curious enough to open devtools.
+if (typeof console !== "undefined" && console.log) {
+  console.log("%csheesh.", "color:#5eead4;font-size:22px;font-weight:700;font-family:Poppins,sans-serif");
+  console.log(
+    "model card\n" +
+    "  type: human, dublin based\n" +
+    "  weights: closed source\n" +
+    "  training data: whale songs, heartbeats, brunch orders\n" +
+    "  contact: saieeshwar03@gmail.com\n" +
+    "  source: https://github.com/saieeshward/saieeshward.github.io"
+  );
 }

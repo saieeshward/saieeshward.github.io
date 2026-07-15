@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>404 - sheesh.</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
   <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:2rem;">
-    <h1 style="font-family:'Poppins',sans-serif;font-size:6rem;font-weight:800;color:var(--text-primary);margin:0;">4<span class="text-accent">0</span>4</h1>
-    <p style="font-size:1.2rem;color:var(--text-secondary);margin:1rem 0 2rem;">This page doesn't exist. Maybe it never did.</p>
+    <h1 style="font-family:'Poppins',sans-serif;font-size:6rem;font-weight:800;color:var(--text-primary);margin:0 0 1.5rem;">4<span class="text-accent">0</span>4</h1>
+    <div class="terminal">
+      <div class="terminal-bar"><span></span><span></span><span></span></div>
+      <div class="terminal-body">
+        <span class="prompt">sheesh@dublin:~$</span> fetch /this-page<br>
+        error 404: not found in index<br>
+        <span class="prompt">sheesh@dublin:~$</span> run diagnostics<br>
+        hypothesis: the page was pruned, or it never converged<br>
+        confidence: 0.98<br>
+        <span class="prompt">sheesh@dublin:~$</span> cd ~<span class="status-cursor"></span>
+      </div>
+    </div>
     <a href="index.html" class="btn btn-accent">Back to Home</a>
   </div>
 </body>
