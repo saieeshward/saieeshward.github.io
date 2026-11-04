@@ -73,26 +73,31 @@
         var catLabels = { ai: "AI / ML", systems: "Systems", creative: "Creative", hardware: "Hardware" };
         var out = [];
 
-        Array.prototype.slice.call(cards, 0, 3).forEach(function (card) {
+        Array.prototype.slice.call(cards, 0, 4).forEach(function (card) {
           var item = card.closest(".project-item");
           var cat = item ? item.getAttribute("data-category") : "";
           var titleEl = card.querySelector("h4");
           var descEl = card.querySelector("p");
           var title = titleEl ? titleEl.textContent : "";
-          var desc = descEl ? descEl.innerHTML : "";
+          var desc = (item && item.getAttribute("data-short")) || (descEl ? descEl.innerHTML : "");
           var badge = card.querySelector(".badge");
           var link = card.querySelector(".project-links a");
-          var label = badge ? badge.textContent.trim() : (catLabels[cat] || "Project");
+          var label = (item && item.getAttribute("data-label")) || (badge ? badge.textContent.trim() : (catLabels[cat] || "Project"));
 
           if (link) {
             var href = link.getAttribute("href");
-            var cta = "View Project";
-            if (link.querySelector(".fa-globe") || /syncwave|\/live/i.test(href)) cta = "Visit Live Site";
-            else if (/github\.com/i.test(href)) cta = "View on GitHub";
+            var cta = link.getAttribute("data-cta") || "View Project";
+            if (!link.getAttribute("data-cta")) {
+              if (/syncwave|\/live/i.test(href)) cta = "Visit Live Site";
+              else if (link.querySelector(".fa-globe") || /github\.io/i.test(href)) cta = "Visit Website";
+              else if (/\.pdf$/i.test(href)) cta = "Read the Dissertation";
+              else if (/github\.com/i.test(href)) cta = "View on GitHub";
+            }
+            var isExternal = /^https?:/i.test(href);
             var liveClass = (badge && badge.classList.contains("badge-live")) ? " work-type-live" : "";
             out.push(
-              '<div class="col-md-4 mb-4">' +
-                '<a href="' + href + '" target="_blank" rel="noopener noreferrer" class="work-card">' +
+              '<div class="col-md-6 col-lg-3 mb-4">' +
+                '<a href="' + href + '"' + (isExternal || /\.pdf$/i.test(href) ? ' target="_blank" rel="noopener noreferrer"' : '') + ' class="work-card">' +
                   '<span class="work-type' + liveClass + '">' + label + '</span>' +
                   '<h4>' + title + '</h4>' +
                   '<p>' + desc + '</p>' +
@@ -104,7 +109,7 @@
             var muted = card.querySelector(".text-muted");
             var mutedHtml = muted ? muted.innerHTML : '<i class="fas fa-lock"></i> Private';
             out.push(
-              '<div class="col-md-4 mb-4">' +
+              '<div class="col-md-6 col-lg-3 mb-4">' +
                 '<div class="work-card">' +
                   '<span class="work-type">' + label + '</span>' +
                   '<h4>' + title + '</h4>' +

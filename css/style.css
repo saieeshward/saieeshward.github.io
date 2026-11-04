@@ -1566,6 +1566,12 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   margin-bottom: 0.5rem;
 }
 
+/* Download cards (chika.html): content-sized, not stretched like grid cards */
+.work-card.download-card { height: auto; }
+.work-card.download-card p { flex: none; }
+.work-card.download-card ol { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; padding-left: 1.2rem; }
+.work-card.download-card h5 { font-size: 1rem; font-weight: 600; }
+
 .work-card strong,
 .h-timeline-card strong,
 .work-card-meta strong {

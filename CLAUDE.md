@@ -121,3 +121,18 @@ Kept: HACCP Food Safety, Postman API Fundamentals Student Expert. Removed: Joy o
 - Hero status line: "AI Engineer @ Napkin Studio". Typed strings: an AI Engineer, an ML Researcher, an Agent Builder, a Video Editor.
 - Recipe: serves "Teams who ship"; currently "AI Engineer @ Napkin Studio"; closing "Plate it up. Code on GitHub, papers on IEEE Xplore, food on the plate. Serve warm."
 - Contact page: "Currently" uses `fa-briefcase`; subtitle "Always up for a chat. Pick a channel."
+
+
+## Nov 2026 round 2 changes
+- **Latest Work (home)** is 4 cards pulled from the first 4 `.project-item`s of projects.html by `populateLatestWork()` in js/main.js, in this order: MSc Dissertation, CLAN, Chika, VITT. Optional attributes on a `.project-item`: `data-label` (badge text), `data-short` (plain-text blurb for home). A link can carry `data-cta` to override the card CTA. Static fallback cards live in index.html and must be kept in sync.
+- **Syncwave / Is It Legal To** is deliberately de-emphasised: not on the home page, not in the bio, one short line on experience.html, card kept lower on projects.html. Do not add "live legal product" claims to the bio or meta tags.
+- **Bio** now says "a dissertation worked on with the Virtual Record Treasury of Ireland" (virtualtreasury.ie).
+- **chika.html** is a standalone Android download page: pinned APK link `https://github.com/batunii/chika/releases/download/v0.2.2-beta/app-release.apk` (GitHub `releases/latest` points at an iOS tag, so it is pinned; bump the tag when a newer Android build ships). The iOS block pins `ios-v0.3.6` / `Chika-unsigned.ipa` (unsigned, sideload via AltStore or Sideloadly with a free Apple ID, 7-day expiry); bump it too. Chika upstream is `batunii/chika` (another GitHub user, Shreyansh Soni); `saieeshward/chika` is only a fork. Website: https://batunii.github.io/chika/. GitHub reports 3,134 total release downloads (checked Nov 2026).
+- **CLAN:** website https://saieeshward.github.io/clan/; backed by a EUR 10,000 Enterprise Ireland Innovation Voucher (stated by owner, unverified).
+- **VITT:** public repo saieeshward/vitt, website https://saieeshward.github.io/vitt/.
+- **Dissertation code:** github.com/saieeshward/Disseration (sic). Live tool is the `seanc-has/` folder of this site. No separate Pages site.
+- **Home timeline** shows only OSCOWL, GoWarm and Virginia Tech India; Koffee & Kale and Syncwave live on experience.html only. The freelance video entry moved to a "Side work" line under Creative skills. HACCP cert is Level 2.
+- **Napkin card** includes the Deck Maker outcome line (supplied by owner; "client-by-client home" is worded as built, not shipped, because the source notes said it awaited approval).
+- **Resume:** navbar still links assets/reports/Resume_Sai_eeshwar_D_.pdf (stale). Do NOT publish assets/reports/resumes/ (contains phone number and immigration status; untracked on purpose).
+- **Dissertation PDF** replaced with the owner-supplied final version (125 pages, Aug 2026, supervisor Declan O'Sullivan), same path `assets/reports/image-to-transcription-dissertation.pdf`.
+- **Co-author:** CLAN and Chika are both built with Shreyansh Soni (GitHub `batunii`); the credit "Built with Shreyansh Soni" appears on both cards (projects.html, home fallback) and on chika.html. Keep it when editing those cards.
