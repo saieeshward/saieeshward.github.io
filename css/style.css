@@ -473,22 +473,14 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   z-index: 1;
 }
 
-/* Right-edge gradient fade - signals more content */
-.h-timeline-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 80px;
-  background: linear-gradient(to right, transparent, var(--bg-dark));
-  pointer-events: none;
-  z-index: 3;
+/* Right-edge fade - signals more content. Applied as a mask on the scroller so it stays fixed while
+   the content scrolls; js/main.js toggles .fade-r only while more content lies to the right. */
+.h-timeline-wrapper.fade-r {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 72px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 72px), transparent);
 }
 
-.section-alt .h-timeline-wrapper::after {
-  background: linear-gradient(to right, transparent, #0e0e0e);
-}
+.h-timeline-wrapper:not(.can-scroll) .scroll-hint { display: none; }
 
 /* Scroll hint text */
 .scroll-hint {
@@ -514,7 +506,6 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
 
 @media (max-width: 768px) {
   .scroll-hint { display: none; }
-  .h-timeline-wrapper::after { display: none; }
 }
 
 .h-timeline-wrapper::-webkit-scrollbar { height: 4px; }
@@ -685,13 +676,14 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   margin-bottom: 0.8rem;
 }
 
-.featured-role > p:last-child {
+.featured-role > p:not(.featured-role-company) {
   font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin: 0;
+  margin: 0 0 0.8rem;
   max-width: 70ch;
 }
+.featured-role > p:last-child { margin-bottom: 0; }
 
 @media (max-width: 768px) {
   .featured-role {
@@ -1244,6 +1236,23 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
 }
 
 .recipe-meta-item:last-child { border-right: none; }
+
+@media (max-width: 576px) {
+  .recipe-meta { grid-template-columns: repeat(2, 1fr); }
+  .recipe-meta-item:nth-child(2) { border-right: none; }
+  .recipe-meta-item:nth-child(-n+2) { border-bottom: 1px dashed var(--border); }
+}
+
+@media (max-width: 991px) {
+  #topNav.navbar-expand-lg > .container { padding-left: 16px; padding-right: 16px; }
+  #topNav .navbar-collapse {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-top: 0.6rem;
+    padding: 0.6rem 1rem;
+  }
+}
 
 .meta-label {
   display: block;

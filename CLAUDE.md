@@ -70,7 +70,7 @@ Current projects (newest first):
 | CLAN - Agent Handoff Format (Context and Live Agent Notation; Rust, MPL-2.0) | systems | - | github.com/saieeshward/clan |
 | Chika - Smart Comic Reader (Chitra Katha; Android/Kotlin, on-device YOLO) | ai | - | github.com/saieeshward/chika |
 | Improvement of Image to Transcription Process for Documents (MSc dissertation, 2026; reading-order layout engine for multi-column PAGE XML, ARD 22.49 to 0.34, + seanc-has correction tool) | ai | shipped | `assets/reports/image-to-transcription-dissertation.pdf` + live tool `seanc-has/` |
-| Shellock CLI | systems | shipped | github.com/EESH-843/shellock |
+| Shellock CLI | systems | shipped | github.com/saieeshward/Shellock |
 | Spotify Audio Feature Viz | creative | - | github.com/EESH-843/spotify-viz |
 | Transformers from Scratch | ai | - | github.com/EESH-843/math-boolean-gpt |
 | Lucene Search Engine | systems | - | github.com/EESH-843/assignment-two-group-10 |
@@ -79,9 +79,9 @@ Current projects (newest first):
 | Heart Murmur Detection | ai | - | private |
 | Is It Legal To | ai | Live | syncwave.co.in |
 | Hybrid Time Series Forecasting | ai | Published | IEEE 11158940 |
-| WAV2Lip-HQ Inference | ai | - | github.com/EESH-843/Wav2Lip-HQ-inference |
+| WAV2Lip-HQ Inference | ai | - | github.com/saieeshward/Wav2Lip-HQ-inference |
 | Cetacean Species Detection | ai | Published | IEEE 10333321 + patent |
-| CRISP | systems | shipped (no Published badge) | github.com/EESH-843/CRISP |
+| CRISP | systems | shipped (no Published badge) | github.com/saieeshward/CRISP |
 | VISU-NG Robot | ai | - | private |
 | V-SAT (1U CubeSat) | hardware | - | private |
 | HackAP - Dance Floor Energy | hardware | - | private |
@@ -133,7 +133,7 @@ Kept: HACCP Food Safety, Postman API Fundamentals Student Expert. Removed: Joy o
 - **Dissertation code:** github.com/saieeshward/Disseration (sic). Live tool is the `seanc-has/` folder of this site. No separate Pages site.
 - **Home timeline** shows only OSCOWL, GoWarm and Virginia Tech India; Koffee & Kale and Syncwave live on experience.html only. The freelance video entry moved to a "Side work" line under Creative skills. HACCP cert is Level 2.
 - **Napkin card** includes the Deck Maker outcome line (supplied by owner; "client-by-client home" is worded as built, not shipped, because the source notes said it awaited approval).
-- **Resume:** navbar still links assets/reports/Resume_Sai_eeshwar_D_.pdf (stale). Do NOT publish assets/reports/resumes/ (contains phone number and immigration status; untracked on purpose).
+- **Resume:** navbar links `assets/reports/Resume_Sai_Eeshwar_D.pdf`, a public version built from the Master (no phone number, no immigration status, no job-search line; Napkin entry has no dates). Do NOT publish `assets/reports/resumes/` (tailored private versions with phone number and work-authorisation/visa details; untracked on purpose). Stale unlinked `assets/reports/resume.pdf` still exists and contains an old phone number.
 - **Dissertation PDF** replaced with the owner-supplied final version (125 pages, Aug 2026, supervisor Declan O'Sullivan), same path `assets/reports/image-to-transcription-dissertation.pdf`.
 - **Co-author:** CLAN and Chika are both built with Shreyansh Soni (GitHub `batunii`); the credit "Built with Shreyansh Soni" appears on both cards (projects.html, home fallback) and on chika.html. Keep it when editing those cards.
 - **Chika download stat:** site says "2,900+ APK downloads" (GitHub API, Nov 2026: APK 2,984, .aab 58, IPA 92, total 3,134). These are raw download counts, not users (1,998 are the v0.1.0 APK; all releases dated 2026-07-08). Do not say "3,000+" or imply user counts.
@@ -141,3 +141,4 @@ Kept: HACCP Food Safety, Postman API Fundamentals Student Expert. Removed: Joy o
 - **Chika iOS:** site says iOS is "coming soon to the App Store". The unsigned IPA download and sideload steps were removed from chika.html; Chika's home/projects cards no longer claim iOS availability.
 - **Napkin cost figures** (60% per-call cost cut via Sonnet 5.5 + prompt caching, ~93% cache hits in testing, cheaper model dropped ~75% of facts so stronger model kept, 82% saving traded for quality) were supplied by the owner and confirmed OK to publish by Napkin.
 - **Shellock:** shipped, but no one uses it yet; do not add usage or adoption claims.
+- **Round 4 (recruiter review fixes):** removed 5 dead `EESH-843/...` GitHub buttons (spotify-viz, math-boolean-gpt, assignment-two-group-10, knowledge-graph, fencer-pro; repos not public). Shellock, CRISP and Wav2Lip now link to `saieeshward`. Poster file renamed `hybrid-forecast-poster.pdf` and labelled "View Poster". Typed strings no longer include "a Video Editor". Pages wrap content in `<main id="main">`; nav toggler, footer icons, filter buttons and the Drive iframe have accessible names. Koffee & Kale card shows "Part-time" in the date slot (not a date). Gallery photos resized to ~700px JPEGs. Footer says "Static HTML, no build step" (site still ships Bootstrap 4 beta + jQuery). `populateLatestWork()` fetches projects.html with `cache: "no-cache"`.

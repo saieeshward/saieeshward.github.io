@@ -14,8 +14,7 @@
         strings: [
           "an AI Engineer ^3000",
           "an ML Researcher",
-          "an Agent Builder",
-          "a Video Editor"
+          "an Agent Builder"
         ],
         typeSpeed: 55,
         backSpeed: 30,
@@ -63,7 +62,7 @@
     var container = document.getElementById("latestWork");
     if (!container) return;
 
-    fetch("projects.html")
+    fetch("projects.html", { cache: "no-cache" })
       .then(function (res) { return res.text(); })
       .then(function (html) {
         var doc = new DOMParser().parseFromString(html, "text/html");
@@ -127,12 +126,25 @@
   }
   populateLatestWork();
 
+  // --- Timeline scroll affordance: fade + hint only while there is more to scroll ---
+  $(".h-timeline-wrapper").each(function () {
+    var el = this;
+    function update() {
+      var overflow = el.scrollWidth - el.clientWidth;
+      el.classList.toggle("can-scroll", overflow > 4);
+      el.classList.toggle("fade-r", overflow - el.scrollLeft > 4);
+    }
+    $(el).on("scroll", update);
+    $(window).on("resize load", update);
+    update();
+  });
+
   // --- Project filter (Projects page) ---
   $(".filter-btn").on("click", function () {
     var filter = $(this).data("filter");
 
-    $(".filter-btn").removeClass("active");
-    $(this).addClass("active");
+    $(".filter-btn").removeClass("active").attr("aria-pressed", "false");
+    $(this).addClass("active").attr("aria-pressed", "true");
 
     $(".earlier-work").prop("open", filter !== "all");
 

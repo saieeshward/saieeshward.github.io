@@ -20,6 +20,7 @@
 <body>
 
   <script>document.write(getNavbar('projects'));</script>
+  <main id="main">
 
   <!-- ========== PAGE HEADER ========== -->
   <section class="page-header">
@@ -33,11 +34,11 @@
   <section class="filter-section">
     <div class="container">
       <div class="filter-tags fade-up">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="ai">AI / ML</button>
-        <button class="filter-btn" data-filter="systems">Systems</button>
-        <button class="filter-btn" data-filter="creative">Creative</button>
-        <button class="filter-btn" data-filter="hardware">Hardware</button>
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="ai" aria-pressed="false">AI / ML</button>
+        <button class="filter-btn" data-filter="systems" aria-pressed="false">Systems</button>
+        <button class="filter-btn" data-filter="creative" aria-pressed="false">Creative</button>
+        <button class="filter-btn" data-filter="hardware" aria-pressed="false">Hardware</button>
       </div>
     </div>
   </section>
@@ -125,7 +126,7 @@
               <span>Node.js</span><span>CLI</span><span>Developer Tooling</span><span>Automation</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/EESH-843/shellock" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://github.com/saieeshward/Shellock" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
               <a href="assets/reports/shellock-outline.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
             </div>
           </div>
@@ -141,7 +142,6 @@
               <span>Python</span><span>Altair</span><span>Data Visualization</span><span>Pandas</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/EESH-843/spotify-viz" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
               <a href="assets/reports/spotify-viz-interactive.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chart-bar"></i> Interactive</a>
               <a href="assets/reports/spotify-viz-report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
             </div>
@@ -162,7 +162,7 @@
               <span>Tag1</span><span>Tag2</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/EESH-843/repo" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://github.com/saieeshward/repo" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
               <a href="assets/reports/report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
             </div>
           </div>
@@ -185,7 +185,6 @@
               <span>PyTorch</span><span>NLP</span><span>Transformers</span><span>Deep Learning</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/EESH-843/math-boolean-gpt" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
               <a href="assets/reports/transformers-report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
             </div>
           </div>
@@ -201,7 +200,6 @@
               <span>Java</span><span>Lucene</span><span>Information Retrieval</span><span>TREC</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/EESH-843/assignment-two-group-10" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
               <a href="assets/reports/lucene-ir-report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
             </div>
           </div>
@@ -217,7 +215,6 @@
               <span>Protege</span><span>RML</span><span>SHACL</span><span>Knowledge Graphs</span><span>Semantic Web</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/EESH-843/knowledge-graph" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
               <a href="assets/reports/shutterBoxd_25338829.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
             </div>
           </div>
@@ -233,7 +230,6 @@
               <span>Research</span><span>Ideation</span><span>Product Discovery</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/EESH-843/fencer-pro" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
               <a href="assets/reports/fencer-pro-report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
               <a href="assets/reports/fencer-pro-presentation.pptx" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-powerpoint"></i> Pitch Deck</a>
             </div>
@@ -283,7 +279,7 @@
             </div>
             <div class="project-links">
               <a href="https://ieeexplore.ieee.org/abstract/document/11158940" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt"></i> Read on IEEE</a>
-              <a href="assets/reports/hybrid-forecast-paper.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> View Slides</a>
+              <a href="assets/reports/hybrid-forecast-poster.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> View Poster</a>
             </div>
           </div>
         </div>
@@ -298,7 +294,7 @@
               <span>Python</span><span>PyTorch</span><span>Deep Learning</span><span>Video Processing</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/EESH-843/Wav2Lip-HQ-inference" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://github.com/saieeshward/Wav2Lip-HQ-inference" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
@@ -330,7 +326,7 @@
               <span>GPS</span><span>Real-Time Tracking</span><span>UX Design</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/EESH-843/CRISP" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://github.com/saieeshward/CRISP" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
@@ -384,6 +380,8 @@
 
     </div>
   </section>
+
+  </main>
 
   <script>document.write(getFooter());</script>
 

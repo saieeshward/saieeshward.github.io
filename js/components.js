@@ -22,11 +22,11 @@ function getNavbar(activePage) {
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="topNav">
     <div class="container">
       <a class="navbar-brand" href="index.html"><span class="brand-name">sheesh<span class="text-accent">.</span></span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           ${navItems}
-          <li class="nav-item"><a class="nav-link nav-resume" href="assets/reports/Resume_Sai_eeshwar_D_.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+          <li class="nav-item"><a class="nav-link nav-resume" href="assets/reports/Resume_Sai_Eeshwar_D.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
         </ul>
       </div>
     </div>
@@ -39,13 +39,13 @@ function getFooter() {
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6">
-          <p class="footer-text"><span class="brand-name-sm">sheesh<span class="text-accent">.</span></span> &copy; ${new Date().getFullYear()} Sai Eeshwar D. Built by hand. No framework, no build step.</p>
+          <p class="footer-text"><span class="brand-name-sm">sheesh<span class="text-accent">.</span></span> &copy; ${new Date().getFullYear()} Sai Eeshwar D. Built by hand. Static HTML, no build step.</p>
         </div>
         <div class="col-md-6 text-md-right">
           <div class="social-icons social-icons-sm">
-            <a href="https://github.com/saieeshward" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/eeshward/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://x.com/d_eeshwar" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://github.com/saieeshward" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/eeshward/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://x.com/d_eeshwar" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
