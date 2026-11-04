@@ -1566,6 +1566,25 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   margin-bottom: 0.5rem;
 }
 
+/* Earlier work (projects.html) */
+.earlier-work { margin-top: 1rem; }
+.earlier-work > summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-card);
+}
+.earlier-work > summary::-webkit-details-marker { display: none; }
+.earlier-work > summary::before { content: "+ "; }
+.earlier-work[open] > summary::before { content: "- "; }
+
 /* Download cards (chika.html): content-sized, not stretched like grid cards */
 .work-card.download-card { height: auto; }
 .work-card.download-card p { flex: none; }

@@ -134,6 +134,8 @@
     $(".filter-btn").removeClass("active");
     $(this).addClass("active");
 
+    $(".earlier-work").prop("open", filter !== "all");
+
     if (filter === "all") {
       $(".project-item").fadeIn(300);
     } else {
