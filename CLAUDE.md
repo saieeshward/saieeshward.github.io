@@ -136,3 +136,4 @@ Kept: HACCP Food Safety, Postman API Fundamentals Student Expert. Removed: Joy o
 - **Resume:** navbar still links assets/reports/Resume_Sai_eeshwar_D_.pdf (stale). Do NOT publish assets/reports/resumes/ (contains phone number and immigration status; untracked on purpose).
 - **Dissertation PDF** replaced with the owner-supplied final version (125 pages, Aug 2026, supervisor Declan O'Sullivan), same path `assets/reports/image-to-transcription-dissertation.pdf`.
 - **Co-author:** CLAN and Chika are both built with Shreyansh Soni (GitHub `batunii`); the credit "Built with Shreyansh Soni" appears on both cards (projects.html, home fallback) and on chika.html. Keep it when editing those cards.
+- **Chika download stat:** site says "2,900+ APK downloads" (GitHub API, Nov 2026: APK 2,984, .aab 58, IPA 92, total 3,134). These are raw download counts, not users (1,998 are the v0.1.0 APK; all releases dated 2026-07-08). Do not say "3,000+" or imply user counts.
