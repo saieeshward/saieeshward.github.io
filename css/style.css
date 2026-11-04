@@ -644,6 +644,63 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
   }
 }
 
+/* --- Featured role (current job, above timeline) --- */
+.featured-role {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 0 1px var(--accent-dim), 0 0 28px var(--accent-dim);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.featured-role-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  padding: 0.15rem 0.7rem;
+  margin-bottom: 0.9rem;
+}
+
+.featured-role h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.featured-role-company {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.8rem;
+}
+
+.featured-role > p:last-child {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 70ch;
+}
+
+@media (max-width: 768px) {
+  .featured-role {
+    padding: 1.3rem 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .featured-role h3 { font-size: 1.25rem; }
+}
+
 /* ===== EDUCATION CARDS ===== */
 
 .education-section { padding: 4rem 0; border-top: 1px solid var(--border); }

@@ -1,20 +1,21 @@
-# Portfolio Site — Reference / Lookup File
+# Portfolio Site - Reference / Lookup File
 
 > Lookup catalog of the whole site. Update this whenever content or structure changes.
 
 ## Deploy
 - **Live URL:** https://saieeshward.github.io
 - **Repo:** https://github.com/saieeshward/saieeshward.github.io (branch `main`)
-- **Hosting:** GitHub Pages (user site — served directly from `main`, static, no build step)
+- **Hosting:** GitHub Pages (user site, served directly from `main`, static, no build step)
 - Push to `main` = deploy.
 
 ## Owner / identity
-- **Name:** Sai Eeshwar D — brand alias **"sheesh."** (note the accent dot)
-- **Role:** ML Researcher & AI Engineer. 2 IEEE publications, 1 Indian patent, 1 live product.
-- **Education:** MSc Computer Science (Intelligent Systems), Trinity College Dublin (Sep 2025–present).
+- **Name:** Sai Eeshwar D - brand alias **"sheesh."** (note the accent dot)
+- **Role:** AI Engineer at Napkin Studio, Dublin (exact title "AI Engineer"; no dates shown on site). Leads product on the studio OS: the tools that turn a client brief into research, a brief, a pitch deck and a production plan. Agents do the drafting, people approve every step. Do NOT describe it as an "operating system for ad agencies". Also ML Researcher. 2 IEEE publications, 1 Indian patent application (filed, not issued), 1 live product.
+- **Education:** MSc Computer Science (Intelligent Systems), Trinity College Dublin (Sep 2025 to Sep 2026), graduated with Distinction. Dissertation 72%, taught modules 62 to 83%.
 - **Based:** Dublin, Ireland.
 - **Email:** saieeshwar03@gmail.com
-- **Socials:** GitHub `github.com/EESH-843`, LinkedIn `linkedin.com/in/eeshward/`, X `x.com/d_eeshwar`, Medium `medium.com/@saieeshwar03`
+- **Socials:** GitHub `github.com/saieeshward` (all profile/social links: hero, contact, footer),  LinkedIn `linkedin.com/in/eeshward/`, X `x.com/d_eeshwar`, Medium `medium.com/@saieeshwar03`
+- **GitHub accounts:** social links use `saieeshward`. Individual older project repo links still point at `EESH-843` (shellock, spotify-viz, math-boolean-gpt, etc.) and stay as they are; newer repos (clan, chika, the site repo) are under `saieeshward`.
 
 ## Tech stack
 - Plain static HTML + Bootstrap (vendored in `vendor/bootstrap/`), jQuery, Typed.js.
@@ -23,80 +24,100 @@
 
 ## File structure
 ```
-index.html         Home (hero, latest work, research, experience preview, skills, "The Recipe", contact CTA)
+index.html         Home (hero, latest work, research, experience with featured Napkin Studio card + timeline, skills, "The Recipe", contact CTA)
 projects.html      Projects grid + filter tags
-experience.html    Work timeline, education, skills, certifications
+experience.html    Featured current role + work timeline, education, skills, certifications
 research.html      Patent, publications, articles, dish gallery, video portfolio
 contact.html       Contact card + social grid
 404.html           Not-found page (terminal-styled, standalone: loads only style.css)
 robots.txt, sitemap.xml
 css/style.css      All styling (single file)
-js/components.js   Shared navbar + footer (getNavbar / getFooter) — edit once, applies everywhere
+js/components.js   Shared navbar + footer (getNavbar / getFooter), edit once, applies everywhere
 js/main.js         Page scripts (typed.js init, etc.)
 js/neural-bg.js    Faint node-mesh canvas behind the home hero (index.html only)
 images/            Dish photos (IMG_*.JPG)
-assets/            profile.png, favicon.svg, reports/ (PDFs, decks, interactive html)
+assets/            profile.jpg (og/twitter image), contact.jpg, setup.jpg, favicon.svg, reports/ (PDFs, decks, interactive html)
 vendor/            bootstrap, jquery, typed.js
 ```
 
 ## Shared components (js/components.js)
-- **Navbar:** `getNavbar('<activePage>')` where activePage ∈ home|projects|experience|research|contact. Pages array drives nav links. Brand = "sheesh.". Includes Resume link → `assets/reports/Resume_Sai_eeshwar_D_.pdf`.
-- **Footer:** `getFooter()` — auto year via `new Date().getFullYear()`, social icons. Footer line: "Built by hand. No framework, no build step."
+- **Navbar:** `getNavbar('<activePage>')` where activePage ∈ home|projects|experience|research|contact. Pages array drives nav links. Brand = "sheesh.". Includes Resume link to `assets/reports/Resume_Sai_eeshwar_D_.pdf`.
+- **Footer:** `getFooter()`, auto year via `new Date().getFullYear()`, social icons (GitHub `saieeshward`, LinkedIn, X). Footer line: "Built by hand. No framework, no build step."
 - Every page calls these via `document.write(...)`.
-- components.js also prints a "model card" easter egg to the devtools console on every page.
+- components.js also prints a "model card" easter egg to the devtools console on every page (includes `deployment: napkin studio`; training data: whale songs, heartbeats, handwriting, brunch orders).
 
 ## Conventions
-- **No em dashes (—) or en dashes (–) in text.** Use a spaced hyphen ` - ` for title/label separators (e.g. `Projects - Sai Eeshwar D`), commas/periods in prose. (Date ranges in timelines still use the `&ndash;` HTML entity, e.g. "Dec 2023 &ndash; May 2024" — that's intentional range typography.)
+- **No em dashes or en dashes in text.** Use a spaced hyphen ` - ` for title/label separators (e.g. `Projects - Sai Eeshwar D`), commas/periods in prose. (Date ranges in timelines still use the `&ndash;` HTML entity, e.g. "Dec 2023 &ndash; May 2024"; that is intentional range typography.)
 - **Accent dot:** headings end with `<span class="text-accent">.</span>` (the green dot). Keep this pattern.
 - **Animations:** add class `fade-up` for entrance animation. A global `prefers-reduced-motion` block at the end of style.css freezes all animations/transitions; JS effects (typed.js, neural-bg) must also check the media query and provide a static fallback.
 - **Mono font:** `var(--font-mono)` (JetBrains Mono) is for small labels/metadata under ~0.9rem only (badges, tags, dates, `.card-meta`, `.status-line`, `.skill-group-title`), never headings, nav, buttons, or body text.
 - **`.card-meta` rows** on project cards use keys `year / status / stack` (values lowercase); status vocabulary: `active | shipped | published | archived | private | live`. Keep to 2-3 keys. Must be a `<div>` (not `<p>`) so populateLatestWork() ignores it.
+- **Open Graph:** `og:image` and `twitter:image` must be absolute on every page: `https://saieeshward.github.io/assets/profile.jpg`.
+- **Featured role card:** Napkin Studio is shown once, as `<div class="featured-role fade-up">` (label "Now", h3 "AI Engineer", `.featured-role-company` "Napkin Studio &middot; Dublin", descriptor) directly above `.h-timeline-wrapper` on index.html and experience.html. It is NOT repeated inside the timeline. Styles live in css/style.css.
+- **Separators in prose:** no pipes `|`; use periods or `&middot;`.
 - **External links:** always `target="_blank" rel="noopener noreferrer"`.
 - Separators in meta lines use `&middot;` (·).
 
 ## Projects page (projects.html)
 Filter categories (data-category / data-filter): `ai`, `systems`, `creative`, `hardware` (+ `all`).
-Badges: `badge-current` (In Progress), `badge-live` (Live), `badge-published` (Published).
+Badges: `badge-current` (In Progress), `badge-live` (Live), `badge-published` (Published). Subtitle: "Things I've built and shipped. Most link to code, a report, or a live demo."
 Add-a-project template is in an HTML comment at the bottom of the project grid.
 
 Current projects (newest first):
 | Project | Category | Status | Link |
 |---|---|---|---|
-| CLAN - Agent Handoff Format (Context and Live Agent Notation; Rust, MPL-2.0) | systems | — | github.com/saieeshward/clan |
-| Chika - Smart Comic Reader (Chitra Katha; Android/Kotlin, on-device YOLO) | ai | — | github.com/saieeshward/chika |
-| Historical Document Transcription (MSc dissertation) | ai | In Progress | private |
-| Shellock CLI | systems | In Progress | github.com/EESH-843/shellock |
-| Spotify Audio Feature Viz | creative | — | github.com/EESH-843/spotify-viz |
-| Transformers from Scratch | ai | — | github.com/EESH-843/math-boolean-gpt |
-| Lucene Search Engine | systems | — | github.com/EESH-843/assignment-two-group-10 |
-| ShutterBoxd - Movie Knowledge Graph | systems | — | github.com/EESH-843/knowledge-graph |
-| Fencer-PRO Innovation Pitch | creative | — | github.com/EESH-843/fencer-pro |
-| Heart Murmur Detection | ai | — | private |
+| VITT - Very Interesting Transaction Tracking (multi-currency expense tracker; Kotlin Multiplatform, Apache-2.0, pre-alpha, local repo `~/Projects/DevTools/Developer/Tracker`) | systems | In Progress | private |
+| CLAN - Agent Handoff Format (Context and Live Agent Notation; Rust, MPL-2.0) | systems | - | github.com/saieeshward/clan |
+| Chika - Smart Comic Reader (Chitra Katha; Android/Kotlin, on-device YOLO) | ai | - | github.com/saieeshward/chika |
+| Improvement of Image to Transcription Process for Documents (MSc dissertation, 2026; reading-order layout engine for multi-column PAGE XML, ARD 22.49 to 0.34, + seanc-has correction tool) | ai | shipped | `assets/reports/image-to-transcription-dissertation.pdf` + live tool `seanc-has/` |
+| Shellock CLI | systems | shipped | github.com/EESH-843/shellock |
+| Spotify Audio Feature Viz | creative | - | github.com/EESH-843/spotify-viz |
+| Transformers from Scratch | ai | - | github.com/EESH-843/math-boolean-gpt |
+| Lucene Search Engine | systems | - | github.com/EESH-843/assignment-two-group-10 |
+| ShutterBoxd - Movie Knowledge Graph | systems | - | github.com/EESH-843/knowledge-graph |
+| Fencer-PRO Innovation Pitch | creative | - | github.com/EESH-843/fencer-pro |
+| Heart Murmur Detection | ai | - | private |
 | Is It Legal To | ai | Live | syncwave.co.in |
 | Hybrid Time Series Forecasting | ai | Published | IEEE 11158940 |
-| WAV2Lip-HQ Inference | ai | — | github.com/EESH-843/Wav2Lip-HQ-inference |
+| WAV2Lip-HQ Inference | ai | - | github.com/EESH-843/Wav2Lip-HQ-inference |
 | Cetacean Species Detection | ai | Published | IEEE 10333321 + patent |
-| CRISP | systems | Published | github.com/EESH-843/CRISP |
-| VISU-NG Robot | ai | — | private |
-| V-SAT (1U CubeSat) | hardware | — | private |
-| HackAP - Dance Floor Energy | hardware | — | private |
+| CRISP | systems | shipped (no Published badge) | github.com/EESH-843/CRISP |
+| VISU-NG Robot | ai | - | private |
+| V-SAT (1U CubeSat) | hardware | - | private |
+| HackAP - Dance Floor Energy | hardware | - | private |
 
 ## Research / publications (research.html)
-- **Patent:** No. 202341063223, "A System and a Method for Classification of Marine Animal Species Using Deep Learning Techniques" (Indian Patent Office, Oct 6 2023).
-- **IEEE CSITSS 2023:** Cetacean Family Species Detection... DOI 10.1109/CSITSS60515.2023.10333321
+- **Patent application (filed, NOT issued/granted; never write "Issued"):** Application No. 202341063223, "A System and a Method for Classification of Marine Animal Species Using Deep Learning Techniques" (Indian Patent Office, filed Oct 6, 2023). Shown as "Application No. 202341063223 &middot; Filed Oct 6, 2023 &middot; Indian Patent Office".
+- **IEEE CSITSS 2023:** Cetacean Family Species Detection (CRNN architecture, not RCNN). DOI 10.1109/CSITSS60515.2023.10333321
 - **IEEE ICCTDC 2025:** Hybrid Time Series Forecasting with ARIMA, ESN, LSTM. DOI 10.1109/ICCTDC64446.2025.11158940
+- **MSc Dissertation (TCD 2026, supervisor Declan O'Sullivan):** "Improvement of Image to Transcription Process for Documents". PDF at `assets/reports/image-to-transcription-dissertation.pdf`. Shown on research.html under its own "MSc Dissertation (Distinction)" label, not as a publication. Card CTA: "Read the Dissertation". NOT an LLM-vs-CNN study: it is a geometric reading-order engine (4 column-detection strategies) + seanc-has review app.
 - **Article:** "Tithe" on Medium.
 - Dish gallery (`images/`), video portfolio (Google Drive embeds, DaVinci Resolve).
 
-## Experience timeline (experience.html / index.html preview)
-- OSCOWL & Co — Research Intern (Dec 2023–May 2024), Hyderabad
-- GoWarm — Generative AI Intern (Oct 2024–Jan 2025), Hyderabad (WAV2Lip-HQ)
-- Freelance Video Editor — Early 2025 (DaVinci Resolve, short film for bob_2.3)
-- Syncwave Automation — Co-founder / Data Scientist (Jan–Sep 2025), "Is It Legal To"
-- Virginia Tech India — ML Research Intern (Mar–May 2025), Chennai (heart murmur, 87%)
-- Koffee & Kale — Sous Chef (Dec 2025–present), Dublin
+## Experience (experience.html / index.html)
+Featured card above the timeline (not repeated in it):
+- **Napkin Studio** - AI Engineer, Dublin (current; no dates shown). Descriptor: "At Napkin Studio, an Irish AI creative studio, I lead product on the studio OS: the tools that turn a client brief into research, a brief, a pitch deck and a production plan. Agents do the drafting, and people approve every step."
+
+Timeline, newest first:
+- Koffee & Kale - Sous Chef, Dublin (past tense, no dates shown; cooked there through the MSc)
+- Virginia Tech India - ML Research Intern (Mar&ndash;May 2025), Chennai (heart murmur, reaching 87%)
+- Syncwave Automation - Co-founder / Data Scientist (Jan&ndash;Sep 2025), "Is It Legal To"
+- Freelance Video Editor - Early 2025 (DaVinci Resolve, short film for bob_2.3); no "(one-time)" or "Open to freelance work."
+- GoWarm - Generative AI Intern (Oct 2024&ndash;Jan 2025), Hyderabad (WAV2Lip-HQ)
+- OSCOWL & Co - Research Intern (Dec 2023&ndash;May 2024), Hyderabad. Did BOTH computer vision / image classification AND StreamLingo voice work (95% voice fidelity); index and experience pages must agree.
 
 ## Education
-- Trinity College Dublin — MSc CS (Intelligent Systems), Sep 2025–present
-- Vellore Institute of Technology — B.Tech CS (AI & ML), 2021–2025, CGPA 8.72
-- National Public School, Bangalore — CBSE XII 92.4% / X 91.4%, 2015–2020
+- Trinity College Dublin - MSc CS (Intelligent Systems), Sep 2025 to Sep 2026, Distinction
+- Vellore Institute of Technology - B.Tech CS (AI & ML), 2021 to 2025, CGPA 8.72
+- National Public School, Bangalore - CBSE XII 92.4% / X 91.4%, 2015 to 2020
+
+## Skills (added/changed)
+Rust, TypeScript, React, Kotlin, Evals (alongside RAG), Agent Systems, On-Device ML, Product are listed in sensible groups. "Node.js CLI" is now "Node.js".
+
+## Certifications
+Kept: HACCP Food Safety, Postman API Fundamentals Student Expert. Removed: Joy of Computing using Python, Programming For Everybody (Python), Python Data Structures, the unnamed IBM Certification.
+
+## Copy notes
+- Hero status line: "AI Engineer @ Napkin Studio". Typed strings: an AI Engineer, an ML Researcher, an Agent Builder, a Video Editor.
+- Recipe: serves "Teams who ship"; currently "AI Engineer @ Napkin Studio"; closing "Plate it up. Code on GitHub, papers on IEEE Xplore, food on the plate. Serve warm."
+- Contact page: "Currently" uses `fa-briefcase`; subtitle "Always up for a chat. Pick a channel."

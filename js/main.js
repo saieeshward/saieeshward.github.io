@@ -14,8 +14,7 @@
         strings: [
           "an AI Engineer ^3000",
           "an ML Researcher",
-          "a Systems Builder",
-          "a Sous Chef",
+          "an Agent Builder",
           "a Video Editor"
         ],
         typeSpeed: 55,

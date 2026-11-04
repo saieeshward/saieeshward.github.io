@@ -43,7 +43,7 @@ function getFooter() {
         </div>
         <div class="col-md-6 text-md-right">
           <div class="social-icons social-icons-sm">
-            <a href="https://github.com/EESH-843" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/saieeshward" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/eeshward/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://x.com/d_eeshwar" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
           </div>
@@ -60,7 +60,8 @@ if (typeof console !== "undefined" && console.log) {
     "model card\n" +
     "  type: human, dublin based\n" +
     "  weights: closed source\n" +
-    "  training data: whale songs, heartbeats, brunch orders\n" +
+    "  deployment: napkin studio\n" +
+    "  training data: whale songs, heartbeats, handwriting, brunch orders\n" +
     "  contact: saieeshwar03@gmail.com\n" +
     "  source: https://github.com/saieeshward/saieeshward.github.io"
   );
