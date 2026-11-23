@@ -69,75 +69,17 @@
         var cards = doc.querySelectorAll(".project-grid .project-item .project-card");
         if (!cards.length) return;
 
-        var catLabels = { ai: "AI / ML", systems: "Systems", creative: "Creative", hardware: "Hardware" };
         var out = [];
 
+        // Reuse the exact Projects-page card so the home page matches it; only the
+        // long description is swapped for the short data-short blurb.
         Array.prototype.slice.call(cards, 0, 4).forEach(function (card) {
           var item = card.closest(".project-item");
-          var cat = item ? item.getAttribute("data-category") : "";
-          var titleEl = card.querySelector("h4");
-          var descEl = card.querySelector("p");
-          var title = titleEl ? titleEl.textContent : "";
-          var desc = (item && item.getAttribute("data-short")) || (descEl ? descEl.innerHTML : "");
-          var badge = card.querySelector(".badge");
-          var link = card.querySelector(".project-links a");
-          var label = (item && item.getAttribute("data-label")) || (badge ? badge.textContent.trim() : (catLabels[cat] || "Project"));
-
-          if (link) {
-            var href = link.getAttribute("href");
-            var cta = link.getAttribute("data-cta") || "View Project";
-            if (!link.getAttribute("data-cta")) {
-              if (/syncwave|\/live/i.test(href)) cta = "Visit Live Site";
-              else if (link.querySelector(".fa-globe") || /github\.io/i.test(href)) cta = "Visit Website";
-              else if (/\.pdf$/i.test(href)) cta = "Read the Dissertation";
-              else if (/github\.com/i.test(href)) cta = "View on GitHub";
-            }
-            var isExternal = /^https?:/i.test(href);
-            var cta2 = item && item.getAttribute("data-cta2");
-            var href2 = item && item.getAttribute("data-cta2-href");
-            if (cta2 && href2) {
-              var tgt = ' target="_blank" rel="noopener noreferrer"';
-              out.push(
-                '<div class="col-md-6 col-lg-3 mb-4">' +
-                  '<div class="work-card">' +
-                    '<span class="work-type">' + label + '</span>' +
-                    '<h4>' + title + '</h4>' +
-                    '<p>' + desc + '</p>' +
-                    '<div class="work-links">' +
-                      '<a href="' + href + '"' + tgt + ' class="work-cta">' + cta + ' <i class="fas fa-arrow-right"></i></a>' +
-                      '<a href="' + href2 + '"' + tgt + ' class="work-cta">' + cta2 + ' <i class="fas fa-arrow-right"></i></a>' +
-                    '</div>' +
-                  '</div>' +
-                '</div>'
-              );
-              return;
-            }
-            // Green only when the label is the "Live" badge itself; a custom data-label stays teal like the others.
-            var liveClass = (badge && badge.classList.contains("badge-live") && !(item && item.getAttribute("data-label"))) ? " work-type-live" : "";
-            out.push(
-              '<div class="col-md-6 col-lg-3 mb-4">' +
-                '<a href="' + href + '"' + (isExternal || /\.pdf$/i.test(href) ? ' target="_blank" rel="noopener noreferrer"' : '') + ' class="work-card">' +
-                  '<span class="work-type' + liveClass + '">' + label + '</span>' +
-                  '<h4>' + title + '</h4>' +
-                  '<p>' + desc + '</p>' +
-                  '<span class="work-cta">' + cta + ' <i class="fas fa-arrow-right"></i></span>' +
-                '</a>' +
-              '</div>'
-            );
-          } else {
-            var muted = card.querySelector(".text-muted");
-            var mutedHtml = muted ? muted.innerHTML : '<i class="fas fa-lock"></i> Private';
-            out.push(
-              '<div class="col-md-6 col-lg-3 mb-4">' +
-                '<div class="work-card">' +
-                  '<span class="work-type">' + label + '</span>' +
-                  '<h4>' + title + '</h4>' +
-                  '<p>' + desc + '</p>' +
-                  '<span class="text-muted">' + mutedHtml + '</span>' +
-                '</div>' +
-              '</div>'
-            );
-          }
+          var clone = card.cloneNode(true);
+          var short = item && item.getAttribute("data-short");
+          var p = clone.querySelector("p");
+          if (short && p) p.textContent = short;
+          out.push('<div class="col-md-6 col-lg-3 mb-4">' + clone.outerHTML + '</div>');
         });
 
         if (out.length) container.innerHTML = out.join("");
@@ -180,5 +122,85 @@
       });
     }
   });
+
+
+  // --- In-site PDF viewer ---
+  // On-site PDFs (assets/...pdf) open in an overlay instead of leaving the site.
+  // Phones and browsers without a built-in PDF viewer keep the normal link.
+  (function () {
+    var canPreview = function () {
+      if (window.matchMedia("(max-width: 767px)").matches) return false;
+      if (typeof navigator.pdfViewerEnabled === "boolean") return navigator.pdfViewerEnabled;
+      return true;
+    };
+
+    var modal, frame, titleEl, openBtn, dlBtn, lastFocus;
+
+    function build() {
+      modal = document.createElement("div");
+      modal.className = "pdf-modal";
+      modal.setAttribute("role", "dialog");
+      modal.setAttribute("aria-modal", "true");
+      modal.setAttribute("aria-labelledby", "pdfModalTitle");
+      modal.innerHTML =
+        '<div class="pdf-modal-backdrop" data-close></div>' +
+        '<div class="pdf-modal-panel">' +
+          '<div class="pdf-modal-bar">' +
+            '<span class="pdf-modal-title" id="pdfModalTitle"></span>' +
+            '<div class="pdf-modal-actions">' +
+              '<a class="pdf-modal-btn" data-open target="_blank" rel="noopener noreferrer"><i class="fas fa-up-right-from-square"></i> Open in new tab</a>' +
+              '<a class="pdf-modal-btn" data-download download><i class="fas fa-download"></i> Download</a>' +
+              '<button type="button" class="pdf-modal-close" data-close aria-label="Close"><i class="fas fa-xmark"></i></button>' +
+            '</div>' +
+          '</div>' +
+          '<iframe class="pdf-modal-frame" title="PDF preview"></iframe>' +
+        '</div>';
+      document.body.appendChild(modal);
+      frame = modal.querySelector("iframe");
+      titleEl = modal.querySelector(".pdf-modal-title");
+      openBtn = modal.querySelector("[data-open]");
+      dlBtn = modal.querySelector("[data-download]");
+      modal.addEventListener("click", function (e) {
+        if (e.target.closest("[data-close]")) close();
+      });
+    }
+
+    function open(href, title) {
+      if (!modal) build();
+      lastFocus = document.activeElement;
+      titleEl.textContent = title;
+      openBtn.href = href;
+      dlBtn.href = href;
+      frame.src = href;
+      modal.classList.add("open");
+      document.body.style.overflow = "hidden";
+      modal.querySelector(".pdf-modal-close").focus();
+    }
+
+    function close() {
+      modal.classList.remove("open");
+      frame.src = "about:blank";
+      document.body.style.overflow = "";
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal && modal.classList.contains("open")) close();
+    });
+
+    document.addEventListener("click", function (e) {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var a = e.target.closest("a[href]");
+      if (!a || a.closest(".pdf-modal")) return;
+      var href = a.getAttribute("href");
+      if (!/^(?!https?:|\/\/)[^?#]*\.pdf(?:[?#].*)?$/i.test(href)) return;
+      if (!canPreview()) return;
+      e.preventDefault();
+      var card = a.closest(".project-card, .pub-card, .patent-card, .work-card");
+      var heading = card && card.querySelector("h3, h4");
+      var title = heading ? heading.textContent.trim() : (a.textContent.trim() || "Document");
+      open(href, title);
+    });
+  })();
 
 })(jQuery);

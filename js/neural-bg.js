@@ -5,6 +5,11 @@
    ======================================== */
 
 (function () {
+  // Theme accent as "r, g, b" (set by the active theme in css/style.css)
+  function accentRgb() {
+    return getComputedStyle(document.documentElement).getPropertyValue("--accent-rgb").trim() || "94, 234, 212";
+  }
+
   "use strict";
 
   var hero = document.querySelector(".hero-section");
@@ -85,7 +90,7 @@
       }
       ctx.beginPath();
       ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(94, 234, 212, 0.30)";
+      ctx.fillStyle = "rgba(" + accentRgb() + ", 0.30)";
       ctx.fill();
     }
 
@@ -101,7 +106,7 @@
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = "rgba(94, 234, 212, " + alpha.toFixed(3) + ")";
+          ctx.strokeStyle = "rgba(" + accentRgb() + ", " + alpha.toFixed(3) + ")";
           ctx.stroke();
         }
       }
@@ -113,7 +118,7 @@
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(pointer.x, pointer.y);
-        ctx.strokeStyle = "rgba(94, 234, 212, " + alpha.toFixed(3) + ")";
+        ctx.strokeStyle = "rgba(" + accentRgb() + ", " + alpha.toFixed(3) + ")";
         ctx.stroke();
       }
     }
