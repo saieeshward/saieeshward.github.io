@@ -14,8 +14,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="css/style.css?v=20261123d" rel="stylesheet" />
-  <script src="js/components.js?v=20261123d"></script>
+  <link href="css/style.css?v=20261123o" rel="stylesheet" />
+  <script src="js/components.js?v=20261123o"></script>
 </head>
 <body>
 
@@ -51,6 +51,7 @@
         <!-- 2026 - Solkeeper (Mars outpost game, built in two days) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="creative" data-label="Game" data-short="Browser 3D game built in two days: a Mars outpost on real Jezero crater terrain, with rovers meshed from NASA photos. Every fact names its NASA source. Built with yjay and ghostnet.">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/solkeeper.jpg" alt="Solkeeper title screen: a Mars outpost on red terrain" loading="lazy" width="800" height="450" />
             <span class="badge badge-live">Live</span>
             <h4>Solkeeper - Mars Outpost Game</h4>
             <p>Browser 3D game built in <strong>two days</strong>: keep a Mars outpost alive for five sols, drive a rover to machines NASA left on Mars, scan them and learn what each one teaches. The rovers are <strong>3D meshes generated from NASA photos</strong> and scaled to NASA's published dimensions. The ground is <strong>real Jezero crater terrain</strong>, streamed from a 1.8 GB NASA/USGS elevation map (about 6 MB fetched), and the Earth to Mars signal delay is computed from planet positions, matching NASA JPL Horizons. <strong>Every fact on screen names its NASA source.</strong> Plain three.js, runs on a school Chromebook. Built with <strong>yjay</strong> and <strong>ghostnet</strong>.</p>
@@ -67,6 +68,7 @@
         <!-- 2026 - MSc Dissertation (TCD, submitted) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai" data-label="MSc Dissertation" data-cta2="Use the tool" data-cta2-href="seanc-has/" data-short="Worked on with the Virtual Record Treasury of Ireland. A geometric layout engine that cuts reading-order error 66x on two-column pages.">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/seanchas.jpg" alt="seanc-has, the transcript review tool built for the dissertation" loading="lazy" width="800" height="450" />
             <span class="badge badge-live">Live</span>
             <h4>Improvement of Image to Transcription Process for Documents</h4>
             <p>MSc dissertation at Trinity College Dublin, worked on with the <strong>Virtual Record Treasury of Ireland</strong>. Transcription tools like Transkribus often <strong>interleave lines across columns</strong>. A geometric layout engine reads PAGE XML, detects columns with one of four strategies, and cuts mean reading-order error <strong>66x</strong> (Average Relative Distance 22.49 to 0.34) on two-column pages. Ships with <strong>seanc-has</strong>, a desktop and browser app for reviewing and exporting corrected transcripts.</p>
@@ -86,6 +88,7 @@
         <!-- 2026 - CLAN (agent-to-agent handoff file format) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems" data-short="Open file format for agent-to-agent handoffs. Built with Shreyansh Soni. Backed by a &euro;10,000 Enterprise Ireland Innovation Voucher.">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/clan.jpg" alt="CLAN website hero with an agent handoff graph" loading="lazy" width="800" height="450" />
             <h4>CLAN - Agent Handoff Format</h4>
             <p>An open file format for <strong>agent-to-agent handoffs</strong>. A <strong>.clan</strong> file is a ZIP carrying the task spec, decision history, and provenance, so a fresh agent continues with no briefing. Rust CLI + SDK, model and framework agnostic. Built with <strong>Shreyansh Soni</strong>. Backed by a <strong>&euro;10,000 Enterprise Ireland Innovation Voucher</strong>.</p>
             <div class="card-meta">year: 2026 &middot; status: active &middot; stack: rust</div>
@@ -102,6 +105,7 @@
         <!-- 2026 - Chika (panel-by-panel comic reader) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai" data-short="Android comic reader that walks you through a page panel by panel with an on-device YOLO model. iOS coming soon to the App Store. Built with Shreyansh Soni.">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/chika.jpg" alt="Chika detecting comic panels and showing them in reading order on a phone" loading="lazy" width="800" height="450" />
             <h4>Chika - Smart Comic Reader</h4>
             <p>Android comic reader (Chitra Katha) that walks you through a page <strong>panel by panel</strong>. <strong>iOS version coming soon to the App Store.</strong> An <strong>on-device YOLO model</strong> detects panels and speech balloons fully offline. Reads CBZ, CBR, and RAR5. Built with <strong>Shreyansh Soni</strong>. <strong>2,900+ APK downloads</strong> on GitHub.</p>
             <div class="card-meta">year: 2026 &middot; status: active &middot; stack: kotlin</div>
@@ -119,6 +123,7 @@
         <!-- 2026 - VITT (multi-currency expense tracker, KMP) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems" data-short="Multi-currency expense tracker in Kotlin Multiplatform. No backend: your own Google Sheet is the database.">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/vitt.jpg" alt="VITT website hero with a multi-currency illustration" loading="lazy" width="800" height="450" />
             <span class="badge badge-current">In Progress</span>
             <h4>VITT - Very Interesting Transaction Tracking</h4>
             <p>Open-source <strong>multi-currency</strong> expense and net-worth tracker. No rate blending, no backend, no bank logins: your data lives in a <strong>Google Sheet you own</strong>, synced through an <strong>append-only event log</strong> so offline edits merge cleanly. Android + iOS from one Kotlin Multiplatform codebase.</p>
@@ -136,6 +141,14 @@
         <!-- 2026 - Shellock (TCD) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems">
           <div class="project-card">
+            <div class="project-thumb project-cover project-cover-ascii" aria-hidden="true"><pre> ________  ___  ___  _______   ___       ___       ________  ________  ___  __
+|\   ____\|\  \|\  \|\  ___ \ |\  \     |\  \     |\   __  \|\   ____\|\  \|\  \
+\ \  \___|\ \  \\\  \ \   __/|\ \  \    \ \  \    \ \  \|\  \ \  \___|\ \  \/  /|_
+ \ \_____  \ \   __  \ \  \_|/_\ \  \    \ \  \    \ \  \\\  \ \  \    \ \   ___  \
+  \|____|\  \ \  \ \  \ \  \_|\ \ \  \____\ \  \____\ \  \\\  \ \  \____\ \  \\ \  \
+    ____\_\  \ \__\ \__\ \_______\ \_______\ \_______\ \_______\ \_______\ \__\\ \__\
+   |\_________\|__|\|__|\|_______|\|_______|\|_______|\|_______|\|_______|\|__| \|__|
+   \|_________|</pre></div>
             <h4>Shellock CLI</h4>
             <p>Node.js CLI that sets up dev environments. Handles multi-module projects with plan files and rollback.</p>
             <div class="card-meta">year: 2026 &middot; status: shipped &middot; stack: node.js</div>
@@ -179,6 +192,7 @@
         <!-- 2025 - TCD Sem 1: Spotify Viz -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="creative">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/spotify.jpg" alt="Spotify dashboard: mood map of tracks by valence and energy" loading="lazy" width="800" height="450" />
             <h4>Spotify Audio Feature Viz</h4>
             <p>Altair dashboard with <strong>114,000+ Spotify tracks</strong>. "Mood Maps" (Valence vs Energy), brush-linked selection, multi-genre filtering.</p>
             <div class="card-meta">year: 2025 &middot; status: shipped &middot; stack: python</div>
@@ -195,6 +209,7 @@
         <!-- 2025 - TCD Sem 1: Transformers from Scratch -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/transformers.jpg" alt="Training and validation loss curves for the 6.3M-parameter Math GPT" loading="lazy" width="800" height="450" />
             <h4>Transformers from Scratch</h4>
             <p>Custom <strong>GPT-style transformer</strong> architectures. Token/position embeddings, <strong>multi-head attention</strong> for arithmetic and boolean logic.</p>
             <div class="card-meta">year: 2025 &middot; status: shipped &middot; stack: pytorch</div>
@@ -210,6 +225,7 @@
         <!-- 2025 - TCD Sem 1: Lucene Search -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/lucene.jpg" alt="Results table comparing BM25 and fused retrieval runs" loading="lazy" width="800" height="450" />
             <h4>Lucene Search Engine</h4>
             <p>Java-based search engine using <strong>Apache Lucene 9.9</strong>. Custom analyzers, field-specific boosting, <strong>BM25 scoring</strong> with TREC evaluation.</p>
             <div class="card-meta">year: 2025 &middot; status: shipped &middot; stack: java</div>
@@ -225,6 +241,7 @@
         <!-- 2025 - TCD Sem 1: ShutterBoxd Knowledge Graph -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/shutterboxd.jpg" alt="Chord diagram of class relationships in the movie knowledge graph" loading="lazy" width="800" height="450" />
             <h4>ShutterBoxd - Movie Knowledge Graph</h4>
             <p>Movie knowledge graph built on IMDb and Letterboxd data. RML mappings, SHACL validation, SPARQL queries, all in Protégé and GraphDB.</p>
             <div class="card-meta">year: 2025 &middot; status: shipped &middot; stack: sparql</div>
@@ -240,6 +257,7 @@
         <!-- 2025 - TCD Sem 1: Fencer-PRO -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="creative">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/fencer.jpg" alt="Pitch deck cover art: a sabre fencer lunging" loading="lazy" width="800" height="450" />
             <h4>Fencer-PRO Innovation Pitch</h4>
             <p>Research pitch for fencing performance tech. Motion capture, real-time feedback, market sizing.</p>
             <div class="card-meta">year: 2025 &middot; status: shipped</div>
@@ -256,6 +274,7 @@
         <!-- 2025 - VTI: Heart Murmur Detection (Mar-May 2025) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/heart.jpg" alt="Pipeline diagram: MFCC and DWT features feeding SVM, KNN and DNN models" loading="lazy" width="800" height="450" />
             <h4>Heart Murmur Detection</h4>
             <p>Heart-sound classifiers for 5 classes (normal plus 4 valve conditions) on a public 1,000-recording dataset, using MFCC and wavelet features with SVM, KNN and DNN models. Aimed at a <strong>digital stethoscope</strong> for low-cost cardiac screening. Built in collaboration with IIT Madras.</p>
             <div class="card-meta">year: 2025 &middot; status: private &middot; stack: python</div>
@@ -271,6 +290,7 @@
         <!-- 2025 - Syncwave: Is It Legal To -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/legal.jpg" alt="Syncwave website home page" loading="lazy" width="800" height="450" />
             <h4>Is It Legal To</h4>
             <p>Legal guidance platform I co-founded. Built the AI backend: an ingestion pipeline over Indian statutes and judgments, plus retrieval and <strong>LLM summaries</strong> that cite their sources.</p>
             <div class="card-meta">year: 2025 &middot; status: archived</div>
@@ -286,6 +306,7 @@
         <!-- 2025 - Hybrid Forecast (IEEE published) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/hybrid.jpg" alt="Poster section with the hybrid model diagram and gold price plot" loading="lazy" width="800" height="450" />
             <span class="badge badge-published">Published</span>
             <h4>Hybrid Time Series Forecasting</h4>
             <p>Combining ARIMA, Echo State Networks, and LSTM for time series prediction. Tested on Brent Oil, Gold, and Sunspot datasets.</p>
@@ -303,6 +324,7 @@
         <!-- 2024 - Wav2Lip-HQ (undergrad project) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
           <div class="project-card">
+            <div class="project-thumb project-cover" aria-hidden="true"><i class="fas fa-film"></i></div>
             <h4>Wav2Lip-HQ Inference</h4>
             <p>Built a <strong>Wav2Lip-HQ</strong> lip-sync inference pipeline for video dubbing. Undergrad project.</p>
             <div class="card-meta">year: 2024 &middot; status: shipped &middot; stack: pytorch</div>
@@ -318,6 +340,7 @@
         <!-- 2023 - Cetacean Detection (IEEE published + Patent) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
           <div class="project-card">
+            <div class="project-thumb project-photo-eq" role="img" aria-label="An underwater call equals a species: a waveform next to a humpback whale, orca, dolphin, sperm whale and beluga, since the model identifies cetacean species from their calls"><img src="images/projects/cetacean.jpg" alt="" loading="lazy" width="800" height="450" /><span class="eq-sign" aria-hidden="true">=</span></div>
             <span class="badge badge-published">Published</span>
             <h4>Cetacean Species Detection</h4>
             <p>Classifies <strong>93 cetacean species</strong> from underwater audio using CNNs, CRNNs, and SoundNet. <strong>IEEE published</strong>, with an Indian patent application filed.</p>
@@ -335,6 +358,7 @@
         <!-- 2023 - CRISP (VIT, published) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems">
           <div class="project-card">
+            <img class="project-thumb" src="images/projects/crisp.jpg" alt="Wiring diagram: Arduino with GSM and GPS modules for bus tracking" loading="lazy" width="800" height="450" />
             <h4>CRISP</h4>
             <p>Real-time GPS tracking for public buses. Built so students could actually figure out when their bus was coming.</p>
             <div class="card-meta">year: 2023 &middot; status: shipped</div>
@@ -350,6 +374,7 @@
         <!-- 2022 - VISU-NG (VIT) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
           <div class="project-card">
+            <div class="project-thumb project-cover" aria-hidden="true"><i class="fas fa-robot"></i></div>
             <h4>VISU-NG Robot</h4>
             <p>Robot that talks back. TTS/STT with LLM integration so it can hold a conversation.</p>
             <div class="card-meta">year: 2022 &middot; status: archived</div>
@@ -365,6 +390,7 @@
         <!-- 2022 - V-SAT (VIT) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="hardware">
           <div class="project-card">
+            <div class="project-thumb project-cover" aria-hidden="true"><i class="fas fa-satellite"></i></div>
             <h4>V-SAT (1U CubeSat)</h4>
             <p>EM spectrum analysis payload for a 1U CubeSat. Redundant systems, weather-resistant build.</p>
             <div class="card-meta">year: 2022 &middot; status: archived</div>
@@ -380,6 +406,7 @@
         <!-- 2021 - HackAP (VIT, earliest) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="hardware">
           <div class="project-card">
+            <div class="project-thumb project-cover" aria-hidden="true"><i class="fas fa-bolt"></i></div>
             <h4>HackAP - Dance Floor Energy</h4>
             <p>Dance floor that generates electricity. Air-tight syringes + piezoelectric sensors under the tiles.</p>
             <div class="card-meta">year: 2021 &middot; status: archived</div>
@@ -403,6 +430,6 @@
 
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js?v=20261123d"></script>
+  <script src="js/main.js?v=20261123o"></script>
 </body>
 </html>

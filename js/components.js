@@ -6,7 +6,10 @@ var SITE_THEMES = [
   { id: "blue",   name: "Electric blue", color: "#60a5fa" },
   { id: "amber",  name: "Amber",  color: "#fb923c" },
   { id: "violet", name: "Violet", color: "#a78bfa" },
-  { id: "lime",   name: "Lime",   color: "#a3e635" }
+  { id: "lime",   name: "Lime",   color: "#a3e635" },
+  { id: "rose",   name: "Rose",   color: "#f472b6" },
+  { id: "gold",   name: "Gold",   color: "#facc15" },
+  { id: "indigo", name: "Indigo", color: "#818cf8" }
 ];
 (function () {
   var ids = SITE_THEMES.map(function (t) { return t.id; });

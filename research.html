@@ -14,8 +14,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="css/style.css?v=20261123d" rel="stylesheet" />
-  <script src="js/components.js?v=20261123d"></script>
+  <link href="css/style.css?v=20261123o" rel="stylesheet" />
+  <script src="js/components.js?v=20261123o"></script>
 </head>
 <body>
 
@@ -51,14 +51,17 @@
     <div class="container">
       <h2 class="section-heading fade-up">Publications<span class="text-accent">.</span></h2>
 
-      <a href="https://ieeexplore.ieee.org/abstract/document/10333321" target="_blank" rel="noopener noreferrer" class="pub-card clickable-card fade-up">
+      <div class="pub-card fade-up">
         <span class="status-pill status-published">Published</span>
         <div class="pub-venue">IEEE CSITSS 2023</div>
         <h4>An Analytical Approach for Cetacean Family Species Detection Using Auditory Hybrid Algorithms for Multi-Class Classification</h4>
         <p class="pub-authors">Sai Eeshwar D, Sagar Dhanraj Pande</p>
         <p class="pub-doi">DOI: 10.1109/CSITSS60515.2023.10333321</p>
-        <span class="card-cta">Read on IEEE <i class="fas fa-arrow-right"></i></span>
-      </a>
+        <div class="pub-actions">
+          <a href="https://ieeexplore.ieee.org/abstract/document/10333321" target="_blank" rel="noopener noreferrer" class="card-cta">Read on IEEE <i class="fas fa-arrow-right"></i></a>
+          <button type="button" class="cite-btn" data-cite="csitss2023"><i class="fas fa-quote-right"></i> Cite</button>
+        </div>
+      </div>
 
       <div class="pub-card fade-up">
         <span class="status-pill status-published">Published</span>
@@ -69,6 +72,7 @@
         <div class="pub-actions">
           <a href="https://ieeexplore.ieee.org/abstract/document/11158940" target="_blank" rel="noopener noreferrer" class="card-cta">Read on IEEE <i class="fas fa-arrow-right"></i></a>
           <a href="assets/reports/hybrid-forecast-poster.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-accent"><i class="fas fa-file-pdf"></i> View Poster</a>
+          <button type="button" class="cite-btn" data-cite="icctdc2025"><i class="fas fa-quote-right"></i> Cite</button>
         </div>
       </div>
 
@@ -146,7 +150,7 @@
       <div class="row">
         <div class="col-lg-6 mb-4">
           <div class="video-embed-card fade-up">
-            <iframe title="Short film edited for bob_2.3" src="https://drive.google.com/file/d/1nT2-pzCOoM-Q3LG2HbY9E5eNCfFYP8sy/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <a class="video-thumb" href="https://drive.google.com/file/d/1nT2-pzCOoM-Q3LG2HbY9E5eNCfFYP8sy/view" target="_blank" rel="noopener noreferrer" aria-label="Watch the bob_2.3 short film on Google Drive"><img loading="lazy" src="images/bob23-thumb.jpg" alt="Still from the bob_2.3 short film: a speaker with a microphone on stage in front of a band" /><span class="play"><i class="fas fa-play"></i></span></a>
             <div class="video-embed-label">
               <h4>bob_2.3</h4>
               <p>Freelance &middot; DaVinci Resolve</p>
@@ -180,6 +184,6 @@
 
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js?v=20261123d"></script>
+  <script src="js/main.js?v=20261123o"></script>
 </body>
 </html>
