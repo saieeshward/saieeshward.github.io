@@ -93,6 +93,25 @@
               else if (/github\.com/i.test(href)) cta = "View on GitHub";
             }
             var isExternal = /^https?:/i.test(href);
+            var cta2 = item && item.getAttribute("data-cta2");
+            var href2 = item && item.getAttribute("data-cta2-href");
+            if (cta2 && href2) {
+              var tgt = ' target="_blank" rel="noopener noreferrer"';
+              out.push(
+                '<div class="col-md-6 col-lg-3 mb-4">' +
+                  '<div class="work-card">' +
+                    '<span class="work-type">' + label + '</span>' +
+                    '<h4>' + title + '</h4>' +
+                    '<p>' + desc + '</p>' +
+                    '<div class="work-links">' +
+                      '<a href="' + href + '"' + tgt + ' class="work-cta">' + cta + ' <i class="fas fa-arrow-right"></i></a>' +
+                      '<a href="' + href2 + '"' + tgt + ' class="work-cta">' + cta2 + ' <i class="fas fa-arrow-right"></i></a>' +
+                    '</div>' +
+                  '</div>' +
+                '</div>'
+              );
+              return;
+            }
             // Green only when the label is the "Live" badge itself; a custom data-label stays teal like the others.
             var liveClass = (badge && badge.classList.contains("badge-live") && !(item && item.getAttribute("data-label"))) ? " work-type-live" : "";
             out.push(

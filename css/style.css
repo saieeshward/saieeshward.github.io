@@ -1567,6 +1567,9 @@ a:hover { color: var(--accent-hover); text-decoration: none; }
 }
 
 .work-cta i { font-size: 0.7rem; margin-left: 0.3rem; transition: margin-left 0.2s; }
+.work-links { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: auto; padding-top: 0.75rem; }
+.work-links .work-cta { margin-top: 0; padding-top: 0; text-decoration: none; }
+.work-links .work-cta:hover { color: var(--text-primary); text-decoration: none; }
 .work-card:hover .work-cta i { margin-left: 0.6rem; }
 
 .work-card-meta {
