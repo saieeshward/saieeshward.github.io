@@ -93,7 +93,8 @@
               else if (/github\.com/i.test(href)) cta = "View on GitHub";
             }
             var isExternal = /^https?:/i.test(href);
-            var liveClass = (badge && badge.classList.contains("badge-live")) ? " work-type-live" : "";
+            // Green only when the label is the "Live" badge itself; a custom data-label stays teal like the others.
+            var liveClass = (badge && badge.classList.contains("badge-live") && !(item && item.getAttribute("data-label"))) ? " work-type-live" : "";
             out.push(
               '<div class="col-md-6 col-lg-3 mb-4">' +
                 '<a href="' + href + '"' + (isExternal || /\.pdf$/i.test(href) ? ' target="_blank" rel="noopener noreferrer"' : '') + ' class="work-card">' +
