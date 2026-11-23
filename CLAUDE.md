@@ -10,7 +10,7 @@
 
 ## Owner / identity
 - **Name:** Sai Eeshwar D - brand alias **"sheesh."** (note the accent dot)
-- **Role:** AI Engineer at Napkin Studio, Dublin (exact title "AI Engineer"; no dates shown on site). Leads product on the studio OS: the tools that turn a client brief into research, a brief, a pitch deck and a production plan. Agents do the drafting, people approve every step. Do NOT describe it as an "operating system for ad agencies". Also ML Researcher. 2 IEEE publications, 1 Indian patent application (filed, not issued), 1 live product.
+- **Role:** AI Engineer at Napkin Studio, Dublin (exact title "AI Engineer"; no dates shown on site). Builds the studio OS with the Napkin team (startup, everyone works together; do not say "leads product"): the tools that turn a client brief into research, a brief, a pitch deck and a production plan. Agents do the drafting, people approve every step. Do NOT describe it as an "operating system for ad agencies". Also ML Researcher. 2 IEEE publications, 1 Indian patent application (filed, not issued). (No "live product" claim: Is It Legal To is a website only.)
 - **Education:** MSc Computer Science (Intelligent Systems), Trinity College Dublin (Sep 2025 to Sep 2026), graduated with Distinction. Dissertation 72%, taught modules 62 to 83%.
 - **Based:** Dublin, Ireland.
 - **Email:** saieeshwar03@gmail.com
@@ -66,6 +66,7 @@ Add-a-project template is in an HTML comment at the bottom of the project grid.
 Current projects (newest first):
 | Project | Category | Status | Link |
 |---|---|---|---|
+| Solkeeper - Mars Outpost Game (NASA Space Apps Challenge 2026; browser three.js game; local source `~/Projects/DevTools/Developer/Hackathlone/junior-astronaut-mission-trainer`, private repo yjay18/junior-astronaut-mission-trainer) | creative | Live | https://randoms.games/mars/outpost/ |
 | VITT - Very Interesting Transaction Tracking (multi-currency expense tracker; Kotlin Multiplatform, Apache-2.0, pre-alpha, local repo `~/Projects/DevTools/Developer/Tracker`) | systems | In Progress | private |
 | CLAN - Agent Handoff Format (Context and Live Agent Notation; Rust, MPL-2.0) | systems | - | github.com/saieeshward/clan |
 | Chika - Smart Comic Reader (Chitra Katha; Android/Kotlin, on-device YOLO) | ai | - | github.com/saieeshward/chika |
@@ -77,9 +78,9 @@ Current projects (newest first):
 | ShutterBoxd - Movie Knowledge Graph | systems | - | github.com/EESH-843/knowledge-graph |
 | Fencer-PRO Innovation Pitch | creative | - | github.com/EESH-843/fencer-pro |
 | Heart Murmur Detection | ai | - | private |
-| Is It Legal To | ai | Live | syncwave.co.in |
+| Is It Legal To | ai | archived (website only; the tool is not live, so no Live badge or user claims) | syncwave.co.in |
 | Hybrid Time Series Forecasting | ai | Published | IEEE 11158940 |
-| WAV2Lip-HQ Inference | ai | - | github.com/saieeshward/Wav2Lip-HQ-inference |
+| Wav2Lip-HQ Inference (undergrad project, not GoWarm) | ai | - | github.com/saieeshward/Wav2Lip-HQ-inference |
 | Cetacean Species Detection | ai | Published | IEEE 10333321 + patent |
 | CRISP | systems | shipped (no Published badge) | github.com/saieeshward/CRISP |
 | VISU-NG Robot | ai | - | private |
@@ -96,15 +97,15 @@ Current projects (newest first):
 
 ## Experience (experience.html / index.html)
 Featured card above the timeline (not repeated in it):
-- **Napkin Studio** - AI Engineer, Dublin (current; no dates shown). Descriptor: "At Napkin Studio, an Irish AI creative studio, I lead product on the studio OS: the tools that turn a client brief into research, a brief, a pitch deck and a production plan. Agents do the drafting, and people approve every step."
+- **Napkin Studio** - AI Engineer, Dublin (current; no dates shown). Descriptor: "An Irish AI creative studio. With the Napkin team I build the studio OS: the tools that turn a client brief into research, a brief, a pitch deck and a production plan. Agents do the drafting, and people approve every step."
 
 Timeline, newest first:
 - Koffee & Kale - Sous Chef, Dublin (past tense, no dates shown; cooked there through the MSc)
-- Virginia Tech India - ML Research Intern (Mar&ndash;May 2025), Chennai (heart murmur, reaching 87%)
+- Virginia Tech India - ML Research Intern (Mar&ndash;May 2025), Chennai (heart murmur and valvular disease detection; no accuracy figures, the validation set was leaky)
 - Syncwave Automation - Co-founder / Data Scientist (Jan&ndash;Sep 2025), "Is It Legal To"
 - Freelance Video Editor - Early 2025 (DaVinci Resolve, short film for bob_2.3); no "(one-time)" or "Open to freelance work."
-- GoWarm - Generative AI Intern (Oct 2024&ndash;Jan 2025), Hyderabad (WAV2Lip-HQ)
-- OSCOWL & Co - Research Intern (Dec 2023&ndash;May 2024), Hyderabad. Did BOTH computer vision / image classification AND StreamLingo voice work (95% voice fidelity); index and experience pages must agree.
+- GoWarm - Generative AI Intern (Oct 2024&ndash;Jan 2025), Hyderabad (CrewAI multi-agent lead qualification only. Wav2Lip-HQ was an UNDERGRAD project, not GoWarm work)
+- OSCOWL & Co - AI Research Intern (Dec 2023&ndash;May 2024), Hyderabad. StreamLingo only (Whisper + Bark speech-to-speech translation; say it APPROXIMATES the speaker's voice, stock Bark has no true cloning), matching the internship letter. No image classification, no "95% voice fidelity".
 
 ## Education
 - Trinity College Dublin - MSc CS (Intelligent Systems), Sep 2025 to Sep 2026, Distinction
@@ -124,7 +125,7 @@ Kept: HACCP Food Safety, Postman API Fundamentals Student Expert. Removed: Joy o
 
 
 ## Nov 2026 round 2 changes
-- **Latest Work (home)** is 4 cards pulled from the first 4 `.project-item`s of projects.html by `populateLatestWork()` in js/main.js, in this order: MSc Dissertation, CLAN, Chika, VITT. Optional attributes on a `.project-item`: `data-label` (badge text), `data-short` (plain-text blurb for home). A link can carry `data-cta` to override the card CTA. Static fallback cards live in index.html and must be kept in sync.
+- **Latest Work (home)** is 4 cards pulled from the first 4 `.project-item`s of projects.html by `populateLatestWork()` in js/main.js, in this order: Solkeeper, MSc Dissertation, CLAN, Chika (VITT dropped off the home page when Solkeeper was added, Nov 23 2026). Optional attributes on a `.project-item`: `data-label` (badge text), `data-short` (plain-text blurb for home). A link can carry `data-cta` to override the card CTA. Static fallback cards live in index.html and must be kept in sync.
 - **Syncwave / Is It Legal To** is deliberately de-emphasised: not on the home page, not in the bio, one short line on experience.html, card kept lower on projects.html. Do not add "live legal product" claims to the bio or meta tags.
 - **Bio** now says "a dissertation worked on with the Virtual Record Treasury of Ireland" (virtualtreasury.ie).
 - **chika.html** is a standalone Android download page: pinned APK link `https://github.com/batunii/chika/releases/download/v0.2.2-beta/app-release.apk` (GitHub `releases/latest` points at an iOS tag, so it is pinned; bump the tag when a newer Android build ships). . Chika upstream is `batunii/chika` (another GitHub user, Shreyansh Soni); `saieeshward/chika` is only a fork. Website: https://batunii.github.io/chika/. GitHub reports 3,134 total release downloads (checked Nov 2026).
@@ -139,7 +140,11 @@ Kept: HACCP Food Safety, Postman API Fundamentals Student Expert. Removed: Joy o
 - **Chika download stat:** site says "2,900+ APK downloads" (GitHub API, Nov 2026: APK 2,984, .aab 58, IPA 92, total 3,134). These are raw download counts, not users (1,998 are the v0.1.0 APK; all releases dated 2026-07-08). Do not say "3,000+" or imply user counts.
 - **Round 3:** projects.html now has the first 6 cards in the main grid and the rest inside a collapsed `<details class="earlier-work">` (Is It Legal To card unchanged, just moved there). New projects go at the top of the first grid. Filter buttons open the Earlier work section when a category is chosen.
 - **Chika iOS:** site says iOS is "coming soon to the App Store". The unsigned IPA download and sideload steps were removed from chika.html; Chika's home/projects cards no longer claim iOS availability.
-- **Napkin cost figures** (60% per-call cost cut via Sonnet 5.5 + prompt caching, ~93% cache hits in testing, cheaper model dropped ~75% of facts so stronger model kept, 82% saving traded for quality) were supplied by the owner and confirmed OK to publish by Napkin.
+- **Napkin cost figures** (60% per-call cost cut via Sonnet 5.5 + prompt caching, ~93% cache hits in testing, cheaper model dropped ~75% of facts so stronger model kept, 82% saving traded for quality) were supplied by the owner and confirmed OK to publish by Napkin. Since Round 5, don't name Sonnet 5.5 or say the default model was switched (owner's call); the 82% figure is dropped.
 - **Shellock:** shipped, but no one uses it yet; do not add usage or adoption claims.
 - **Round 4 (recruiter review fixes):** removed 5 dead `EESH-843/...` GitHub buttons (spotify-viz, math-boolean-gpt, assignment-two-group-10, knowledge-graph, fencer-pro; repos not public). Shellock, CRISP and Wav2Lip now link to `saieeshward`. Poster file renamed `hybrid-forecast-poster.pdf` and labelled "View Poster". Typed strings no longer include "a Video Editor". Pages wrap content in `<main id="main">`; nav toggler, footer icons, filter buttons and the Drive iframe have accessible names. Koffee & Kale card shows "Part-time" in the date slot (not a date). Gallery photos resized to ~700px JPEGs. Footer says "Static HTML, no build step" (site still ships Bootstrap 4 beta + jQuery). `populateLatestWork()` fetches projects.html with `cache: "no-cache"`.
 - **Virginia Tech India internship** was in collaboration with IIT Madras; stated on the resume, experience.html, the home timeline and the Heart Murmur card.
+
+- **Round 5 (Nov 23 2026, resume alignment):** site copy now matches the one-page resume (`assets/reports/resumes/Sai_Eeshwar_D_Resume.pdf`, built by `resumes/src/general.py`). Napkin cost line no longer names Sonnet 5.5 or "moving the default"; it says prompt caching + per-step model selection, checked by manual side-by-side testing (Napkin infra is on AWS, Claude API, model-agnostic). "client-by-client home" is now "per-client workspaces", "checks" now "tests". Removed all undefined 87% / 95% metrics. Is It Legal To lost its Live badge and "real users" line. ARD is spelled out as Average Relative Distance. Protege is Protégé.
+- **Round 6 (Nov 23 2026, owner-confirmed facts):** Napkin cost is a ~60% lower PER-TOKEN model price (not a measured per-call bill), ~93% cache figure is "in testing". Napkin role worded as building the studio OS with the team, not "lead product". Wav2Lip-HQ moved off GoWarm (undergrad project). OSCOWL title "AI Research Intern", StreamLingo only. Heart murmur: 5 classes (normal + 4 valve conditions) on the PUBLIC Yaseen et al. 2018 1,000-recording dataset (not collected by Sai), no accuracy. Syncwave title stays "Co-founder and Data Scientist". The Napkin award-library figures stay off the site and resume. Public resume `assets/reports/Resume_Sai_Eeshwar_D.pdf` is now built by `PUBLIC=1 python3 resumes/src/general.py` (A4, 10.2pt) then soffice (no phone, no job-search line, Napkin date "Present"); delete the intermediate .docx so it is not published.
+- **Solkeeper (Nov 23 2026):** added as the newest card (top of projects.html, Live badge, data-cta "Play it online", link https://randoms.games/mars/outpost/, page title "Solkeeper"). Spotify Viz moved into Earlier work (now 14) to keep 6 cards in the main grid. Home fallback cards updated. Team credit: "Built with yjay and ghostnet" (owner-confirmed handles; keep on card, home fallback and data-short). Any Space Apps result is unconfirmed; don't add one. Portfolio only: Solkeeper is deliberately NOT on the resume.

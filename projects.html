@@ -48,11 +48,27 @@
     <div class="container">
       <div class="row project-grid">
 
+        <!-- 2026 - Solkeeper (NASA Space Apps Challenge 2026, Mars outpost game) -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="creative" data-label="NASA Space Apps 2026" data-short="Browser 3D game for NASA Space Apps 2026: keep a Mars outpost alive, drive to machines NASA left on Mars, scan them and learn what each one teaches. Every fact names its NASA source. Built with yjay and ghostnet.">
+          <div class="project-card">
+            <span class="badge badge-live">Live</span>
+            <h4>Solkeeper - Mars Outpost Game</h4>
+            <p>Browser 3D game for the <strong>NASA Space Apps Challenge 2026</strong>: keep a Mars outpost alive for five sols, drive a rover to machines NASA left on Mars, scan them and learn what each one teaches. The ground is <strong>real Jezero crater terrain</strong>, streamed from a 1.8 GB NASA/USGS elevation map with HTTP range requests (about 6 MB fetched). The wind is a real Perseverance recording, and <strong>every fact on screen names its NASA source</strong>. Plain three.js, no build step, made for school Chromebooks. Built with <strong>yjay</strong> and <strong>ghostnet</strong>.</p>
+            <div class="card-meta">year: 2026 &middot; status: live &middot; stack: three.js</div>
+            <div class="project-tags">
+              <span>three.js</span><span>WebGL</span><span>Game Design</span><span>NASA Data</span><span>Geospatial</span><span>Generative 3D</span>
+            </div>
+            <div class="project-links">
+              <a href="https://randoms.games/mars/outpost/" target="_blank" rel="noopener noreferrer" data-cta="Play it online"><i class="fas fa-gamepad"></i> Play</a>
+            </div>
+          </div>
+        </div>
+
         <!-- 2026 - MSc Dissertation (TCD, submitted) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai" data-label="MSc Dissertation" data-short="Worked on with the Virtual Record Treasury of Ireland. A geometric layout engine that cuts reading-order error 66x on two-column pages.">
           <div class="project-card">
             <h4>Improvement of Image to Transcription Process for Documents</h4>
-            <p>MSc dissertation at Trinity College Dublin, worked on with the <strong>Virtual Record Treasury of Ireland</strong>. Transcription tools like Transkribus often <strong>interleave lines across columns</strong>. A geometric layout engine reads PAGE XML, detects columns with one of four strategies, and cuts mean reading-order error <strong>66x</strong> (ARD 22.49 to 0.34) on two-column pages. Ships with <strong>seanc-has</strong>, a desktop and browser app for reviewing and exporting corrected transcripts.</p>
+            <p>MSc dissertation at Trinity College Dublin, worked on with the <strong>Virtual Record Treasury of Ireland</strong>. Transcription tools like Transkribus often <strong>interleave lines across columns</strong>. A geometric layout engine reads PAGE XML, detects columns with one of four strategies, and cuts mean reading-order error <strong>66x</strong> (Average Relative Distance 22.49 to 0.34) on two-column pages. Ships with <strong>seanc-has</strong>, a desktop and browser app for reviewing and exporting corrected transcripts.</p>
             <div class="card-meta">year: 2026 &middot; status: shipped &middot; stack: python</div>
             <div class="project-tags">
               <span>Python</span><span>Layout Analysis</span><span>OCR / HTR</span><span>PAGE XML</span><span>Human-in-the-Loop</span>
@@ -132,22 +148,6 @@
           </div>
         </div>
 
-        <!-- 2025 - TCD Sem 1: Spotify Viz -->
-        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="creative">
-          <div class="project-card">
-            <h4>Spotify Audio Feature Viz</h4>
-            <p>Altair dashboard with <strong>114,000+ Spotify tracks</strong>. "Mood Maps" (Valence vs Energy), brush-linked selection, multi-genre filtering.</p>
-            <div class="card-meta">year: 2025 &middot; status: shipped &middot; stack: python</div>
-            <div class="project-tags">
-              <span>Python</span><span>Altair</span><span>Data Visualization</span><span>Pandas</span>
-            </div>
-            <div class="project-links">
-              <a href="assets/reports/spotify-viz-interactive.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chart-bar"></i> Interactive</a>
-              <a href="assets/reports/spotify-viz-report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
-            </div>
-          </div>
-        </div>
-
         <!--
         ==========================================
         ADD NEW PROJECT - Copy this template (newest work goes at the top of the first grid; older work goes inside "Earlier work"):
@@ -172,8 +172,24 @@
       </div>
 
       <details class="earlier-work">
-        <summary>Earlier work (13)</summary>
+        <summary>Earlier work (14)</summary>
         <div class="row project-grid-more mt-3">
+
+        <!-- 2025 - TCD Sem 1: Spotify Viz -->
+        <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="creative">
+          <div class="project-card">
+            <h4>Spotify Audio Feature Viz</h4>
+            <p>Altair dashboard with <strong>114,000+ Spotify tracks</strong>. "Mood Maps" (Valence vs Energy), brush-linked selection, multi-genre filtering.</p>
+            <div class="card-meta">year: 2025 &middot; status: shipped &middot; stack: python</div>
+            <div class="project-tags">
+              <span>Python</span><span>Altair</span><span>Data Visualization</span><span>Pandas</span>
+            </div>
+            <div class="project-links">
+              <a href="assets/reports/spotify-viz-interactive.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-chart-bar"></i> Interactive</a>
+              <a href="assets/reports/spotify-viz-report.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
+            </div>
+          </div>
+        </div>
 
         <!-- 2025 - TCD Sem 1: Transformers from Scratch -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
@@ -209,10 +225,10 @@
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="systems">
           <div class="project-card">
             <h4>ShutterBoxd - Movie Knowledge Graph</h4>
-            <p>Movie knowledge graph built on IMDb and Letterboxd data. RML mappings, SHACL validation, SPARQL queries, all in Protege and GraphDB.</p>
+            <p>Movie knowledge graph built on IMDb and Letterboxd data. RML mappings, SHACL validation, SPARQL queries, all in Protégé and GraphDB.</p>
             <div class="card-meta">year: 2025 &middot; status: shipped &middot; stack: sparql</div>
             <div class="project-tags">
-              <span>Protege</span><span>RML</span><span>SHACL</span><span>Knowledge Graphs</span><span>Semantic Web</span>
+              <span>Protégé</span><span>RML</span><span>SHACL</span><span>Knowledge Graphs</span><span>Semantic Web</span>
             </div>
             <div class="project-links">
               <a href="assets/reports/shutterBoxd_25338829.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Report</a>
@@ -240,7 +256,7 @@
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
           <div class="project-card">
             <h4>Heart Murmur Detection</h4>
-            <p>Deep learning model reaching <strong>87% accuracy</strong> on heart murmur classification from stethoscope audio. Runs on a <strong>digital stethoscope</strong> for low-cost cardiac screening. Built in collaboration with IIT Madras.</p>
+            <p>Heart-sound classifiers for 5 classes (normal plus 4 valve conditions) on a public 1,000-recording dataset, using MFCC and wavelet features with SVM, KNN and DNN models. Aimed at a <strong>digital stethoscope</strong> for low-cost cardiac screening. Built in collaboration with IIT Madras.</p>
             <div class="card-meta">year: 2025 &middot; status: private &middot; stack: python</div>
             <div class="project-tags">
               <span>Deep Learning</span><span>Audio Classification</span><span>Healthcare</span><span>Python</span>
@@ -254,15 +270,14 @@
         <!-- 2025 - Syncwave: Is It Legal To -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
           <div class="project-card">
-            <span class="badge badge-live">Live</span>
             <h4>Is It Legal To</h4>
-            <p>Legal guidance platform I co-founded. Case tracking, <strong>AI summaries</strong>, and lawyer matching. Live, with real users.</p>
-            <div class="card-meta">year: 2025 &middot; status: live</div>
+            <p>Legal guidance platform I co-founded. Built the AI backend: an ingestion pipeline over Indian statutes and judgments, plus retrieval and <strong>LLM summaries</strong> that cite their sources.</p>
+            <div class="card-meta">year: 2025 &middot; status: archived</div>
             <div class="project-tags">
-              <span>AI</span><span>Deep Learning</span><span>LegalTech</span><span>LLM Optimization</span>
+              <span>RAG</span><span>LLMs</span><span>LegalTech</span><span>Data Pipelines</span>
             </div>
             <div class="project-links">
-              <a href="https://syncwave.co.in" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i> Live Site</a>
+              <a href="https://syncwave.co.in" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i> Website</a>
             </div>
           </div>
         </div>
@@ -284,11 +299,11 @@
           </div>
         </div>
 
-        <!-- 2024 - GoWarm: WAV2Lip-HQ -->
+        <!-- 2024 - Wav2Lip-HQ (undergrad project) -->
         <div class="col-md-6 col-lg-4 mb-4 project-item" data-category="ai">
           <div class="project-card">
-            <h4>WAV2Lip-HQ Inference</h4>
-            <p>Lip-sync pipeline reaching <strong>95% accuracy at 30 FPS</strong>, with 4K support. Built for video dubbing during my internship at GoWarm.</p>
+            <h4>Wav2Lip-HQ Inference</h4>
+            <p>Productionised Wav2Lip-HQ lip-sync inference for video dubbing, running at <strong>30 FPS</strong> with 4K output. Undergrad project.</p>
             <div class="card-meta">year: 2024 &middot; status: shipped &middot; stack: pytorch</div>
             <div class="project-tags">
               <span>Python</span><span>PyTorch</span><span>Deep Learning</span><span>Video Processing</span>
